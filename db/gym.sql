@@ -52,7 +52,7 @@ CREATE TABLE classes_date_times (
   id SERIAL PRIMARY KEY,
   start_time TIME(0),
   end_time TIME(0),
-  dates DATE,
+  class_date DATE,
   class_id INT REFERENCES classes(id) ON DELETE CASCADE
 );
 

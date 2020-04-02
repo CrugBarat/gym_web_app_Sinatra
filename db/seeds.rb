@@ -81,15 +81,12 @@ class1.save()
 
 
 ##################################################################
-# CLASSES
+# CLASSES_DATE_TIME
 
-class1 = Class.new({'title' => 'Spin Class',
-                    'desciption' => 'A high-intensity group exercise class
-                                     on a stationary bike, which allows you to
-                                     increase or decrease pedal resistance.',
-                    'instructor_id' => instructor1.id,
-                    'room_id' => room1.id,
-                    'active' => 1})
+class1 = Class.new({'start_time' => '09:00:00',
+                    'end_time' => '10:00:00',
+                    'class_date' => '2020-01-27',
+                    'class_id' => class1.id})
 
 
 class1.save()
