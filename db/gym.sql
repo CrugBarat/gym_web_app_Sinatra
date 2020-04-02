@@ -1,4 +1,5 @@
 DROP TABLE IF EXISTS bookings;
+DROP TABLE IF EXISTS member_details;
 DROP TABLE IF EXISTS members;
 DROP TABLE IF EXISTS classes_date_times;
 DROP TABLE IF EXISTS classes;
@@ -11,10 +12,6 @@ CREATE TABLE members (
   id SERIAL PRIMARY KEY,
   first_name VARCHAR(255),
   last_name VARCHAR(255),
-  address TEXT,
-  post_code VARCHAR(255),
-  telephone_number INT,
-  email_address VARCHAR(255),
   date_of_birth DATE,
   active BOOLEAN
 );
@@ -25,6 +22,15 @@ CREATE TABLE instructors (
   last_name VARCHAR(255),
   profile TEXT,
   email_address VARCHAR(255)
+);
+
+CREATE TABLE member_details (
+  id SERIAL PRIMARY KEY,
+  address TEXT,
+  post_code VARCHAR(255),
+  telephone_number INT,
+  email_address VARCHAR(255),
+  member_id INT REFERENCES members(id) ON DELETE CASCADE
 );
 
 CREATE TABLE rooms (
@@ -44,7 +50,7 @@ CREATE TABLE classes (
   title VARCHAR(255),
   description TEXT,
   instructor_id INT REFERENCES instructors(id) ON DELETE CASCADE,
-  room_id INT REFERENCES rooms(id),
+  room_id INT REFERENCES rooms(id) ON DELETE CASCADE,
   active BOOLEAN
 );
 
