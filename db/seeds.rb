@@ -2,7 +2,7 @@ require('pry-byebug')
 require_relative('../models/member.rb')
 require_relative('../models/class.rb')
 require_relative('../models/booking.rb')
-require_relative('../models/classes_date_time.rb')
+require_relative('../models/class_date_time.rb')
 require_relative('../models/instructor.rb')
 require_relative('../models/room.rb')
 require_relative('../models/amenity.rb')
@@ -10,7 +10,7 @@ require_relative('../models/amenity.rb')
 # Member.delete_all()
 # Class.delete_all()
 # Booking.delete_all()
-# ClassesDateTime.delete_all()
+# ClassDateTime.delete_all()
 # Instructor.delete_all()
 # Room.delete_all()
 # Amenity.delete_all()
@@ -34,12 +34,12 @@ member1.save()
 ##################################################################
 # INSTRUCTORS
 
-instructor1 = Member.new({'first_name' => 'Richard',
-                          'last_name' => 'Jonson',
-                          'profile' => 'Coming from a Rugby background,
-                                        Richard has developed a career in strength
-                                        & conditioning training with functional training',
-                          'email_address' => 'r_jonson@gym.com'})
+instructor1 = Instructor.new({'first_name' => 'Richard',
+                              'last_name' => 'Jonson',
+                              'profile' => 'Coming from a Rugby background,
+                                            Richard has developed a career in strength
+                                            & conditioning training with functional training',
+                              'email_address' => 'r_jonson@gym.com'})
 
 
 instructor1.save()
@@ -81,15 +81,25 @@ class1.save()
 
 
 ##################################################################
-# CLASSES_DATE_TIME
+# CLASS_DATE_TIME
 
-class1 = Class.new({'start_time' => '09:00:00',
-                    'end_time' => '10:00:00',
-                    'class_date' => '2020-01-27',
-                    'class_id' => class1.id})
+class_date_time1 = ClassDateTime.new({'start_time' => '09:00:00',
+                                      'end_time' => '10:00:00',
+                                      'class_date' => '2020-01-27',
+                                      'class_id' => class1.id})
 
 
-class1.save()
+class_date_time1.save()
+
+
+##################################################################
+# BOOKINGS
+
+booking1 = Booking.new({'member_id' => member1.id,
+                        'class_id' => class1.id})
+
+
+booking1.save()
 
 
 ##################################################################

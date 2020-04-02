@@ -48,7 +48,7 @@ CREATE TABLE classes (
   active BOOLEAN
 );
 
-CREATE TABLE classes_date_times (
+CREATE TABLE class_date_times (
   id SERIAL PRIMARY KEY,
   start_time TIME(0),
   end_time TIME(0),
