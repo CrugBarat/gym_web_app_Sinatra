@@ -18,5 +18,3 @@ class Member
   end
 
 end
-
-git commit -m"adds contructor to the Instructor class"
