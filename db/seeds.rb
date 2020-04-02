@@ -61,7 +61,7 @@ amenity1 = Amenity.new({'type' => 'Spin Bike',
                         'room_id' => room1.id})
 
 
-instructor1.save()
+amenity1.save()
 
 
 ##################################################################
