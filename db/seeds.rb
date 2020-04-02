@@ -5,6 +5,7 @@ require_relative('../models/booking.rb')
 require_relative('../models/classes_date_time.rb')
 require_relative('../models/instructor.rb')
 require_relative('../models/room.rb')
+require_relative('../models/amenity.rb')
 
 # Member.delete_all()
 # Class.delete_all()
@@ -12,6 +13,7 @@ require_relative('../models/room.rb')
 # ClassesDateTime.delete_all()
 # Instructor.delete_all()
 # Room.delete_all()
+# Amenity.delete_all()
 
 ##################################################################
 # MEMBERS
@@ -27,7 +29,6 @@ member1 = Member.new({'first_name' => 'John',
 
 
 member1.save()
-
 
 
 ##################################################################
@@ -65,7 +66,36 @@ amenity1.save()
 
 
 ##################################################################
+# CLASSES
 
+class1 = Class.new({'title' => 'Spin Class',
+                    'desciption' => 'A high-intensity group exercise class
+                                     on a stationary bike, which allows you to
+                                     increase or decrease pedal resistance.',
+                    'instructor_id' => instructor1.id,
+                    'room_id' => room1.id,
+                    'active' => 1})
+
+
+class1.save()
+
+
+##################################################################
+# CLASSES
+
+class1 = Class.new({'title' => 'Spin Class',
+                    'desciption' => 'A high-intensity group exercise class
+                                     on a stationary bike, which allows you to
+                                     increase or decrease pedal resistance.',
+                    'instructor_id' => instructor1.id,
+                    'room_id' => room1.id,
+                    'active' => 1})
+
+
+class1.save()
+
+
+##################################################################
 # PRY
 
 binding.pry

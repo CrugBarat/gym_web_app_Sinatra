@@ -45,7 +45,7 @@ CREATE TABLE classes (
   description TEXT,
   instructor_id INT REFERENCES instructors(id) ON DELETE CASCADE,
   room_id INT REFERENCES rooms(id),
-  status INT
+  active BOOLEAN
 );
 
 CREATE TABLE classes_date_times (
