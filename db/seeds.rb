@@ -6,6 +6,7 @@ require_relative('../models/class_date_time.rb')
 require_relative('../models/instructor.rb')
 require_relative('../models/room.rb')
 require_relative('../models/amenity.rb')
+require_relative('../models/member_details.rb')
 
 # Member.delete_all()
 # Class.delete_all()
@@ -20,10 +21,6 @@ require_relative('../models/amenity.rb')
 
 member1 = Member.new({'first_name' => 'John',
                       'last_name' => 'Smith',
-                      'address' => '123 Queen St, Glasgow',
-                      'post_code' => 'G1 1AH',
-                      'telephone_number' => 07123123123,
-                      'email_address' => 'johnsmith@gmail.com',
                       'date_of_birth' => '1984-10-27',
                       'active' => 1})
 
@@ -32,6 +29,24 @@ member1.save()
 
 
 ##################################################################
+# MEMBERS DETAILS
+
+members_details1 = MembersDetails.new({'address' => '123 Queen St, Glasgow',
+                                       'post_code' => 'G1 1AH',
+                                       'telephone_number' => 07123123123,
+                                       'email_address' => 'johnsmith@gmail.com',
+                                       'member_id' => member1.id})
+
+
+members_details1.save()
+
+
+##################################################################
+
+
+
+
+
 # INSTRUCTORS
 
 instructor1 = Instructor.new({'first_name' => 'Richard',
