@@ -57,6 +57,10 @@ class Instructor
     self.returns_single_instructor(results)
   end
 
+  def full_name()
+    return "#{@first_name} #{@last_name}"
+  end
+
   def self.map_items(result)
     result.map{|instructor| Instructor.new(instructor)}
   end

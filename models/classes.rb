@@ -32,7 +32,7 @@ class Classes
   def update()
     sql = "UPDATE classes
     SET (title, description, instructor_id, room_id, active)
-    = ($1, $2, £3, $4, $5)
+    = ($1, $2, $3, $4, $5)
     WHERE id = $6"
     values = [@title, @description, @instructor_id, @room_id, @active, @id]
     SqlRunner.run(sql, values)

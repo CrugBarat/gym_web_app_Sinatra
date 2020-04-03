@@ -1,0 +1,23 @@
+<form action="/instructors/classes" method="post" id="classform">
+  <label for="title">Title:</label>
+  <input id="title" type="text" name="title" required>
+  <select id="instructor" name="instructor_id">
+    <% for instructor in @instructors %>
+    <option value="<%= instructor.id %>">
+      <%=  instructor.full_name() %>
+    </option>
+    <% end %>
+  </select>
+  <select id="room" name="room_id">
+    <% for room in @rooms %>
+    <option value="<%= room.id %>">
+      <%=  room.name() %>
+    </option>
+    <% end %>
+  </select>
+  <label for="active">Active?</label>
+  <input id="active" type="boolean" name="active" required>
+  <button type="submit" name="button">CREATE</button>
+</form>
+
+  <textarea id="description" name="description" form="classform" rows="8" cols="80">Description...</textarea>
