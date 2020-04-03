@@ -8,6 +8,7 @@ require_relative('controllers/instructors_controller.rb')
 require_relative('controllers/instructors_controller.rb')
 require_relative('controllers/members_controller.rb')
 require_relative('controllers/rooms_controller.rb')
+also_reload('./models/*')
 
 get '/' do
   erb(:homepage)
