@@ -16,10 +16,10 @@ class Class
 
   def save()
     sql = "INSERT INTO classes
-    (title, desciption, instructor_id, room_id, active)
+    (title, description, instructor_id, room_id, active)
     VALUES ($1, $2, $3, $4, $5)
     RETURNING *"
-    values = [@title, @desciption, @instructor_id, @room_id, @active]
+    values = [@title, @description, @instructor_id, @room_id, @active]
     @id = SqlRunner.run(sql, values)[0]['id'].to_i
   end
 
@@ -31,10 +31,10 @@ class Class
 
   def update()
     sql = "UPDATE classes
-    SET (title, desciption, instructor_id, room_id, active)
+    SET (title, description, instructor_id, room_id, active)
     = ($1, $2, £3, $4, $5)
     WHERE id = $6"
-    values = [@title, @desciption, @instructor_id, @room_id, @active, @id]
+    values = [@title, @description, @instructor_id, @room_id, @active, @id]
     SqlRunner.run(sql, values)
   end
 

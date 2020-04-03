@@ -64,6 +64,6 @@ CREATE TABLE class_date_times (
 
 CREATE TABLE bookings (
   id SERIAL PRIMARY KEY,
-  memeber_id INT REFERENCES members(id) ON DELETE CASCADE,
+  member_id INT REFERENCES members(id) ON DELETE CASCADE,
   class_id INT REFERENCES classes(id) ON DELETE CASCADE
 );

@@ -8,14 +8,14 @@ require_relative('../models/room.rb')
 require_relative('../models/amenity.rb')
 require_relative('../models/member_details.rb')
 
-# Member.delete_all()
-# MemberDetails.delete_all()
-# Class.delete_all()
-# Booking.delete_all()
-# ClassDateTime.delete_all()
-# Instructor.delete_all()
-# Room.delete_all()
-# Amenity.delete_all()
+Member.delete_all()
+MemberDetails.delete_all()
+Class.delete_all()
+Booking.delete_all()
+ClassDateTime.delete_all()
+Instructor.delete_all()
+Room.delete_all()
+Amenity.delete_all()
 
 ##################################################################
 # MEMBERS
@@ -43,11 +43,6 @@ member_details1.save()
 
 
 ##################################################################
-
-
-
-
-
 # INSTRUCTORS
 
 instructor1 = Instructor.new({'first_name' => 'Richard',
@@ -85,7 +80,7 @@ amenity1.save()
 # CLASSES
 
 class1 = Class.new({'title' => 'Spin Class',
-                    'desciption' => 'A high-intensity group exercise class
+                    'description' => 'A high-intensity group exercise class
                                      on a stationary bike, which allows you to
                                      increase or decrease pedal resistance.',
                     'instructor_id' => instructor1.id,

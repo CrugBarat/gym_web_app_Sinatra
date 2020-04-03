@@ -12,10 +12,10 @@ class Room
 
   def save()
     sql = "INSERT INTO rooms
-    (first_name)
+    (name)
     VALUES ($1)
     RETURNING *"
-    values = [@first_name]
+    values = [@name]
     @id = SqlRunner.run(sql, values)[0]['id'].to_i
   end
 
@@ -27,10 +27,10 @@ class Room
 
   def update()
     sql = "UPDATE rooms
-    SET (first_name)
+    SET (name)
     = ($1)
     WHERE id = $2"
-    values = [@first_name, @id]
+    values = [@name, @id]
     SqlRunner.run(sql, values)
   end
 
