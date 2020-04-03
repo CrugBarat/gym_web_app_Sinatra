@@ -46,6 +46,14 @@ class Room
     SqlRunner.run(sql)
   end
 
+  def self.find_by_id(id)
+    sql = "SELECT * FROM rooms
+           WHERE id = $1"
+    values = [id]
+    results = SqlRunner.run(sql, values)
+    self.returns_single_room(results)
+  end
+
   def self.map_items(result)
     result.map{|room| Room.new(room)}
   end
