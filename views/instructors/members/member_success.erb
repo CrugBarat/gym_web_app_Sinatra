@@ -7,6 +7,6 @@
   <p>Member ID: <%= @new_member.id %></p>
 </div>
 
-<a href="/instructors/add_details_member">
-  <button type="button" name="button">Add Details</button>
-</a>
+<form action="/instructors/members/<%= @new_member.id %>/add_details" method="post">
+  <button type="submit">Add Details</button>
+</form>
