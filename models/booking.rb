@@ -54,6 +54,14 @@ class Booking
     SqlRunner.run(sql)
   end
 
+  def self.find_by_id(id)
+    sql = "SELECT * FROM bookings
+           WHERE id = $1"
+    values = [id]
+    results = SqlRunner.run(sql, values)
+    self.returns_single_booking(results)
+  end
+
   def self.returns_single_booking(results)
     return nil if results.first() == nil
     Booking.new(results.first())
