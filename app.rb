@@ -1,5 +1,5 @@
 require( 'sinatra' )
-require( 'sinatra/contrib/all' )
+require( 'sinatra/contrib/all' ) if development?
 require_relative('controllers/amenities_controller.rb')
 require_relative('controllers/bookings_controller.rb')
 require_relative('controllers/class_date_times_controller.rb')
