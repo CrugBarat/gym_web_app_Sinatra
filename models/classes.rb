@@ -58,6 +58,19 @@ class Classes
     self.returns_single_class(results)
   end
 
+  def room()
+    sql = "SELECT * FROM rooms
+           WHERE id = $1"
+    values = [@room_id]
+    results = SqlRunner.run(sql, values)
+    Room.returns_single_room(results)
+  end
+
+  def show_room_name()
+    room = room()
+    room.name
+  end
+
   def self.map_items(result)
     result.map{|a_class| Classes.new(a_class)}
   end
