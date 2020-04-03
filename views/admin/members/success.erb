@@ -4,7 +4,7 @@
   <hr>
   <p>Member: <%= @new_member.full_name %></p>
   <p>DOB: <%= @new_member.date_of_birth %></p>
-  <p>Member ID: <%= @new_member.id %></p>
+  <p>Membership Number: <%= @new_member.id %></p>
 </div>
 
 <form action="/admin/members/<%= @new_member.id %>/add_details" method="post">

@@ -18,26 +18,26 @@ end
 #INDEX
 get '/admin/members' do
   @members = Member.all()
-  erb(:"admin/members/members")
+  erb(:"admin/members/index")
 end
 
 #NEW
 get '/admin/members/create' do
-  erb(:"admin/members/create_member")
+  erb(:"admin/members/create")
 end
 
 #CREATE
 post '/admin/members' do
   @new_member = Member.new(params)
   @new_member.save()
-  erb(:"admin/members/member_success")
+  erb(:"admin/members/success")
 end
 
 #SHOW
 get '/admin/members/:id' do
   id = params['id'].to_i
   @member = Member.find_by_id(id)
-  erb(:"admin/members/show_member")
+  erb(:"admin/members/show")
 end
 
 #EDIT
@@ -71,26 +71,42 @@ end
 #INDEX
 get '/admin/classes' do
   @classes = Classes.all()
-  erb(:"admin/classes/classes")
+  erb(:"admin/classes/index")
 end
 
 #NEW
 get '/admin/classes/create' do
   @rooms = Room.all()
   @instructors = Instructor.all()
-  erb(:"admin/classes/create_class")
+  erb(:"admin/classes/create")
 end
 
 #CREATE
 post '/admin/classes' do
-  new_class = Classes.new(params)
-  new_class.save()
-  erb(:"admin/classes/class_success")
+  @new_class = Classes.new(params)
+  @new_class.save()
+  erb(:"admin/classes/success")
 end
 
 #SHOW
 get '/admin/classes/:id' do
   id = params['id'].to_i
   @found_class = Classes.find_by_id(id)
-  erb(:"admin/classes/show_class")
+  erb(:"admin/classes/show")
+end
+
+get '/admin/classes/:id/edit' do
+  id = params['id'].to_i
+  @class = Classes.find_by_id(id)
+  @classes = Classes.all()
+  @rooms = Room.all()
+  @instructors = Instructor.all()
+  erb(:"admin/classes/edit")
+end
+
+#UPDATE
+post '/admin/classes/:id' do
+  member = Classes.new(params)
+  member.update()
+  redirect('/admin/classes/' + params['id'])
 end
