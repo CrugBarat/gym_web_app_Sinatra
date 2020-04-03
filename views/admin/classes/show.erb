@@ -1,14 +1,10 @@
-<a href="/admin">
-  <button type="button">HOME</button>
+<a href="/admin/classes">
+  <button type="button">CLASSES</button>
 </a>
-
-<div>
-  <p>Title: <%= @found_class.title %></p>
-  <p>Description: <%= @found_class.description %></p>
-  <p>Instrcutor: <%= @found_class.instructor_id %></p>
-  <p>Room: <%= @found_class.room_id %></p>
-</div>
-
+<p>Title: <%= @found_class.title %></p>
+<p>Description: <%= @found_class.description %></p>
+<p>Instrcutor: <%= @found_class.instructor_id %></p>
+<p>Room: <%= @found_class.room_id %></p>
 <a href="/admin/classes/<%= @found_class.id %>/edit">
   <button type="button" name="button">EDIT</button>
 </a>

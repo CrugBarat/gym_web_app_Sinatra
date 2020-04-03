@@ -1,7 +1,6 @@
-<a href="/admin">
+<a href="/admin/members">
   <button type="button">HOME</button>
 </a>
-
 <form action="/admin/members/<%= @member.id %>" method="POST">
   <label for="first_name">First Name:</label>
   <input id="first_name" type="string" name="first_name" required/>
@@ -11,7 +10,7 @@
   <input id="date_of_birth" type="date" name="date_of_birth" required/>
   <label for="active">Active? </label>
   <input id="active" type="bool" name="active" required/>
-    <br/>
-    <br/>
-    <button type="submit" name="button">Submit</button>
+  <br/>
+  <br/>
+  <button type="submit" name="button">Submit</button>
 </form>

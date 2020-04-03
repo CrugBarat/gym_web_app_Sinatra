@@ -5,6 +5,7 @@ require_relative('../models/member_details.rb')
 require_relative('../models/instructor.rb')
 require_relative('../models/room.rb')
 require_relative('../models/classes.rb')
+require_relative('../models/booking.rb')
 also_reload('./models/*')
 
 
@@ -110,4 +111,21 @@ post '/admin/classes/:id' do
   member = Classes.new(params)
   member.update()
   redirect('/admin/classes/' + params['id'])
+end
+
+#################################################################
+#BOOK
+
+#NEW
+get '/admin/book' do
+  @members = Member.all()
+  @classes = Classes.all()
+  erb(:"admin/bookings/book")
+end
+
+#CREATE
+post '/admin/book' do
+  @new_booking = Booking.new(params)
+  @new_booking.save
+  erb(:"admin/bookings/success")
 end
