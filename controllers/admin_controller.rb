@@ -147,7 +147,8 @@ end
 get '/admin/bookings/:id/edit' do
   id = params['id'].to_i
   @booking = Booking.find_by_id(id)
-  @bookings = Booking.all()
+  @members = Member.all()
+  @classes = Classes.all()
   erb(:"admin/bookings/edit")
 end
 
