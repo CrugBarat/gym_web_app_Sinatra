@@ -13,4 +13,49 @@ class Instructor
     @email_address = options['email_address']
   end
 
+  def save()
+    sql = "INSERT INTO instructors
+    (first_name, last_name, profile, email_address)
+    VALUES ($1, $2, $3, $4)
+    RETURNING *"
+    values = [@first_name, @last_name, @profile, @email_address]
+    @id = SqlRunner.run(sql, values)[0]['id'].to_i
+  end
+
+  def self.all()
+    sql = "SELECT * FROM instructors"
+    result = SqlRunner.run(sql)
+    self.map_items(result)
+  end
+
+  def update()
+    sql = "UPDATE instructors
+    SET (first_name, last_name, profile, email_address)
+    = ($1, $2, £3, $4)
+    WHERE id = $5"
+    values = [@first_name, @last_name, @profile, @email_address, @id]
+    SqlRunner.run(sql, values)
+  end
+
+  def delete()
+    sql = "DELETE FROM instructors
+    WHERE id = $1"
+    values = [@id]
+    SqlRunner.run(sql, values)
+  end
+
+  def self.delete_all()
+    sql = "DELETE FROM instructors"
+    SqlRunner.run(sql)
+  end
+
+  def self.map_items(result)
+    result.map{|instructor| Instructor.new(instructor)}
+  end
+
+  def self.returns_single_instructor(results)
+    return nil if results.first() == nil
+    Instructor.new(results.first())
+  end
+
 end

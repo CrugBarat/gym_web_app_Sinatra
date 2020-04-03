@@ -53,7 +53,7 @@ class ClassDateTime
     result.map{|class_date_time| ClassDateTime.new(class_date_time)}
   end
 
-  def self.returns_single_amenity(results)
+  def self.returns_single_class_date_time(results)
     return nil if results.first() == nil
     ClassDateTime.new(results.first())
   end

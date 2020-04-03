@@ -54,7 +54,7 @@ class Booking
     SqlRunner.run(sql)
   end
 
-  def self.returns_single_amenity(results)
+  def self.returns_single_booking(results)
     return nil if results.first() == nil
     Booking.new(results.first())
   end
