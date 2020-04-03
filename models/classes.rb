@@ -71,6 +71,19 @@ class Classes
     room.name
   end
 
+  def instructor()
+    sql = "SELECT * FROM Instructors
+           WHERE id = $1"
+    values = [@instructor_id]
+    results = SqlRunner.run(sql, values)
+    Instructor.returns_single_instructor(results)
+  end
+
+  def show_instructor_name()
+    instructor = instructor()
+    instructor.full_name
+  end
+
   def self.map_items(result)
     result.map{|a_class| Classes.new(a_class)}
   end
