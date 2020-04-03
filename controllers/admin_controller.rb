@@ -8,89 +8,89 @@ require_relative('../models/classes.rb')
 also_reload('./models/*')
 
 
-get '/gym' do
-  erb(:"gym/home")
+get '/admin' do
+  erb(:"admin/home")
 end
 
 ################################################################
 #MEMBERS
 
 #INDEX
-get '/gym/members' do
+get '/admin/members' do
   @members = Member.all()
-  erb(:"gym/members/members")
+  erb(:"admin/members/members")
 end
 
 #NEW
-get '/gym/members/create' do
-  erb(:"gym/members/create_member")
+get '/admin/members/create' do
+  erb(:"admin/members/create_member")
 end
 
 #CREATE
-post '/gym/members' do
+post '/admin/members' do
   @new_member = Member.new(params)
   @new_member.save()
-  erb(:"gym/members/member_success")
+  erb(:"admin/members/member_success")
 end
 
 #SHOW
-get '/gym/members/:id' do
+get '/admin/members/:id' do
   id = params['id'].to_i
   @member = Member.find_by_id(id)
-  erb(:"gym/members/show_member")
+  erb(:"admin/members/show_member")
 end
 
 #EDIT
-get '/gym/members/:id/edit' do
+get '/admin/members/:id/edit' do
   id = params['id'].to_i
   @member = Member.find_by_id(id)
   @members = Member.all()
-  erb(:"gym/members/edit")
+  erb(:"admin/members/edit")
 end
 
 #UPDATE
-post '/gym/members/:id' do
+post '/admin/members/:id' do
   member = Member.new(params)
   member.update()
-  redirect('/gym/members/' + params['id'])
+  redirect('/admin/members/' + params['id'])
 end
 
-# get '/gym/members/:id/add_details' do
-#   erb(:"gym/members/add_details_member")
+# get '/admin/members/:id/add_details' do
+#   erb(:"admin/members/add_details_member")
 # end
 #
-# post '/gym/:id' do
+# post '/admin/:id' do
 #   @new_member_details = MemberDetails.new(params)
 #   @new_member_details.save()
-#   erb(:"gym/members/add_details_success")
+#   erb(:"admin/members/add_details_success")
 # end
 
 #################################################################
 #CLASSES
 
 #INDEX
-get '/gym/classes' do
+get '/admin/classes' do
   @classes = Classes.all()
-  erb(:"gym/classes/classes")
+  erb(:"admin/classes/classes")
 end
 
 #NEW
-get '/gym/classes/create' do
+get '/admin/classes/create' do
   @rooms = Room.all()
   @instructors = Instructor.all()
-  erb(:"gym/classes/create_class")
+  erb(:"admin/classes/create_class")
 end
 
 #CREATE
-post '/gym/classes' do
+post '/admin/classes' do
   new_class = Classes.new(params)
   new_class.save()
-  erb(:"gym/classes/class_success")
+  erb(:"admin/classes/class_success")
 end
 
 #SHOW
-get '/gym/classes/:id' do
+get '/admin/classes/:id' do
   id = params['id'].to_i
   @found_class = Classes.find_by_id(id)
-  erb(:"gym/classes/show_class")
+  erb(:"admin/classes/show_class")
 end
