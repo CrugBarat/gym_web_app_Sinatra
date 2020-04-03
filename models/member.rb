@@ -31,7 +31,7 @@ class Member
   def update()
     sql = "UPDATE members
     SET (first_name, last_name, date_of_birth, active)
-    = ($1, $2, £3, $4)
+    = ($1, $2, $3, $4)
     WHERE id = $5"
     values = [@first_name, @last_name, @date_of_birth, @active, @id]
     SqlRunner.run(sql, values)

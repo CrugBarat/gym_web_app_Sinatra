@@ -1,6 +1,6 @@
 require('pry-byebug')
 require_relative('../models/member.rb')
-require_relative('../models/class.rb')
+require_relative('../models/classes.rb')
 require_relative('../models/booking.rb')
 require_relative('../models/class_date_time.rb')
 require_relative('../models/instructor.rb')
@@ -10,7 +10,7 @@ require_relative('../models/member_details.rb')
 
 Member.delete_all()
 MemberDetails.delete_all()
-Class.delete_all()
+Classes.delete_all()
 Booking.delete_all()
 ClassDateTime.delete_all()
 Instructor.delete_all()
@@ -79,7 +79,7 @@ amenity1.save()
 ##################################################################
 # CLASSES
 
-class1 = Class.new({'title' => 'Spin Class',
+class1 = Classes.new({'title' => 'Spin Class',
                     'description' => 'A high-intensity group exercise class
                                      on a stationary bike, which allows you to
                                      increase or decrease pedal resistance.',

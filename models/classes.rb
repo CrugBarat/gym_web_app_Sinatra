@@ -1,6 +1,6 @@
 require_relative('../db/sql_runner.rb')
 
-class Class
+class Classes
 
   attr_reader :id
   attr_accessor :title, :description, :instructor_id, :room_id, :active
@@ -51,12 +51,12 @@ class Class
   end
 
   def self.map_items(result)
-    result.map{|a_class| Class.new(a_class)}
+    result.map{|a_class| Classes.new(a_class)}
   end
 
   def self.returns_single_class(results)
     return nil if results.first() == nil
-    Class.new(results.first())
+    Classes.new(results.first())
   end
 
 end
