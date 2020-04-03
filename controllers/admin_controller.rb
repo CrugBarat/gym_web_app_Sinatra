@@ -19,7 +19,7 @@ end
 #INDEX
 get '/admin/members' do
   @members = Member.all()
-  @find = Member.find_by_id(params)
+  # @find = Member.find_by_id(params)
   erb(:"admin/members/index")
 end
 
@@ -116,16 +116,44 @@ end
 #################################################################
 #BOOK
 
+#INDEX
+get '/admin/bookings' do
+  @bookings = Booking.all()
+  erb(:"admin/bookings/index")
+end
+
 #NEW
-get '/admin/book' do
+get '/admin/bookings/new' do
   @members = Member.all()
   @classes = Classes.all()
   erb(:"admin/bookings/book")
 end
 
 #CREATE
-post '/admin/book' do
+post '/admin/bookings' do
   @new_booking = Booking.new(params)
   @new_booking.save
   erb(:"admin/bookings/success")
+end
+
+#SHOW
+get '/admin/bookings/:id' do
+  id = params['id'].to_i
+  @booking = Booking.find_by_id(id)
+  erb(:"admin/bookings/show")
+end
+
+#EDIT
+get '/admin/bookings/:id/edit' do
+  id = params['id'].to_i
+  @booking = Booking.find_by_id(id)
+  @bookings = Booking.all()
+  erb(:"admin/bookings/edit")
+end
+
+#UPDATE
+post '/admin/bookings/:id' do
+  booking = Booking.new(params)
+  booking.update()
+  redirect('/admin/bookings/' + params['id'])
 end

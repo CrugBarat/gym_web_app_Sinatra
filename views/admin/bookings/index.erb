@@ -1,0 +1,16 @@
+<a href="/admin">
+  <button type="button">HOME</button>
+</a>
+<a href="/admin/bookings/new">
+  <button type="button" name="button">BOOK</button>
+</a>
+<hr>
+<% for booking in @bookings %>
+<p>Member: <%=booking.member_id()%></p>
+<p>Class: <%=booking.class_id()%></p>
+<p>Booking ID: <%=booking.id()%></p>
+<a href="/admin/bookings/<%= booking.id %>/edit">
+  <button type="button" name="button">EDIT</button>
+</a>
+<hr>
+<%end%>
