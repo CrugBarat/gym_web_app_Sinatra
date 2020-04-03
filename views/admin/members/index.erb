@@ -1,3 +1,12 @@
+<a href="/admin">
+  <button type="button">HOME</button>
+</a>
+
+<a href="/admin/members/create">
+  <button type="button" name="button">CREATE</button>
+</a>
+
+
 <div>
   <hr>
   <% for member in @members %>
@@ -5,6 +14,15 @@
   <p>Last Name: <%=member.last_name()%></p>
   <p>DOB: <%=member.date_of_birth()%></p>
   <p>Member ID:<%=member.id()%></p>
+  <a href="/admin/members/<%= member.id %>/edit">
+    <button type="button" name="button">EDIT</button>
+  </a>
   <hr>
   <%end%>
 </div>
+
+<!-- <form action="/admin/members/<%= %>" method="GET">
+  <label for="id">Find by ID:</label>
+  <input id="id" type="number" name="id" required/>
+  <button type="submit" name="button">FIND</button>
+</form> -->

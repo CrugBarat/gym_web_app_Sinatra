@@ -18,6 +18,7 @@ end
 #INDEX
 get '/admin/members' do
   @members = Member.all()
+  @find = Member.find_by_id(params)
   erb(:"admin/members/index")
 end
 

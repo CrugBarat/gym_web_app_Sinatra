@@ -1,3 +1,8 @@
+<a href="/admin">
+  <button type="button">HOME</button>
+</a>
+
+
 <div>
   <hr>
   <p>MEMBER</p>
@@ -6,3 +11,7 @@
   <p>DOB: <%= @member.date_of_birth %></p>
   <p>Membership Number: <%= @member.id %></p>
 </div>
+
+<a href="/admin/members/<%= @member.id %>">
+  <button type="button" name="button">EDIT</button>
+</a>
