@@ -1,6 +1,6 @@
 require_relative('../db/sql_runner.rb')
 
-class MembersDetails
+class MemberDetails
 
   attr_reader :id
   attr_accessor :address, :post_code, :telephone_number, :email_address, :member_id

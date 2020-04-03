@@ -9,6 +9,7 @@ require_relative('../models/amenity.rb')
 require_relative('../models/member_details.rb')
 
 # Member.delete_all()
+# MemberDetails.delete_all()
 # Class.delete_all()
 # Booking.delete_all()
 # ClassDateTime.delete_all()
@@ -31,14 +32,14 @@ member1.save()
 ##################################################################
 # MEMBERS DETAILS
 
-members_details1 = MembersDetails.new({'address' => '123 Queen St, Glasgow',
+member_details1 = MemberDetails.new({'address' => '123 Queen St, Glasgow',
                                        'post_code' => 'G1 1AH',
                                        'telephone_number' => 07123123123,
                                        'email_address' => 'johnsmith@gmail.com',
                                        'member_id' => member1.id})
 
 
-members_details1.save()
+member_details1.save()
 
 
 ##################################################################
