@@ -1,0 +1,10 @@
+<div>
+  <hr>
+  <% for member in @members %>
+  <p>First Name: <%=member.first_name()%></p>
+  <p>Last Name: <%=member.last_name()%></p>
+  <p>DOB: <%=member.date_of_birth()%></p>
+  <p>Member ID:<%=member.id()%></p>
+  <hr>
+  <%end%>
+</div>

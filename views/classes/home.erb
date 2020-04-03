@@ -1,1 +1,10 @@
-<p>Hello</p>
+<div>
+  <hr>
+  <% for classes in @classes %>
+  <p><%=classes.title()%></p>
+  <p>Description: <%=classes.description()%></p>
+  <p>Instructor ID: <%=classes.instructor_id()%></p>
+  <p>Room ID: <%=classes.room_id()%></p>
+  <hr>
+  <%end%>
+</div>
