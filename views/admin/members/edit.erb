@@ -1,7 +1,7 @@
 <a href="/admin/members">
   <button type="button">HOME</button>
 </a>
-<form action="/admin/members/<%= @member.id %>" method="POST">
+<form action="/admin/members/<%= @member.id() %>" method="POST">
   <label for="first_name">First Name:</label>
   <input id="first_name" type="string" name="first_name" required/>
   <label for="last_name">Last Name: </label>

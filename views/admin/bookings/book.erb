@@ -2,7 +2,7 @@
   <label for="member">Member:</label>
   <select id="member" name="member_id">
     <% for member in @members %>
-    <option value="<%= member.id %>">
+    <option value="<%= member.id() %>">
       <%=  member.full_name() %>
     </option>
     <% end %>
@@ -10,7 +10,7 @@
   <label for="classes">Class:</label>
   <select id="classes" name="class_id">
     <% for classes in @classes %>
-    <option value="<%= classes.id %>">
+    <option value="<%= classes.id() %>">
       <%=  classes.title() %>
     </option>
     <% end %>

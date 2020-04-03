@@ -62,6 +62,32 @@ class Booking
     self.returns_single_booking(results)
   end
 
+  def member()
+    sql = "SELECT * FROM members
+           WHERE id = $1"
+    values = [@member_id]
+    results = SqlRunner.run(sql, values)
+    Member.returns_single_member(results)
+  end
+
+  def show_member_name
+    member = member()
+    member.full_name
+  end
+
+  def classes()
+    sql = "SELECT * FROM classes
+           WHERE id = $1"
+    values = [@class_id]
+    results = SqlRunner.run(sql, values)
+    Classes.returns_single_class(results)
+  end
+
+  def show_class_title
+    classes = classes()
+    classes.title
+  end
+
   def self.returns_single_booking(results)
     return nil if results.first() == nil
     Booking.new(results.first())

@@ -4,9 +4,9 @@
 <hr>
 <p>MEMBER</p>
 <hr>
-<p>Member: <%= @member.full_name %></p>
-<p>DOB: <%= @member.date_of_birth %></p>
-<p>Membership Number: <%= @member.id %></p>
-<a href="/admin/members/<%= @member.id %>">
+<p>Member: <%= @member.full_name() %></p>
+<p>DOB: <%= @member.date_of_birth() %></p>
+<p>Membership Number: <%= @member.id() %></p>
+<a href="/admin/members/<%= @member.id() %>">
   <button type="button" name="button">EDIT</button>
 </a>

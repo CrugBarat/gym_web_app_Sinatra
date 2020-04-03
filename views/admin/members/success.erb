@@ -4,9 +4,9 @@
 <hr>
 <p>NEW MEMBER CREATED</p>
 <hr>
-<p>Member: <%= @new_member.full_name %></p>
-<p>DOB: <%= @new_member.date_of_birth %></p>
-<p>Membership Number: <%= @new_member.id %></p>
-<form action="/admin/members/<%= @new_member.id %>/add_details" method="post">
+<p>Member: <%= @new_member.full_name() %></p>
+<p>DOB: <%= @new_member.date_of_birth() %></p>
+<p>Membership Number: <%= @new_member.id() %></p>
+<form action="/admin/members/<%= @new_member.id() %>/add_details" method="post">
   <button type="submit">Add Details</button>
 </form>
