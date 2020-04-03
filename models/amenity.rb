@@ -49,7 +49,7 @@ class Amenity
     end
 
     def self.map_items(result)
-    result.map{|customer| Amenity.new(customer)}
+    result.map{|amenity| Amenity.new(amenity)}
   end
 
   def self.returns_single_amenity(results)
