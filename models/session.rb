@@ -135,6 +135,14 @@ class Session
     date_time.session_date()
   end
 
+  def show_active()
+    if active() == 't'
+      return "ACTIVE"
+    else
+      return "INACTIVE"
+    end
+  end
+
   def self.map_items(result)
     result.map{|a_class| Session.new(a_class)}
   end

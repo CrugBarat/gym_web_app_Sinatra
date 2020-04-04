@@ -69,6 +69,14 @@ class Member
     return "#{@first_name} #{@last_name}"
   end
 
+  def show_active()
+    if active() == 't'
+      return "ACTIVE"
+    else
+      return "INACTIVE"
+    end
+  end
+
   def self.map_items(result)
     result.map{|member| Member.new(member)}
   end
