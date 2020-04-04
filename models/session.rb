@@ -12,15 +12,15 @@ class Session
     @instructor_id = options['instructor_id'].to_i
     @room_id = options['room_id'].to_i
     @active = options['active']
-    @max_capacity = options['max_capacity']
+    @max_capacity = options['max_capacity'].to_i
   end
 
   def save()
     sql = "INSERT INTO sessions
-    (title, description, instructor_id, room_id, active)
-    VALUES ($1, $2, $3, $4, $5)
+    (title, description, instructor_id, room_id, active, max_capacity)
+    VALUES ($1, $2, $3, $4, $5, $6)
     RETURNING *"
-    values = [@title, @description, @instructor_id, @room_id, @active]
+    values = [@title, @description, @instructor_id, @room_id, @active, @max_capacity]
     @id = SqlRunner.run(sql, values)[0]['id'].to_i
   end
 
@@ -32,10 +32,10 @@ class Session
 
   def update()
     sql = "UPDATE sessions
-    SET (title, description, instructor_id, room_id, active)
-    = ($1, $2, $3, $4, $5)
-    WHERE id = $6"
-    values = [@title, @description, @instructor_id, @room_id, @active, @id]
+    SET (title, description, instructor_id, room_id, active, max_capacity)
+    = ($1, $2, $3, $4, $5, $6)
+    WHERE id = $7"
+    values = [@title, @description, @instructor_id, @room_id, @active, @max_capacity, @id]
     SqlRunner.run(sql, values)
   end
 
@@ -93,6 +93,14 @@ class Session
     values = [@id]
     results = SqlRunner.run(sql, values)
     Member.map_items(results)
+  end
+
+  def number_of_members()
+    members().size()
+  end
+
+  def over_capacity?()
+    @max_capacity <= number_of_members()
   end
 
   def self.map_items(result)

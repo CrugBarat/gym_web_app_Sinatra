@@ -6,8 +6,8 @@
 </a>
 <p>NEW BOOKING</p>
 <hr>
-<p>Member: <%=@new_booking.member_id()%></p>
-<p>Session: <%=@new_booking.session_id()%></p>
+<p>Member: <%=@new_booking.show_member_name()%></p>
+<p>Session: <%=@new_booking.show_session_title()%></p>
 <p>Booking ID: <%=@new_booking.id()%></p>
 <a href="/admin/bookings/<%= @new_booking.id() %>/edit">
   <button type="button" name="button">EDIT</button>

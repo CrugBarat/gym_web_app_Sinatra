@@ -1,6 +1,6 @@
 require('pry-byebug')
 require_relative('../models/member.rb')
-require_relative('../models/sessions.rb')
+require_relative('../models/session.rb')
 require_relative('../models/booking.rb')
 require_relative('../models/session_date_time.rb')
 require_relative('../models/instructor.rb')
@@ -47,9 +47,7 @@ member_details1.save()
 
 instructor1 = Instructor.new({'first_name' => 'Richard',
                               'last_name' => 'Jonson',
-                              'profile' => 'Coming from a Rugby background,
-                                            Richard has developed a career in strength
-                                            & conditioning training with functional training',
+                              'profile' => 'Coming from a Rugby background, Richard has developed a career in strength & conditioning training with functional training',
                               'email_address' => 'r_jonson@gym.com'})
 
 
@@ -60,9 +58,11 @@ instructor1.save()
 # ROOMS
 
 room1 = Room.new({'name' => 'Spin Studio'})
+room2 = Room.new({'name' => 'Free Weights'})
 
 
 room1.save()
+room2.save()
 
 
 ##################################################################
@@ -80,15 +80,22 @@ equipment1.save()
 # SESSIONS
 
 session1 = Session.new({'title' => 'Spin Class',
-                        'description' => 'A high-intensity group exercise class
-                                         on a stationary bike, which allows you to
-                                         increase or decrease pedal resistance.',
+                        'description' => 'A high-intensity group exercise class on a stationary bike, which allows you to increase or decrease pedal resistance.',
                         'instructor_id' => instructor1.id,
                         'room_id' => room1.id,
-                        'active' => 1})
+                        'active' => 1,
+                        'max_capacity' => 25})
+
+session2 = Session.new({'title' => 'One2One',
+                        'description' => 'A one to one training session with your personal fitness instructor.',
+                        'instructor_id' => instructor1.id,
+                        'room_id' => room2.id,
+                        'active' => 1,
+                        'max_capacity' => 1})
 
 
 session1.save()
+session2.save()
 
 
 ##################################################################
@@ -109,8 +116,12 @@ session_date_time1.save()
 booking1 = Booking.new({'member_id' => member1.id,
                         'session_id' => session1.id})
 
+booking2 = Booking.new({'member_id' => member1.id,
+                        'session_id' => session2.id})
+
 
 booking1.save()
+booking2.save()
 
 
 ##################################################################

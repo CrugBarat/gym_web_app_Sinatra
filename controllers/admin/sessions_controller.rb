@@ -2,7 +2,7 @@ require('sinatra')
 require('sinatra/contrib/all') if development?
 require_relative('../../models/instructor.rb')
 require_relative('../../models/room.rb')
-require_relative('../../models/sessions.rb')
+require_relative('../../models/session.rb')
 also_reload('./models/*')
 
 
@@ -28,8 +28,8 @@ end
 
 #CREATE
 post '/admin/sessions' do
-  @new_class = Session.new(params)
-  @new_class.save()
+  @new_session = Session.new(params)
+  @new_session.save()
   erb(:"admin/sessions/success")
 end
 

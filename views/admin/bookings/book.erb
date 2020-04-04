@@ -8,11 +8,13 @@
     <% end %>
   </select>
   <label for="sessions">Session:</label>
-  <select id="sessions" name="class_id">
-    <% for sessions in @sessions %>
-    <option value="<%= sessions.id() %>">
-      <%=  sessions.title() %>
+  <select id="sessions" name="session_id">
+    <% for session in @sessions %>
+      <% if session.over_capacity?() == false %>
+    <option value="<%= session.id() %>">
+      <%=  session.title() %>
     </option>
+      <%end %>
     <% end %>
   </select>
   <button type="submit" name="button">BOOK</button>

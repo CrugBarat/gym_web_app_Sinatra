@@ -10,11 +10,16 @@
 <p>Description: <%=session.description()%></p>
 <p>Instructor: <%=session.show_instructor_name()%></p>
 <p>Room: <%=session.show_room_name()%></p>
+<p>Max Capacity: <%=session.max_capacity()%></p>
+<p>Bookings: <%=session.number_of_members()%></p>
 <p>Class ID: <%=session.id() %></p>
 <a href="/admin/sessions/<%= session.id() %>/edit">
   <button type="button" name="button">EDIT</button>
 <a href="/admin/sessions/<%= session.id() %>/bookings">
   <button type="button" name="button">BOOKINGS</button>
+</a>
+<a href="/admin/bookings/new">
+  <button type="button" name="button">BOOK</button>
 </a>
 <hr>
 <%end%>
