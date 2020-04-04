@@ -30,7 +30,7 @@ end
 post '/admin/sessions' do
   @new_session = Session.new(params)
   @new_session.save()
-  erb(:"admin/sessions/success")
+  redirect('/admin/sessions/' + @new_session.id.to_s + '/date_time/create')
 end
 
 #SHOW
@@ -43,7 +43,7 @@ end
 #EDIT
 get '/admin/sessions/:id/edit' do
   id = params['id'].to_i
-  @class = Session.find_by_id(id)
+  @session = Session.find_by_id(id)
   @sessions = Session.all()
   @rooms = Room.all()
   @instructors = Instructor.all()

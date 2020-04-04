@@ -1,7 +1,7 @@
 <a href="/admin/sessions">
   <button type="button">SESSIONS</button>
 </a>
-<form action="/admin/sessions/<%= @class.id() %>" method="post" id="classform">
+<form action="/admin/sessions/<%= @session.id() %>" method="post" id="classform">
   <label for="title">Title:</label>
   <input id="title" type="text" name="title" required>
   <select id="instructor" name="instructor_id">
@@ -20,6 +20,6 @@
   </select>
   <label for="active">Active?</label>
   <input id="active" type="checkbox" name="active" required>
-  <button type="submit" name="button">SUBMIT</button>
+  <button type="submit" name="button">UPDATE</button>
 </form>
 <textarea id="description" name="description" form="classform" rows="8" cols="80">Description...</textarea>

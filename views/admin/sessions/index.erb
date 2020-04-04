@@ -16,7 +16,6 @@
 <p>Max Capacity: <%=session.max_capacity()%></p>
 <p>Bookings: <%=session.number_of_members()%></p>
 <p>Class ID: <%=session.id() %></p>
-<hr>
 <a href="/admin/sessions/<%= session.id() %>/edit">
   <button type="button" name="button">EDIT</button>
 <a href="/admin/sessions/<%= session.id() %>/bookings">
@@ -24,9 +23,6 @@
 </a>
 <a href="/admin/bookings/new">
   <button type="button" name="button">BOOK</button>
-</a>
-<a href="/admin/sessions/<%= session.id %>/session_dates_times">
-  <button type="button" name="button">DATES/TIMES</button>
 </a>
 <hr>
 <%end%>
