@@ -6,10 +6,6 @@ require_relative('../../models/booking.rb')
 also_reload('./models/*')
 
 
-
-#################################################################
-#BOOK
-
 #INDEX
 get '/admin/bookings' do
   @bookings = Booking.all()

@@ -40,6 +40,7 @@ get '/admin/classes/:id' do
   erb(:"admin/classes/show")
 end
 
+#EDIT
 get '/admin/classes/:id/edit' do
   id = params['id'].to_i
   @class = Classes.find_by_id(id)

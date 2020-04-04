@@ -46,12 +46,18 @@ post '/admin/members/:id' do
   redirect('/admin/members/' + params['id'])
 end
 
-# get '/admin/members/:id/add_details' do
-#   erb(:"admin/members/add_details_member")
-# end
-#
-# post '/admin/:id' do
-#   @new_member_details = MemberDetails.new(params)
-#   @new_member_details.save()
-#   erb(:"admin/members/add_details_success")
-# end
+#CREATE
+post '/admin/members/:id/add_details' do
+  id = params['id'].to_i
+  @member = Member.find_by_id(id)
+  erb(:"admin/members/add_details")
+end
+
+#NEW
+post '/admin/members/add_details/:id' do
+  id = params['id'].to_i
+  new_params = params.merge!(member_id: id)
+  @new_member_details = MemberDetails.new(new_params)
+  @new_member_details.save()
+  erb(:"admin/members/add_details_success")
+end
