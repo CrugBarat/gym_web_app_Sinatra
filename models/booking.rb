@@ -20,17 +20,10 @@ class Booking
     @id = SqlRunner.run(sql, values)[0]['id'].to_i
   end
 
-  # [READ] retrieve all bookings from bookings table
-  # Create a new object for each booking
-  # Return the booking objects in an array
   def self.all()
     sql = "SELECT * FROM bookings"
     result = SqlRunner.run(sql)
     self.map_items(result)
-  end
-
-  def self.map_items(result)
-    result.map{|booking| Booking.new(booking)}
   end
 
   def update()
@@ -94,6 +87,17 @@ class Booking
   def show_session_title
     sessions = sessions()
     sessions.title
+  end
+
+  def self.membership_check(params)
+    member = Member.find_by_id(params[:member_id])
+    session = Session.find_by_id(params[:session_id])
+    return if member.correct_membership?() == false && session.peak_time?() == true
+    Booking.new(params)
+  end
+
+  def self.map_items(result)
+    result.map{|booking| Booking.new(booking)}
   end
 
   def self.returns_single_booking(results)

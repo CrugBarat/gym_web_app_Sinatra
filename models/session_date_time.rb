@@ -65,7 +65,6 @@ class SessionDateTime
     self.returns_single_session_date_time(results)
   end
 
-
   def self.map_items(result)
     result.map{|session_date_time| SessionDateTime.new(session_date_time)}
   end

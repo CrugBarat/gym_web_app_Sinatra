@@ -5,7 +5,6 @@ require_relative('../../models/session.rb')
 require_relative('../../models/booking.rb')
 also_reload('./models/*')
 
-
 #INDEX
 get '/admin/bookings' do
   @bookings = Booking.all()
@@ -21,9 +20,13 @@ end
 
 #CREATE
 post '/admin/bookings' do
-  @new_booking = Booking.new(params)
+  @new_booking = Booking.membership_check(params)
   @new_booking.save
   erb(:"admin/bookings/success")
+end
+
+get '/admin/bookings/error' do
+  erb(:"admin/bookings/error")
 end
 
 #SHOW

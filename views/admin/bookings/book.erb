@@ -10,11 +10,11 @@
   <label for="sessions">Session:</label>
   <select id="sessions" name="session_id">
     <% for session in @sessions %>
-      <% if session.over_capacity?() == false %>
+    <% if session.over_capacity?() == false %>
     <option value="<%= session.id() %>">
       <%=  session.title() %>
     </option>
-      <%end %>
+    <%end %>
     <% end %>
   </select>
   <button type="submit" name="button">BOOK</button>
