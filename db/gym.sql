@@ -1,5 +1,5 @@
 DROP TABLE IF EXISTS bookings CASCADE;
-DROP TABLE IF EXISTS session_date_times CASCADE;
+DROP TABLE IF EXISTS session_dates_times CASCADE;
 DROP TABLE IF EXISTS sessions CASCADE;
 DROP TABLE IF EXISTS member_details CASCADE;
 DROP TABLE IF EXISTS members CASCADE;
@@ -55,7 +55,7 @@ CREATE TABLE sessions (
   max_capacity INT
 );
 
-CREATE TABLE session_date_times (
+CREATE TABLE session_dates_times (
   id SERIAL PRIMARY KEY,
   start_time TIME(0),
   end_time TIME(0),

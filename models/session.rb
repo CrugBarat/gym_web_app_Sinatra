@@ -103,6 +103,31 @@ class Session
     @max_capacity <= number_of_members()
   end
 
+  def date_time()
+    sql = "SELECT * FROM session_dates_times
+           INNER JOIN sessions
+           ON session_dates_times.session_id = sessions.id
+           WHERE sessions.id = $1"
+    values = [@id]
+    results = SqlRunner.run(sql, values)
+    SessionDateTime.returns_single_session_date_time(results)
+  end
+
+  def start_time()
+    date_time = date_time()
+    date_time.start_time()
+  end
+
+  def end_time()
+    date_time = date_time()
+    date_time.end_time()
+  end
+
+  def date()
+    date_time = date_time()
+    date_time.session_date()
+  end
+
   def self.map_items(result)
     result.map{|a_class| Session.new(a_class)}
   end

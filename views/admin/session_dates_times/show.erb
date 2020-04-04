@@ -1,0 +1,10 @@
+<a href="/admin/sessions">
+  <button type="button">SESSIONS</button>
+</a>
+<p>Title: <%= @session.title() %></p>
+<p>Start Time: <%= @session_date_time.start_time() %></p>
+<p>End Time: <%= @session_date_time.end_time() %></p>
+<p>Date: <%= @session_date_time.session_date() %></p>
+<%# <a href="/admin/session_date_times/<%= @session_date_time.id() %>/edit">
+  <!-- <button type="button" name="button">EDIT</button> %> -->
+</a>

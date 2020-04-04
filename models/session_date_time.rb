@@ -14,7 +14,7 @@ class SessionDateTime
   end
 
   def save()
-    sql = "INSERT INTO session_date_times
+    sql = "INSERT INTO session_dates_times
     (start_time, end_time, session_date, session_id)
     VALUES ($1, $2, $3, $4)
     RETURNING *"
@@ -23,13 +23,13 @@ class SessionDateTime
   end
 
   def self.all()
-    sql = "SELECT * FROM session_date_times"
+    sql = "SELECT * FROM session_dates_times"
     result = SqlRunner.run(sql)
     self.map_items(result)
   end
 
   def update()
-    sql = "UPDATE session_date_times
+    sql = "UPDATE session_dates_times
     SET (start_time, end_time, session_date, session_id)
     = ($1, $2, $3, $4)
     WHERE id = $5"
@@ -38,20 +38,28 @@ class SessionDateTime
   end
 
   def delete()
-    sql = "DELETE FROM session_date_times
+    sql = "DELETE FROM session_dates_times
     WHERE id = $1"
     values = [@id]
     SqlRunner.run(sql, values)
   end
 
   def self.delete_all()
-    sql = "DELETE FROM session_date_times"
+    sql = "DELETE FROM session_dates_times"
     SqlRunner.run(sql)
   end
 
   def self.find_by_id(id)
-    sql = "SELECT * FROM session_date_times
+    sql = "SELECT * FROM session_dates_times
            WHERE id = $1"
+    values = [id]
+    results = SqlRunner.run(sql, values)
+    self.returns_single_session_date_time(results)
+  end
+
+  def self.find_by_session_id(id)
+    sql = "SELECT * FROM session_dates_times
+           WHERE session_id = $1"
     values = [id]
     results = SqlRunner.run(sql, values)
     self.returns_single_session_date_time(results)
