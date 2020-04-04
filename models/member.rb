@@ -77,6 +77,14 @@ class Member
     end
   end
 
+  def correct_membership?()
+    if membership_type() == "PREMIUM"
+      return true
+    else
+      return false
+    end
+  end
+
   def self.map_items(result)
     result.map{|member| Member.new(member)}
   end

@@ -8,7 +8,7 @@
 <p>DOB: <%= @member.date_of_birth() %></p>
 <p>Membership Number: <%= @member.id() %></p>
 <p>Membership Type: <%=@member.membership_type()%></p>
-<p>Active? <%=@member.show_active()%></p>
+<p><%=@member.show_active()%></p>
 <a href="/admin/members/<%= @member.id() %>/edit">
   <button type="button" name="button">EDIT</button>
 </a>

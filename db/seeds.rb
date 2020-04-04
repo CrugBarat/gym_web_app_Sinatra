@@ -23,7 +23,7 @@ Equipment.delete_all()
 member1 = Member.new({'first_name' => 'John',
                       'last_name' => 'Smith',
                       'date_of_birth' => '1984-10-27',
-                      'membership_type' => 'PREMUIM',
+                      'membership_type' => 'PREMIUM',
                       'active' => 1})
 
 
@@ -107,8 +107,8 @@ session_date_time1 = SessionDateTime.new({'start_time' => '09:00:00',
                                           'session_date' => '2020-01-27',
                                           'session_id' => session1.id})
 
-session_date_time2 = SessionDateTime.new({'start_time' => '12:00:00',
-                                          'end_time' => '12:45:00',
+session_date_time2 = SessionDateTime.new({'start_time' => '18:00:00',
+                                          'end_time' => '18:45:00',
                                           'session_date' => '2020-01-27',
                                           'session_id' => session2.id})
 

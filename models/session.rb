@@ -143,6 +143,14 @@ class Session
     end
   end
 
+  def peak_time?()
+    if start_time() >= "09:00:00" && end_time() <= "17:00:00"
+      return true
+    else
+      return false
+    end
+  end
+
   def self.map_items(result)
     result.map{|a_class| Session.new(a_class)}
   end
