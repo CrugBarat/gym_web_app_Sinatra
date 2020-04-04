@@ -62,6 +62,14 @@ class Booking
     self.returns_single_booking(results)
   end
 
+  def self.find_by_member_id(id)
+    sql = "SELECT * FROM bookings
+           WHERE member_id = $1"
+    values = [id]
+    results = SqlRunner.run(sql, values)
+    self.returns_single_booking(results)
+  end
+
   def member()
     sql = "SELECT * FROM members
            WHERE id = $1"

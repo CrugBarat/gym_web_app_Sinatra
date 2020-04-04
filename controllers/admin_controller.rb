@@ -76,6 +76,13 @@ get '/admin/classes' do
   erb(:"admin/classes/index")
 end
 
+get '/admin/classes/:id/bookings' do
+  id = params['id'].to_i
+  found_class = Classes.find_by_id(id)
+  @members = found_class.members()
+  erb(:"admin/classes/bookings")
+end
+
 #NEW
 get '/admin/classes/create' do
   @rooms = Room.all()

@@ -84,6 +84,16 @@ class Classes
     instructor.full_name
   end
 
+  def members()
+    sql = "SELECT * FROM bookings
+           INNER JOIN members
+           ON bookings.member_id = members.id
+           WHERE bookings.class_id = $1"
+    values = [@id]
+    results = SqlRunner.run(sql, values)
+    Member.map_items(results)
+  end
+
   def self.map_items(result)
     result.map{|a_class| Classes.new(a_class)}
   end

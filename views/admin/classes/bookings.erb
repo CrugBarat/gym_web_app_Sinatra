@@ -1,0 +1,13 @@
+<a href="/admin/classes">
+  <button type="button">CLASSES</button>
+</a>
+<hr>
+<% for member in @members %>
+<p>Member: <%=member.full_name()%></p>
+<p>Membership No: <%=member.id()%></p>
+<% booking = Booking.find_by_member_id(member.id) %>
+<a href="/admin/bookings/<%= booking.id %>/edit">
+  <button type="button" name="button">EDIT BOOKING</button>
+</a>
+<hr>
+<%end%>
