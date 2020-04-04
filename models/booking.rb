@@ -3,20 +3,20 @@ require_relative('../db/sql_runner.rb')
 class Booking
 
   attr_reader :id
-  attr_accessor :member_id, :class_id
+  attr_accessor :member_id, :session_id
 
   def initialize(options)
     @id = options['id'].to_i if options['id']
     @member_id = options['member_id'].to_i
-    @class_id = options['class_id'].to_i
+    @session_id = options['session_id'].to_i
   end
 
   def save()
     sql = "INSERT INTO bookings
-    (member_id, class_id)
+    (member_id, session_id)
     VALUES ($1, $2)
     RETURNING *"
-    values = [@member_id, @class_id]
+    values = [@member_id, @session_id]
     @id = SqlRunner.run(sql, values)[0]['id'].to_i
   end
 
@@ -35,10 +35,10 @@ class Booking
 
   def update()
     sql = "UPDATE bookings
-    SET (member_id, class_id)
+    SET (member_id, session_id)
     = ($1, $2)
     WHERE id = $3"
-    values = [@member_id, @class_id, @id]
+    values = [@member_id, @session_id, @id]
     SqlRunner.run(sql, values)
   end
 
@@ -83,17 +83,17 @@ class Booking
     member.full_name
   end
 
-  def classes()
-    sql = "SELECT * FROM classes
+  def sessions()
+    sql = "SELECT * FROM sessions
            WHERE id = $1"
-    values = [@class_id]
+    values = [@session_id]
     results = SqlRunner.run(sql, values)
-    Classes.returns_single_class(results)
+    Session.returns_single_session(results)
   end
 
   def show_class_title
-    classes = classes()
-    classes.title
+    sessions = sessions()
+    sessions.title
   end
 
   def self.returns_single_booking(results)

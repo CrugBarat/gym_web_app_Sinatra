@@ -31,7 +31,7 @@ class Instructor
   def update()
     sql = "UPDATE instructors
     SET (first_name, last_name, profile, email_address)
-    = ($1, $2, £3, $4)
+    = ($1, $2, $3, $4)
     WHERE id = $5"
     values = [@first_name, @last_name, @profile, @email_address, @id]
     SqlRunner.run(sql, values)

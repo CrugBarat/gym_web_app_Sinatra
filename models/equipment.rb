@@ -1,6 +1,6 @@
 require_relative('../db/sql_runner.rb')
 
-class Amenity
+class Equipment
 
   attr_reader :id
   attr_accessor :type, :quantity, :room_id
@@ -13,7 +13,7 @@ class Amenity
   end
 
   def save()
-    sql = "INSERT INTO amenities
+    sql = "INSERT INTO equipment
     (type, quantity, room_id)
     VALUES ($1, $2, $3)
     RETURNING *"
@@ -22,13 +22,13 @@ class Amenity
   end
 
   def self.all()
-    sql = "SELECT * FROM amenities"
+    sql = "SELECT * FROM equipment"
     result = SqlRunner.run(sql)
     self.map_items(result)
   end
 
   def update()
-    sql = "UPDATE amenities
+    sql = "UPDATE equipment
     SET (type, quantity, room_id)
     = ($1, $2, $3)
     WHERE id = $4"
@@ -37,32 +37,32 @@ class Amenity
   end
 
   def delete()
-    sql = "DELETE FROM amenities
+    sql = "DELETE FROM equipment
     WHERE id = $1"
     values = [@id]
     SqlRunner.run(sql, values)
   end
 
   def self.delete_all()
-    sql = "DELETE FROM amenities"
+    sql = "DELETE FROM equipment"
     SqlRunner.run(sql)
   end
 
   def self.find_by_id(id)
-    sql = "SELECT * FROM amenities
+    sql = "SELECT * FROM equipment
            WHERE id = $1"
     values = [id]
     results = SqlRunner.run(sql, values)
-    self.returns_single_amenity(results)
+    self.returns_single_equipment(results)
   end
 
   def self.map_items(result)
-    result.map{|amenity| Amenity.new(amenity)}
+    result.map{|equipment| Equipment.new(equipment)}
   end
 
-  def self.returns_single_amenity(results)
+  def self.returns_single_equipment(results)
     return nil if results.first() == nil
-    Amenity.new(results.first())
+    Equipment.new(results.first())
   end
 
 end

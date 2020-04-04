@@ -1,21 +1,21 @@
 require('pry-byebug')
 require_relative('../models/member.rb')
-require_relative('../models/classes.rb')
+require_relative('../models/sessions.rb')
 require_relative('../models/booking.rb')
-require_relative('../models/class_date_time.rb')
+require_relative('../models/session_date_time.rb')
 require_relative('../models/instructor.rb')
 require_relative('../models/room.rb')
-require_relative('../models/amenity.rb')
+require_relative('../models/equipment.rb')
 require_relative('../models/member_details.rb')
 
 Member.delete_all()
 MemberDetails.delete_all()
-Classes.delete_all()
+Session.delete_all()
 Booking.delete_all()
-ClassDateTime.delete_all()
+SessionDateTime.delete_all()
 Instructor.delete_all()
 Room.delete_all()
-Amenity.delete_all()
+Equipment.delete_all()
 
 ##################################################################
 # MEMBERS
@@ -66,48 +66,48 @@ room1.save()
 
 
 ##################################################################
-# AMENITIES
+# EQUIPMENT
 
-amenity1 = Amenity.new({'type' => 'Spin Bike',
-                        'quantity' => 25,
-                        'room_id' => room1.id})
-
-
-amenity1.save()
+equipment1 = Equipment.new({'type' => 'Spin Bike',
+                            'quantity' => 25,
+                            'room_id' => room1.id})
 
 
-##################################################################
-# CLASSES
-
-class1 = Classes.new({'title' => 'Spin Class',
-                    'description' => 'A high-intensity group exercise class
-                                     on a stationary bike, which allows you to
-                                     increase or decrease pedal resistance.',
-                    'instructor_id' => instructor1.id,
-                    'room_id' => room1.id,
-                    'active' => 1})
-
-
-class1.save()
+equipment1.save()
 
 
 ##################################################################
-# CLASS_DATE_TIME
+# SESSIONS
 
-class_date_time1 = ClassDateTime.new({'start_time' => '09:00:00',
-                                      'end_time' => '10:00:00',
-                                      'class_date' => '2020-01-27',
-                                      'class_id' => class1.id})
+session1 = Session.new({'title' => 'Spin Class',
+                        'description' => 'A high-intensity group exercise class
+                                         on a stationary bike, which allows you to
+                                         increase or decrease pedal resistance.',
+                        'instructor_id' => instructor1.id,
+                        'room_id' => room1.id,
+                        'active' => 1})
 
 
-class_date_time1.save()
+session1.save()
+
+
+##################################################################
+# SESSION_DATE_TIME
+
+session_date_time1 = SessionDateTime.new({'start_time' => '09:00:00',
+                                          'end_time' => '10:00:00',
+                                          'class_date' => '2020-01-27',
+                                          'session_id' => session1.id})
+
+
+session_date_time1.save()
 
 
 ##################################################################
 # BOOKINGS
 
 booking1 = Booking.new({'member_id' => member1.id,
-                        'class_id' => class1.id})
+                        'session_id' => session1.id})
 
 
 booking1.save()

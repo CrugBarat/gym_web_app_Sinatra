@@ -1,9 +1,9 @@
 require_relative('../db/sql_runner.rb')
 
-class Classes
+class Session
 
   attr_reader :id
-  attr_accessor :title, :description, :instructor_id, :room_id, :active
+  attr_accessor :title, :description, :instructor_id, :room_id, :active, :max_capacity
 
   def initialize(options)
     @id = options['id'].to_i if options['id']
@@ -12,10 +12,11 @@ class Classes
     @instructor_id = options['instructor_id'].to_i
     @room_id = options['room_id'].to_i
     @active = options['active']
+    @max_capacity = options['max_capacity']
   end
 
   def save()
-    sql = "INSERT INTO classes
+    sql = "INSERT INTO sessions
     (title, description, instructor_id, room_id, active)
     VALUES ($1, $2, $3, $4, $5)
     RETURNING *"
@@ -24,13 +25,13 @@ class Classes
   end
 
   def self.all()
-    sql = "SELECT * FROM classes"
+    sql = "SELECT * FROM sessions"
     result = SqlRunner.run(sql)
     self.map_items(result)
   end
 
   def update()
-    sql = "UPDATE classes
+    sql = "UPDATE sessions
     SET (title, description, instructor_id, room_id, active)
     = ($1, $2, $3, $4, $5)
     WHERE id = $6"
@@ -39,23 +40,23 @@ class Classes
   end
 
   def delete()
-    sql = "DELETE FROM classes
+    sql = "DELETE FROM sessions
     WHERE id = $1"
     values = [@id]
     SqlRunner.run(sql, values)
   end
 
   def self.delete_all()
-    sql = "DELETE FROM classes"
+    sql = "DELETE FROM sessions"
     SqlRunner.run(sql)
   end
 
   def self.find_by_id(id)
-    sql = "SELECT * FROM classes
+    sql = "SELECT * FROM sessions
            WHERE id = $1"
     values = [id]
     results = SqlRunner.run(sql, values)
-    self.returns_single_class(results)
+    self.returns_single_session(results)
   end
 
   def room()
@@ -88,19 +89,19 @@ class Classes
     sql = "SELECT * FROM bookings
            INNER JOIN members
            ON bookings.member_id = members.id
-           WHERE bookings.class_id = $1"
+           WHERE bookings.session_id = $1"
     values = [@id]
     results = SqlRunner.run(sql, values)
     Member.map_items(results)
   end
 
   def self.map_items(result)
-    result.map{|a_class| Classes.new(a_class)}
+    result.map{|a_class| Session.new(a_class)}
   end
 
-  def self.returns_single_class(results)
+  def self.returns_single_session(results)
     return nil if results.first() == nil
-    Classes.new(results.first())
+    Session.new(results.first())
   end
 
 end

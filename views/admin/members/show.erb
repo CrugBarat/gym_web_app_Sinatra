@@ -7,6 +7,9 @@
 <p>Member: <%= @member.full_name() %></p>
 <p>DOB: <%= @member.date_of_birth() %></p>
 <p>Membership Number: <%= @member.id() %></p>
-<a href="/admin/members/<%= @member.id() %>">
+<a href="/admin/members/<%= @member.id() %>/edit">
   <button type="button" name="button">EDIT</button>
+</a>
+<a href="/admin/members/<%= @member.id() %>/contact_details">
+  <button type="button" name="button">CONTACT DETAILS</button>
 </a>

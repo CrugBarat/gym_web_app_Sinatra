@@ -32,7 +32,7 @@ class MemberDetails
   def update()
     sql = "UPDATE member_details
     SET (address, post_code, telephone_number, email_address, member_id)
-    = ($1, $2, £3, $4, $5)
+    = ($1, $2, $3, $4, $5)
     WHERE id = $6"
     values = [@address, @post_code, @telephone_number, @email_address, @member_id, @id]
     SqlRunner.run(sql, values)
@@ -53,6 +53,14 @@ class MemberDetails
   def self.find_by_id(id)
     sql = "SELECT * FROM member_details
            WHERE id = $1"
+    values = [id]
+    results = SqlRunner.run(sql, values)
+    self.returns_single_member_details(results)
+  end
+
+  def self.find_by_member_id(id)
+    sql = "SELECT * FROM member_details
+           WHERE member_id = $1"
     values = [id]
     results = SqlRunner.run(sql, values)
     self.returns_single_member_details(results)

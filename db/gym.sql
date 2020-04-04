@@ -1,9 +1,9 @@
 DROP TABLE IF EXISTS bookings CASCADE;
 DROP TABLE IF EXISTS class_date_times CASCADE;
-DROP TABLE IF EXISTS classes CASCADE;
+DROP TABLE IF EXISTS sessions CASCADE;
 DROP TABLE IF EXISTS member_details CASCADE;
 DROP TABLE IF EXISTS members CASCADE;
-DROP TABLE IF EXISTS amenities CASCADE;
+DROP TABLE IF EXISTS equipment CASCADE;
 DROP TABLE IF EXISTS rooms CASCADE;
 DROP TABLE IF EXISTS instructors CASCADE;
 
@@ -38,14 +38,14 @@ CREATE TABLE rooms (
   name VARCHAR(255)
 );
 
-CREATE TABLE amenities (
+CREATE TABLE equipment (
   id SERIAL PRIMARY KEY,
   type VARCHAR(255),
   quantity INT,
   room_id INT REFERENCES rooms(id) ON DELETE CASCADE
 );
 
-CREATE TABLE classes (
+CREATE TABLE sessions (
   id SERIAL PRIMARY KEY,
   title VARCHAR(255),
   description TEXT,
@@ -58,12 +58,12 @@ CREATE TABLE class_date_times (
   id SERIAL PRIMARY KEY,
   start_time TIME(0),
   end_time TIME(0),
-  class_date DATE,
-  class_id INT REFERENCES classes(id) ON DELETE CASCADE
+  session_date DATE,
+  session_id INT REFERENCES sessions(id) ON DELETE CASCADE
 );
 
 CREATE TABLE bookings (
   id SERIAL PRIMARY KEY,
   member_id INT REFERENCES members(id) ON DELETE CASCADE,
-  class_id INT REFERENCES classes(id) ON DELETE CASCADE
+  session_id INT REFERENCES sessions(id) ON DELETE CASCADE
 );
