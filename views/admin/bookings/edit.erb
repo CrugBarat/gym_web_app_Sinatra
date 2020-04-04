@@ -1,5 +1,5 @@
 <a href="/admin/bookings">
-  <button type="button">CLASSES</button>
+  <button type="button">SESSIONS</button>
 </a>
 <form action="/admin/bookings/<%= @booking.id %>" method="post">
   <label for="member">Member:</label>
@@ -10,10 +10,10 @@
     </option>
     <% end %>
   </select>
-  <select id="classes" name="class_id">
-    <% for classes in @classes %>
-    <option value="<%= classes.id() %>">
-      <%=  classes.title() %>
+  <select id="sessions" name="session_id">
+    <% for sessions in @sessions %>
+    <option value="<%= sessions.id() %>">
+      <%=  sessions.title() %>
     </option>
     <% end %>
   </select>

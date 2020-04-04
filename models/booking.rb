@@ -91,7 +91,7 @@ class Booking
     Session.returns_single_session(results)
   end
 
-  def show_class_title
+  def show_session_title
     sessions = sessions()
     sessions.title
   end

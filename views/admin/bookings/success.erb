@@ -7,7 +7,7 @@
 <p>NEW BOOKING</p>
 <hr>
 <p>Member: <%=@new_booking.member_id()%></p>
-<p>Class: <%=@new_booking.class_id()%></p>
+<p>Session: <%=@new_booking.session_id()%></p>
 <p>Booking ID: <%=@new_booking.id()%></p>
 <a href="/admin/bookings/<%= @new_booking.id() %>/edit">
   <button type="button" name="button">EDIT</button>

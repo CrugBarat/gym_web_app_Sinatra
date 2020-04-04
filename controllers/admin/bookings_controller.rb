@@ -1,7 +1,7 @@
 require('sinatra')
 require('sinatra/contrib/all') if development?
 require_relative('../../models/member.rb')
-require_relative('../../models/classes.rb')
+require_relative('../../models/sessions.rb')
 require_relative('../../models/booking.rb')
 also_reload('./models/*')
 
@@ -15,7 +15,7 @@ end
 #NEW
 get '/admin/bookings/new' do
   @members = Member.all()
-  @classes = Classes.all()
+  @sessions = Session.all()
   erb(:"admin/bookings/book")
 end
 
@@ -38,7 +38,7 @@ get '/admin/bookings/:id/edit' do
   id = params['id'].to_i
   @booking = Booking.find_by_id(id)
   @members = Member.all()
-  @classes = Classes.all()
+  @sessions = Session.all()
   erb(:"admin/bookings/edit")
 end
 

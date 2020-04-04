@@ -7,11 +7,11 @@
     </option>
     <% end %>
   </select>
-  <label for="classes">Class:</label>
-  <select id="classes" name="class_id">
-    <% for classes in @classes %>
-    <option value="<%= classes.id() %>">
-      <%=  classes.title() %>
+  <label for="sessions">Session:</label>
+  <select id="sessions" name="class_id">
+    <% for sessions in @sessions %>
+    <option value="<%= sessions.id() %>">
+      <%=  sessions.title() %>
     </option>
     <% end %>
   </select>
