@@ -28,6 +28,13 @@ class Member
     self.map_items(result)
   end
 
+  def self.all_active()
+    sql = "SELECT * FROM members
+           WHERE active"
+    result = SqlRunner.run(sql)
+    self.map_items(result)
+  end
+
   def update()
     sql = "UPDATE members
     SET (first_name, last_name, date_of_birth, active)

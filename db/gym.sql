@@ -13,7 +13,7 @@ CREATE TABLE members (
   first_name VARCHAR(255),
   last_name VARCHAR(255),
   date_of_birth DATE,
-  active BOOLEAN
+  active BOOLEAN 
 );
 
 CREATE TABLE instructors (
@@ -51,8 +51,8 @@ CREATE TABLE sessions (
   description TEXT,
   instructor_id INT REFERENCES instructors(id) ON DELETE CASCADE,
   room_id INT REFERENCES rooms(id) ON DELETE CASCADE,
-  active BOOLEAN,
-  max_capacity INT
+  max_capacity INT,
+  active BOOLEAN
 );
 
 CREATE TABLE session_dates_times (

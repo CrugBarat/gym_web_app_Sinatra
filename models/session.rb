@@ -30,6 +30,13 @@ class Session
     self.map_items(result)
   end
 
+  def self.all_active()
+    sql = "SELECT * FROM sessions
+           WHERE active"
+    result = SqlRunner.run(sql)
+    self.map_items(result)
+  end
+
   def update()
     sql = "UPDATE sessions
     SET (title, description, instructor_id, room_id, active, max_capacity)

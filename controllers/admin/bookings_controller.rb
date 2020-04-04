@@ -14,8 +14,8 @@ end
 
 #NEW
 get '/admin/bookings/new' do
-  @members = Member.all()
-  @sessions = Session.all()
+  @members = Member.all_active()
+  @sessions = Session.all_active()
   erb(:"admin/bookings/book")
 end
 
