@@ -13,7 +13,8 @@ CREATE TABLE members (
   first_name VARCHAR(255),
   last_name VARCHAR(255),
   date_of_birth DATE,
-  active BOOLEAN 
+  membership_type VARCHAR(255),
+  active BOOLEAN
 );
 
 CREATE TABLE instructors (

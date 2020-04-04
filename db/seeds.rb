@@ -23,6 +23,7 @@ Equipment.delete_all()
 member1 = Member.new({'first_name' => 'John',
                       'last_name' => 'Smith',
                       'date_of_birth' => '1984-10-27',
+                      'membership_type' => 'PREMUIM',
                       'active' => 1})
 
 
