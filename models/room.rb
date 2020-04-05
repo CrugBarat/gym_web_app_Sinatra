@@ -27,8 +27,7 @@ class Room
 
   def update()
     sql = "UPDATE rooms
-    SET (name)
-    = ($1)
+    SET name = $1
     WHERE id = $2"
     values = [@name, @id]
     SqlRunner.run(sql, values)

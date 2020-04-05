@@ -9,7 +9,7 @@
 </a>
 <hr>
 <% for instructor in @instructors %>
-<p>Instrcutor: <%=instructor.full_name()%></p>
+<p>Instructor: <%=instructor.full_name()%></p>
 <p>Instructor ID:<%=instructor.id()%></p>
 <a href="/admin/instructors/<%= instructor.id() %>/edit">
   <button type="button" name="button">EDIT</button>

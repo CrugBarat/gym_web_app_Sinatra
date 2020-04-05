@@ -1,0 +1,17 @@
+<a href="/admin">
+  <button type="button">HOME</button>
+</a>
+<a href="/admin/rooms">
+  <button type="button" name="button">ROOMS</button>
+</a>
+<a href="/admin/rooms/create">
+  <button type="button" name="button">CREATE</button>
+</a>
+<hr>
+<form action="/admin/rooms/<%= @room.id() %>" method="POST">
+  <label for="name">Room Name:</label>
+  <input id="name" type="string" name="name" required/>
+  <br/>
+  <br/>
+  <button type="submit" name="button">UPDATE</button>
+</form>

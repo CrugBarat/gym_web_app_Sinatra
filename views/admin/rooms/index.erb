@@ -1,0 +1,18 @@
+<a href="/admin">
+  <button type="button">HOME</button>
+</a>
+<a href="/admin/rooms">
+  <button type="button" name="button">ROOMS</button>
+</a>
+<a href="/admin/rooms/create">
+  <button type="button" name="button">CREATE</button>
+</a>
+<hr>
+<% for room in @rooms %>
+<p>Room: <%=room.name()%></p>
+<p>Room ID:<%=room.id()%></p>
+<a href="/admin/rooms/<%= room.id() %>/edit">
+  <button type="button" name="button">EDIT</button>
+</a>
+<hr>
+<%end%>
