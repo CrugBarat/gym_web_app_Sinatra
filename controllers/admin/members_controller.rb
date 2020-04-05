@@ -32,7 +32,6 @@ end
 get '/admin/members/:id/edit' do
   id = params['id'].to_i
   @member = Member.find_by_id(id)
-  @members = Member.all()
   erb(:"admin/members/edit")
 end
 

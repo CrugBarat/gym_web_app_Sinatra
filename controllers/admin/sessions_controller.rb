@@ -44,7 +44,6 @@ end
 get '/admin/sessions/:id/edit' do
   id = params['id'].to_i
   @session = Session.find_by_id(id)
-  @sessions = Session.all()
   @rooms = Room.all()
   @instructors = Instructor.all()
   erb(:"admin/sessions/edit")

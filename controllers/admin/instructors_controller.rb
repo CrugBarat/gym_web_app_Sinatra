@@ -32,7 +32,6 @@ end
 get '/admin/instructors/:id/edit' do
   id = params['id'].to_i
   @instructor = Instructor.find_by_id(id)
-  @instructors = Instructor.all()
   erb(:"admin/instructors/edit")
 end
 

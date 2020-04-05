@@ -41,7 +41,6 @@ get '/admin/bookings/:id/edit' do
   id = params['id'].to_i
   @booking = Booking.find_by_id(id)
   @members = Member.all()
-  @sessions = Session.all()
   erb(:"admin/bookings/edit")
 end
 

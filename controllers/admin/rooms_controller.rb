@@ -32,7 +32,6 @@ end
 get '/admin/rooms/:id/edit' do
   id = params['id'].to_i
   @room = Room.find_by_id(id)
-  @rooms = Room.all()
   erb(:"admin/rooms/edit")
 end
 

@@ -1,0 +1,26 @@
+<a href="/admin">
+  <button type="button">HOME</button>
+</a>
+<a href="/admin/equipment">
+  <button type="button" name="button">EQUIPMENT</button>
+</a>
+<a href="/admin/equipment/create">
+  <button type="button" name="button">CREATE</button>
+</a>
+<hr>
+<form action="/admin/equipment" method="POST">
+  <label for="type">Type:</label>
+  <input id="type" type="string" name="type" required/>
+  <label for="Quantity">Quantity: </label>
+  <input id="Quantity" type="number" name="Quantity" required/>
+  <select id="room" name="room_id">
+    <% for room in @rooms %>
+    <option value="<%= room.id() %>">
+      <%=  room.name() %>
+    </option>
+    <% end %>
+  </select>
+  <br/>
+  <br/>
+  <button type="submit" name="button">CREATE</button>
+</form>
