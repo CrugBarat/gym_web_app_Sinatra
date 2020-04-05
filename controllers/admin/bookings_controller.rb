@@ -21,7 +21,7 @@ end
 #CREATE
 post '/admin/bookings' do
   @new_booking = Booking.membership_check(params)
-  @new_booking.save
+  @new_booking.save()
   erb(:"admin/bookings/success")
 end
 

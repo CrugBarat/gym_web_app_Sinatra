@@ -89,11 +89,11 @@ class Booking
     sessions.title
   end
 
-  def self.membership_check(params)
-    member = Member.find_by_id(params[:member_id])
-    session = Session.find_by_id(params[:session_id])
+  def self.membership_check(booking_hash)
+    member = Member.find_by_id(booking_hash[:member_id])
+    session = Session.find_by_id(booking_hash[:session_id])
     return if member.correct_membership?() == false && session.peak_time?() == true
-    Booking.new(params)
+    Booking.new(booking_hash)
   end
 
   def self.map_items(result)

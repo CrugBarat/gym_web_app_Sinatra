@@ -1,0 +1,77 @@
+.grid {
+  padding-top: 400px;
+  padding-left: 100px;
+  padding-right: 100px;
+  padding-bottom: 60px;
+}
+
+.grid-row {
+  display: flex;
+  flex-direction: row;
+}
+
+.cell1 {
+  background-color: #EE4266;
+  flex: 1;
+}
+
+.cell2 {
+  background-color: #4392F1;
+  flex: 1;
+}
+
+.cell3 {
+  background-color: #1ABC9C;
+  flex: 1;
+}
+
+.cell4 {
+  background-color: #4392F1;
+  flex: 1;
+}
+
+.cell5 {
+  background-color: #1ABC9C;
+  flex: 1;
+}
+
+.cell6 {
+  background-color: #EE4266;
+  flex: 1;
+}
+
+.cell_container {
+  position: relative;
+  text-align: center;
+  color: white;
+}
+
+.bottom-right {
+  position: absolute;
+  bottom: 8px;
+  right: 16px;
+  font-size: 25px;
+  font-size: 3vw;
+}
+
+@media all and ( max-width: 830px ) {
+  .grid-row-sm{
+    flex-direction: column;
+  }
+}
+@media all and ( max-width: 830px ) {
+  .menu_grid-row-sm{
+    flex-direction: column;
+  }
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.img1 {
+  max-width: 100%;
+  height: auto;
+  opacity: 0.5;
+}
