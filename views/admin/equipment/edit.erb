@@ -11,8 +11,8 @@
 <form action="/admin/equipment/<%= @found_equipment.id() %>" method="POST">
   <label for="type">Type:</label>
   <input id="type" type="string" name="type" required/>
-  <label for="Quantity">Quantity: </label>
-  <input id="Quantity" type="number" name="Quantity" required/>
+  <label for="quantity">Quantity: </label>
+  <input id="quantity" type="number" name="quantity" required/>
   <select id="room" name="room_id">
     <% for room in @rooms %>
     <option value="<%= room.id() %>">

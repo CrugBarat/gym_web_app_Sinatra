@@ -9,6 +9,13 @@ get '/admin/rooms' do
   erb(:"admin/rooms/index")
 end
 
+get '/admin/rooms/:id/equipment' do
+  id = params['id'].to_i
+  room = Room.find_by_id(id)
+  @equipment = room.equipment()
+  erb(:"admin/rooms/equipment")
+end
+
 #NEW
 get '/admin/rooms/create' do
   erb(:"admin/rooms/create")

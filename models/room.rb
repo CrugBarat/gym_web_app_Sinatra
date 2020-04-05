@@ -53,6 +53,14 @@ class Room
     self.returns_single_room(results)
   end
 
+  def equipment()
+    sql = "SELECT * FROM equipment
+           WHERE room_id = $1"
+    values = [@id]
+    results = SqlRunner.run(sql, values)
+    Equipment.map_items(results)
+  end
+
   def self.map_items(result)
     result.map{|room| Room.new(room)}
   end
