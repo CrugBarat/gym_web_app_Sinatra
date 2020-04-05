@@ -5,6 +5,7 @@ require_relative('../../models/room.rb')
 require_relative('../../models/session.rb')
 also_reload('./models/*')
 
+
 #INDEX
 get '/admin/sessions' do
   @sessions = Session.all()
@@ -51,7 +52,7 @@ end
 
 #UPDATE
 post '/admin/sessions/:id' do
-  member = Session.new(params)
-  member.update()
-  redirect('/admin/sessions/' + params['id'])
+  session = Session.new(params)
+  session.update()
+  redirect('/admin/sessions/' + session.id.to_s + '/date_time/edit')
 end

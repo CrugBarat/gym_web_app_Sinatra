@@ -56,7 +56,7 @@ CREATE TABLE sessions (
 );
 
 CREATE TABLE session_dates_times (
-  id2 SERIAL PRIMARY KEY,
+  id SERIAL PRIMARY KEY,
   start_time TIME(0),
   end_time TIME(0),
   session_date DATE,
