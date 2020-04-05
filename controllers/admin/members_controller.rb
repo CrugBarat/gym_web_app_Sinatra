@@ -38,7 +38,8 @@ end
 
 #UPDATE
 post '/admin/members/:id' do
+  id = params['id']
   member = Member.new(params)
   member.update()
-  redirect('/admin/members/' + params['id'])
+  redirect('/admin/members/' + id + '/member_details/edit')
 end

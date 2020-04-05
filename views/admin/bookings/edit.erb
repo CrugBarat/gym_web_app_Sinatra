@@ -1,6 +1,19 @@
+<a href="/admin">
+  <button type="button">HOME</button>
+</a>
+<a href="/admin/members">
+  <button type="button">MEMBERS</button>
+</a>
 <a href="/admin/bookings">
   <button type="button">SESSIONS</button>
 </a>
+<a href="/admin/bookings">
+  <button type="button">BOOKINGS</button>
+</a>
+<a href="/admin/bookings/new">
+  <button type="button" name="button">BOOK</button>
+</a>
+<hr>
 <form action="/admin/bookings/<%= @booking.id %>" method="post">
   <label for="member">Member:</label>
   <select id="member" name="member_id">
@@ -17,5 +30,5 @@
     </option>
     <% end %>
   </select>
-  <button type="submit" name="button">SUBMIT</button>
+  <button type="submit" name="button">UPDATE</button>
 </form>

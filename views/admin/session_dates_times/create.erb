@@ -1,6 +1,3 @@
-<a href="/admin/sessions">
-  <button type="button">SESSIONS</button>
-</a>
 <form action="/admin/sessions/<%= @session.id %>/date_time" method="post">
   <label for="start_time">Start Time:</label>
   <input id="start_time" type="time" name="start_time" required>
