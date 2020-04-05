@@ -1,0 +1,19 @@
+<a href="/admin">
+  <button type="button">HOME</button>
+</a>
+<a href="/admin/instructors">
+  <button type="button" name="button">INSTRUCTORS</button>
+</a>
+<a href="/admin/instructors/create">
+  <button type="button" name="button">CREATE</button>
+</a>
+<hr>
+<p>INSTRUCTOR</p>
+<hr>
+<p>Instructor: <%= @instructor.full_name() %></p>
+<p>Profile: <%= @instructor.profile() %></p>
+<p>Instructor ID: <%= @instructor.id() %></p>
+<p>Email: <%= @instructor.email_address() %></p>
+<a href="/admin/instructors/<%= @instructor.id() %>/edit">
+  <button type="button" name="button">EDIT</button>
+</a>

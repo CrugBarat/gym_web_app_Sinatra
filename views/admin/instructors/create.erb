@@ -1,0 +1,22 @@
+<a href="/admin">
+  <button type="button">HOME</button>
+</a>
+<a href="/admin/instructors">
+  <button type="button" name="button">INSTRUCTORS</button>
+</a>
+<a href="/admin/instructors/create">
+  <button type="button" name="button">CREATE</button>
+</a>
+<hr>
+<form action="/admin/instructors" method="POST" id="instructorform">
+  <label for="first_name">First Name:</label>
+  <input id="first_name" type="string" name="first_name" required/>
+  <label for="last_name">Last Name: </label>
+  <input id="last_name" type="string" name="last_name" required/>
+  <label for="email_address">Email:</label>
+  <input id="email_address" type="string" name="email_address" required/>
+  <br/>
+  <br/>
+  <button type="submit" name="button">CREATE</button>
+</form>
+<textarea id="profile" name="profile" form="instructorform" rows="8" cols="80">Profile...</textarea>
