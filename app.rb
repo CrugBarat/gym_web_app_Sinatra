@@ -1,6 +1,7 @@
 require( 'sinatra' )
 require( 'sinatra/contrib/all' ) if development?
 require_relative('controllers/admin/admin_controller.rb')
+require_relative('controllers/users/users_controller.rb')
 also_reload('./models/*')
 
 # set :raise_errors, false

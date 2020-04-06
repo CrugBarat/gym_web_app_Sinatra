@@ -1,0 +1,36 @@
+<section>
+  <div class="grid">
+    <div class="grid-row grid-row-sm">
+      <div class="cell_container">
+        <a href="/users">
+          <div class="cell1"><img class="img1" src="/images/sessions.webp" alt="">
+            <div class="bottom-right">MAIN MENU</div>
+          </div>
+        </a>
+      </div>
+      <div class="cell_container">
+        <a href="/users/bookings/new">
+          <div class="cell2"><img class="img1" src="/images/sessions.webp" alt="">
+            <div class="bottom-right">BOOK</div>
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
+  <section>
+    <% for session in @sessions%>
+    <div class="index">
+      <p><%=session.title()%></p>
+      <p>Instructor: <%=session.show_instructor_name()%></p>
+      <p>Studio: <%=session.show_room_name()%></p>
+      <p>Start Time: <%=session.start_time()%></p>
+      <p>End Time: <%=session.end_time()%></p>
+      <p>Date: <%=session.date()%></p>
+      <a href="/users/bookings/new">
+        <button type="button" name="button">BOOK</button>
+      </a>
+    </div>
+    <%end%>
+    <br/>
+    <br/>
+  </section>

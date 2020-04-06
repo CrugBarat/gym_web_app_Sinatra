@@ -1,0 +1,44 @@
+<section>
+  <div class="grid">
+    <div class="grid-row grid-row-sm">
+      <div class="cell_container">
+        <a href="/users">
+          <div class="cell1"><img class="img1" src="/images/sessions.webp" alt="">
+            <div class="bottom-right">MAIN MENU</div>
+          </div>
+        </a>
+      </div>
+      <div class="cell_container">
+        <a href="/users/instructors">
+          <div class="cell3"><img class="img1" src="/images/sessions.webp" alt="">
+            <div class="bottom-right">INSTRUCTORS</div>
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
+  <section>
+    <div class="box">
+      <form action="/users/bookings" method="post">
+        <label for="member">Member</label>
+        <select id="member" name="member_id">
+          <% for member in @members %>
+          <option value="<%= member.id() %>">
+            <%=  member.full_name() %>
+          </option>
+          <% end %>
+        </select>
+        <label for="sessions">Session</label>
+        <select id="sessions" name="session_id">
+          <% for session in @sessions %>
+          <% if session.over_capacity?() == false %>
+          <option value="<%= session.id() %>">
+            <%=  session.title() %>
+          </option>
+          <%end %>
+          <% end %>
+        </select>
+        <button type="submit" name="button">BOOK</button>
+      </form>
+    </div>
+  </section>

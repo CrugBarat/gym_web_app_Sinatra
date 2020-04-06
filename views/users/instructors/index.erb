@@ -1,0 +1,31 @@
+<section>
+  <div class="grid">
+    <div class="grid-row grid-row-sm">
+      <div class="cell_container">
+        <a href="/users">
+          <div class="cell1"><img class="img1" src="/images/sessions.webp" alt="">
+            <div class="bottom-right">MAIN MENU</div>
+          </div>
+        </a>
+      </div>
+      <div class="cell_container">
+        <a href="/users/rooms">
+          <div class="cell2"><img class="img1" src="/images/sessions.webp" alt="">
+            <div class="bottom-right">STUDIOS</div>
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
+  <section>
+    <% for instructor in @instructors %>
+    <div class="index">
+      <p>Instructor: <%=instructor.full_name()%></p>
+      <p>Profile: <%=instructor.profile()%></p>
+      <p>Contact: <%=instructor.email_address()%></p>
+      <hr>
+    </div>
+    <%end%>
+    <br/>
+    <br/>
+  </section>

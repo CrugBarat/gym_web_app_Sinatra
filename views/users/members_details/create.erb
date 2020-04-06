@@ -1,0 +1,15 @@
+<div class="box">
+  <form action="/users/members/<%= @member.id %>/member_details" method="POST">
+    <label for="address">Address</label>
+    <input id="address" type="text" name="address" required/>
+    <label for="post_code">Postcode </label>
+    <input id="post_code" type="text" name="post_code" required/>
+    <label for="telephone_number">Telephone </label>
+    <input id="telephone_number" type="number" name="telephone_number" required/>
+    <label for="email_address">Email </label>
+    <input id="email_address" type="text" name="email_address" required/>
+    <br/>
+    <br/>
+    <button type="submit" name="button">SUBMIT</button>
+  </form>
+</div>

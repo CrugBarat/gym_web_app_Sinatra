@@ -1,0 +1,33 @@
+<section>
+  <div class="grid">
+    <div class="grid-row grid-row-sm">
+      <div class="cell_container">
+        <a href="/users">
+          <div class="cell1"><img class="img1" src="/images/sessions.webp" alt="">
+            <div class="bottom-right">MAIN MENU</div>
+          </div>
+        </a>
+      </div>
+      <div class="cell_container">
+        <a href="/users/sessions">
+          <div class="cell3"><img class="img1" src="/images/sessions.webp" alt="">
+            <div class="bottom-right">SESSIONS</div>
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
+  <section>
+    <div class="index">
+      <p>Member: <%= @member.full_name() %></p>
+      <p>DOB: <%=@member.date_of_birth()%></p>
+      <p>Membership Type: <%=@member.membership_type()%></p>
+      <p>Address: <%= @member_details.address() %></p>
+      <p>Postcode: <%= @member_details.post_code() %></p>
+      <p>Telephone: <%= @member_details.telephone_number() %></p>
+      <p>Email: <%= @member_details.email_address() %></p>
+      <p><%=@member.show_active()%></p>
+    </div>
+    <br/>
+    <br/>
+  </section>

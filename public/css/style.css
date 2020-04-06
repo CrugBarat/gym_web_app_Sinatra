@@ -397,5 +397,18 @@ font-style: italic;
   position: relative;
   font-size: 20px;
 }
-
 /* HOMEPAGE SIGNUP END */
+
+/* HOMEPAGE BOX 2? */
+.box3 {
+  border-radius: 5px;
+  background-color: #fe5ebb;
+  padding-left: 250px;
+  padding-right: 250px;
+  padding-top: 50px;
+  padding-bottom: 400px;
+  font-family: 'Montserrat', monospace;
+  position: relative;
+  font-size: 20px;
+}
+/* HOMEPAGE BOX 2? END */

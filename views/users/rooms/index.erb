@@ -1,0 +1,29 @@
+<section>
+  <div class="grid">
+    <div class="grid-row grid-row-sm">
+      <div class="cell_container">
+        <a href="/users">
+          <div class="cell1"><img class="img1" src="/images/sessions.webp" alt="">
+            <div class="bottom-right">MAIN MENU</div>
+          </div>
+        </a>
+      </div>
+      <div class="cell_container">
+        <a href="/users/bookings/new">
+          <div class="cell2"><img class="img1" src="/images/sessions.webp" alt="">
+            <div class="bottom-right">BOOK</div>
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
+  <section>
+    <% for room in @rooms %>
+    <div class="index">
+      <p>Room: <%=room.name()%></p>
+      <p>Equipment: <%= room.equipment%></p>
+    </div>
+    <%end%>
+    <br/>
+    <br/>
+  </section>
