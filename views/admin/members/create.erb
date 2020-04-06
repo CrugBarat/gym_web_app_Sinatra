@@ -1,23 +1,48 @@
-<a href="/admin/members/create">
-  <button type="button" name="button">CREATE</button>
-</a>
-<div class="box">
-<form action="/admin/members" method="POST">
-  <label for="first_name">First Name</label>
-  <input id="first_name" type="text" name="first_name" required/>
-  <label for="last_name">Last Name </label>
-  <input id="last_name" type="text" name="last_name" required/>
-  <label for="date_of_birth">D.0.B </label>
-  <input id="date_of_birth" type="date" name="date_of_birth" required/>
-  <label for="membership_type">Membership Type</label>
-  <select id="membership_type" name="membership_type">
-    <option value="PREMIUM">PREMIUM</option>
-    <option value="STANDARD">STANDARD</option>
-  </select>
-  <label for="active">Active? </label>
-  <input id="active" type="checkbox" name="active"/>
-  <br/>
-  <br/>
-  <button type="submit" name="button">CREATE</button>
-</form>
-</div>
+<section>
+  <div class="grid">
+    <div class="grid-row grid-row-sm">
+      <div class="cell_container">
+        <a href="/admin/members">
+          <div class="cell1"><img class="img1" src="/images/sessions.webp" alt="">
+            <div class="bottom-right">MEMBERS</div>
+          </div>
+        </a>
+      </div>
+      <div class="cell_container">
+        <a href="/admin/sessions">
+          <div class="cell2"><img class="img1" src="/images/sessions.webp" alt="">
+            <div class="bottom-right">SESSIONS</div>
+          </div>
+        </a>
+      </div>
+      <div class="cell_container">
+        <a href="/admin/bookings">
+          <div class="cell3"><img class="img1" src="/images/sessions.webp" alt="">
+            <div class="bottom-right">BOOKINGS</div>
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
+  <section>
+    <div class="box">
+      <form action="/admin/members" method="POST">
+        <label for="first_name">First Name</label>
+        <input id="first_name" type="text" name="first_name" required/>
+        <label for="last_name">Last Name </label>
+        <input id="last_name" type="text" name="last_name" required/>
+        <label for="date_of_birth">D.0.B </label>
+        <input id="date_of_birth" type="date" name="date_of_birth" required/>
+        <label for="membership_type">Membership Type</label>
+        <select id="membership_type" name="membership_type">
+          <option value="PREMIUM">PREMIUM</option>
+          <option value="STANDARD">STANDARD</option>
+        </select>
+        <label for="active">Active? </label>
+        <input id="active" type="checkbox" name="active"/>
+        <br/>
+        <br/>
+        <button type="submit" name="button">CREATE</button>
+      </form>
+    </div>
+  </section>

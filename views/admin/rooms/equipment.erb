@@ -1,10 +1,34 @@
-<a href="/admin/rooms/create">
-  <button type="button">CREATE</button>
-</a>
-<% for equipment in @equipment %>
-<div class="">
-<p>Type: <%=equipment.type()%></p>
-<p>Quantity: <%=equipment.quantity()%></p>
-<hr>
-<%end%>
-</div>
+<section>
+  <div class="grid">
+    <div class="grid-row grid-row-sm">
+      <div class="cell_container">
+        <a href="/admin/members">
+          <div class="cell1"><img class="img1" src="/images/sessions.webp" alt="">
+            <div class="bottom-right">MEMBERS</div>
+          </div>
+        </a>
+      </div>
+      <div class="cell_container">
+        <a href="/admin/sessions">
+          <div class="cell2"><img class="img1" src="/images/sessions.webp" alt="">
+            <div class="bottom-right">SESSIONS</div>
+          </div>
+        </a>
+      </div>
+      <div class="cell_container">
+        <a href="/admin/bookings">
+          <div class="cell3"><img class="img1" src="/images/sessions.webp" alt="">
+            <div class="bottom-right">BOOKINGS</div>
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
+  <section>
+    <% for equipment in @equipment %>
+    <div class="index">
+      <p>Type: <%=equipment.type()%></p>
+      <p>Quantity: <%=equipment.quantity()%></p>
+    </div>
+    <%end%>
+  </section>

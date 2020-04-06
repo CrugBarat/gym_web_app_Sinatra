@@ -1,21 +1,46 @@
-<a href="/admin/members/create">
-  <button type="button" name="button">CREATE</button>
-</a>
-<% for member in @members %>
-<div class="index">
-<p>Name: <%=member.full_name()%></p>
-<p>DOB: <%=member.date_of_birth()%></p>
-<p>Membership Type: <%=member.membership_type()%></p>
-<p><%=member.show_active()%></p>
-<p>Membership Number:<%=member.id()%></p>
-<a href="/admin/members/<%= member.id() %>/edit">
-  <button type="button" name="button">EDIT</button>
-</a>
-<a href="/admin/members/<%= member.id() %>/member_details/show">
-  <button type="button" name="button">CONTACT DETAILS</button>
-</a>
-<a href="/admin/bookings/new">
-  <button type="button" name="button">BOOK</button>
-</a>
-</div>
-<%end%>
+<section>
+  <div class="grid">
+    <div class="grid-row grid-row-sm">
+      <div class="cell_container">
+        <a href="/admin/members">
+          <div class="cell1"><img class="img1" src="/images/sessions.webp" alt="">
+            <div class="bottom-right">MEMBERS</div>
+          </div>
+        </a>
+      </div>
+      <div class="cell_container">
+        <a href="/admin/sessions">
+          <div class="cell2"><img class="img1" src="/images/sessions.webp" alt="">
+            <div class="bottom-right">SESSIONS</div>
+          </div>
+        </a>
+      </div>
+      <div class="cell_container">
+        <a href="/admin/bookings">
+          <div class="cell3"><img class="img1" src="/images/sessions.webp" alt="">
+            <div class="bottom-right">BOOKINGS</div>
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
+  <section>
+    <% for member in @members %>
+    <div class="index">
+      <p>Name: <%=member.full_name()%></p>
+      <p>DOB: <%=member.date_of_birth()%></p>
+      <p>Membership Type: <%=member.membership_type()%></p>
+      <p><%=member.show_active()%></p>
+      <p>Membership Number:<%=member.id()%></p>
+      <a href="/admin/members/<%= member.id() %>/edit">
+        <button type="button" name="button">EDIT</button>
+      </a>
+      <a href="/admin/members/<%= member.id() %>/member_details/show">
+        <button type="button" name="button">CONTACT DETAILS</button>
+      </a>
+      <a href="/admin/bookings/new">
+        <button type="button" name="button">BOOK</button>
+      </a>
+    </div>
+    <%end%>
+  </section>

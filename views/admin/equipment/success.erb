@@ -1,9 +1,31 @@
-<a href="/admin/equipment/create">
-  <button type="button" name="button">CREATE</button>
-</a>
+<section>
+  <div class="grid">
+    <div class="grid-row grid-row-sm">
+      <div class="cell_container">
+        <a href="/admin/members">
+          <div class="cell1"><img class="img1" src="/images/sessions.webp" alt="">
+            <div class="bottom-right">MEMBERS</div>
+          </div>
+        </a>
+      </div>
+      <div class="cell_container">
+        <a href="/admin/sessions">
+          <div class="cell2"><img class="img1" src="/images/sessions.webp" alt="">
+            <div class="bottom-right">SESSIONS</div>
+          </div>
+        </a>
+      </div>
+      <div class="cell_container">
+        <a href="/admin/bookings">
+          <div class="cell3"><img class="img1" src="/images/sessions.webp" alt="">
+            <div class="bottom-right">BOOKINGS</div>
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
+  <section>
 <div class="index">
-  <p>NEW EQUIPMENT</p>
-  <hr>
   <p>Type: <%= @new_equipment.type() %></p>
   <p>Quantity: <%= @new_equipment.quantity() %></p>
   <p>Room: <%= @new_equipment.show_room_name() %></p>
@@ -11,3 +33,4 @@
     <button type="button" name="button">EDIT</button>
   </a>
 </div>
+</section>

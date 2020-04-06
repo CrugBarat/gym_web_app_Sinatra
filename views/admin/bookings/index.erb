@@ -1,13 +1,38 @@
-<a href="/admin/bookings/new">
-  <button type="button" name="button">BOOK</button>
-</a>
-<% for booking in @bookings %>
-<div class="index">
-<p>Member: <%=booking.show_member_name()%></p>
-<p>Session: <%=booking.show_session_title()%></p>
-<p>Booking ID: <%=booking.id()%></p>
-<a href="/admin/bookings/<%= booking.id() %>/edit">
-  <button type="button" name="button">EDIT</button>
-</a>
-</div>
-<%end%>
+<section>
+  <div class="grid">
+    <div class="grid-row grid-row-sm">
+      <div class="cell_container">
+        <a href="/admin/members">
+          <div class="cell1"><img class="img1" src="/images/sessions.webp" alt="">
+            <div class="bottom-right">MEMBERS</div>
+          </div>
+        </a>
+      </div>
+      <div class="cell_container">
+        <a href="/admin/sessions">
+          <div class="cell2"><img class="img1" src="/images/sessions.webp" alt="">
+            <div class="bottom-right">SESSIONS</div>
+          </div>
+        </a>
+      </div>
+      <div class="cell_container">
+        <a href="/admin/bookings">
+          <div class="cell3"><img class="img1" src="/images/sessions.webp" alt="">
+            <div class="bottom-right">BOOKINGS</div>
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
+  <section>
+    <% for booking in @bookings %>
+    <div class="index">
+      <p>Member: <%=booking.show_member_name()%></p>
+      <p>Session: <%=booking.show_session_title()%></p>
+      <p>Booking ID: <%=booking.id()%></p>
+      <a href="/admin/bookings/<%= booking.id() %>/edit">
+        <button type="button" name="button">EDIT</button>
+      </a>
+    </div>
+    <%end%>
+  </section>

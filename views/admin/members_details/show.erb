@@ -1,18 +1,41 @@
-<a href="/admin/members/create">
-  <button type="button" name="button">CREATE</button>
-</a>
-<div class="index">
-  <p>MEMBER</p>
-  <hr>
-  <p>Member: <%= @member.full_name() %></p>
-  <p>DOB: <%=@member.date_of_birth()%></p>
-  <p>Membership Type: <%=@member.membership_type()%></p>
-  <p>Address: <%= @member_details.address() %></p>
-  <p>Postcode: <%= @member_details.post_code() %></p>
-  <p>Telephone: <%= @member_details.telephone_number() %></p>
-  <p>Email: <%= @member_details.email_address() %></p>
-  <p><%=@member.show_active()%></p>
-  <a href="/admin/members/<%= @member.id() %>/edit">
-    <button type="button" name="button">EDIT</button>
-  </a>
-</div>
+<section>
+  <div class="grid">
+    <div class="grid-row grid-row-sm">
+      <div class="cell_container">
+        <a href="/admin/members">
+          <div class="cell1"><img class="img1" src="/images/sessions.webp" alt="">
+            <div class="bottom-right">MEMBERS</div>
+          </div>
+        </a>
+      </div>
+      <div class="cell_container">
+        <a href="/admin/sessions">
+          <div class="cell2"><img class="img1" src="/images/sessions.webp" alt="">
+            <div class="bottom-right">SESSIONS</div>
+          </div>
+        </a>
+      </div>
+      <div class="cell_container">
+        <a href="/admin/bookings">
+          <div class="cell3"><img class="img1" src="/images/sessions.webp" alt="">
+            <div class="bottom-right">BOOKINGS</div>
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
+  <section>
+    <div class="index">
+      <p>Member: <%= @member.full_name() %></p>
+      <p>DOB: <%=@member.date_of_birth()%></p>
+      <p>Membership Type: <%=@member.membership_type()%></p>
+      <p>Address: <%= @member_details.address() %></p>
+      <p>Postcode: <%= @member_details.post_code() %></p>
+      <p>Telephone: <%= @member_details.telephone_number() %></p>
+      <p>Email: <%= @member_details.email_address() %></p>
+      <p><%=@member.show_active()%></p>
+      <a href="/admin/members/<%= @member.id() %>/edit">
+        <button type="button" name="button">EDIT</button>
+      </a>
+    </div>
+  </section>

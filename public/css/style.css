@@ -36,8 +36,8 @@ body, html {
   border: solid 10px white;
   padding-left: 25px;
   padding-right: 25px;
-  padding-top: 25px;
-  padding-bottom: 50px;
+  padding-top: 50px;
+  padding-bottom: 70px;
 }
 
 .grid-row {

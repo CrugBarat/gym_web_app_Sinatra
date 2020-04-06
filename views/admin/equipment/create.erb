@@ -1,22 +1,47 @@
-<a href="/admin/equipment/create">
-  <button type="button" name="button">CREATE</button>
-</a>
-<div class="box">
-<form action="/admin/equipment" method="POST">
-  <label for="type">Type</label>
-  <input id="type" type="text" name="type" required/>
-  <label for="quantity">Quantity</label>
-  <input id="quantity" type="number" name="quantity" required/>
-  <label for="room">Studio</label>
-  <select id="room" name="room_id">
-    <% for room in @rooms %>
-    <option value="<%= room.id() %>">
-      <%=  room.name() %>
-    </option>
-    <% end %>
-  </select>
-  <br/>
-  <br/>
-  <button type="submit" name="button">CREATE</button>
-</form>
-</div>
+<section>
+  <div class="grid">
+    <div class="grid-row grid-row-sm">
+      <div class="cell_container">
+        <a href="/admin/members">
+          <div class="cell1"><img class="img1" src="/images/sessions.webp" alt="">
+            <div class="bottom-right">MEMBERS</div>
+          </div>
+        </a>
+      </div>
+      <div class="cell_container">
+        <a href="/admin/sessions">
+          <div class="cell2"><img class="img1" src="/images/sessions.webp" alt="">
+            <div class="bottom-right">SESSIONS</div>
+          </div>
+        </a>
+      </div>
+      <div class="cell_container">
+        <a href="/admin/bookings">
+          <div class="cell3"><img class="img1" src="/images/sessions.webp" alt="">
+            <div class="bottom-right">BOOKINGS</div>
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
+  <section>
+    <div class="box">
+      <form action="/admin/equipment" method="POST">
+        <label for="type">Type</label>
+        <input id="type" type="text" name="type" required/>
+        <label for="quantity">Quantity</label>
+        <input id="quantity" type="number" name="quantity" required/>
+        <label for="room">Studio</label>
+        <select id="room" name="room_id">
+          <% for room in @rooms %>
+          <option value="<%= room.id() %>">
+            <%=  room.name() %>
+          </option>
+          <% end %>
+        </select>
+        <br/>
+        <br/>
+        <button type="submit" name="button">CREATE</button>
+      </form>
+    </div>
+  </section>

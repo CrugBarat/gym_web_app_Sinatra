@@ -1,12 +1,37 @@
-<a href="/admin/rooms/create">
-  <button type="button" name="button">CREATE</button>
-</a>
-<div class="index">
-<p>ROOM</p>
-<hr>
-<p>Room: <%= @room.name() %></p>
-<p>Room ID: <%= @room.id() %></p>
-<a href="/admin/rooms/<%= @room.id() %>/edit">
-  <button type="button" name="button">EDIT</button>
-</a>
-</div>
+<section>
+  <div class="grid">
+    <div class="grid-row grid-row-sm">
+      <div class="cell_container">
+        <a href="/admin/members">
+          <div class="cell1"><img class="img1" src="/images/sessions.webp" alt="">
+            <div class="bottom-right">MEMBERS</div>
+          </div>
+        </a>
+      </div>
+      <div class="cell_container">
+        <a href="/admin/sessions">
+          <div class="cell2"><img class="img1" src="/images/sessions.webp" alt="">
+            <div class="bottom-right">SESSIONS</div>
+          </div>
+        </a>
+      </div>
+      <div class="cell_container">
+        <a href="/admin/bookings">
+          <div class="cell3"><img class="img1" src="/images/sessions.webp" alt="">
+            <div class="bottom-right">BOOKINGS</div>
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
+  <section>
+    <div class="index">
+      <p>ROOM</p>
+      <hr>
+      <p>Room: <%= @room.name() %></p>
+      <p>Room ID: <%= @room.id() %></p>
+      <a href="/admin/rooms/<%= @room.id() %>/edit">
+        <button type="button" name="button">EDIT</button>
+      </a>
+    </div>
+  </section>
