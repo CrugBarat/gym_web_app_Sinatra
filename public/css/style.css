@@ -1,11 +1,12 @@
 body, html {
+  overflow-x: hidden;
 }
 
+/* HERO IMAGE */
 .home {
   background-image: url("/images/hero.jpeg");
-  height: 90%;
-  height: 100vh;
-  width: 99vw;
+  height: 65vh;
+  width: 100vw;
   background-repeat: no-repeat;
   background-size: cover;
   background-blend-mode: luminosity;
@@ -21,11 +22,14 @@ body, html {
 
 .bottom-left {
   position: absolute;
-  bottom: 50px;
+  bottom: 15px;
   left: 16px;
-  font-size: 20vw;
+  font-size: 18vw;
 }
+/* HERO IMAGE END  */
 
+
+/* FLEXBOX MENU */
 .grid {
   font-family: 'Montserrat', monospace;
   text-shadow: 1px 0 0 #000, 0 -1px 0 #000, 0 1px 0 #000, -1px 0 0 #000;
@@ -135,14 +139,17 @@ a {
   height: auto;
   opacity: 0.15;
 }
+/* FLEXBOX MENU END */
 
 
+/* NAVBAR */
 ul {
   list-style-type: none;
   margin: 0;
-  padding: 0;
+  padding: 2;
   overflow: hidden;
   background-color: #414141;
+  width: 100vw;
 }
 
 li {
@@ -160,7 +167,10 @@ li a {
 li a:hover {
   background-color: #fe5ebb;
 }
+/* NAVBAR END */
 
+
+/* ICONS */
 .material-icons {
   font-family: 'Material Icons';
   font-weight: normal;
@@ -175,15 +185,10 @@ li a:hover {
   direction: ltr;
   text-rendering: optimizeLegibility;
 }
+/* ICONS END */
 
-.icon-logo {
-    background: url('/images/gym.png');
-    height: 20px;
-    width: 20px;
-    display: block;
-    float: left;
-}
 
+/* FOOTER */
 #page-container {
   position: relative;
   min-height: 100vh;
@@ -196,13 +201,16 @@ li a:hover {
 #footer {
   position: absolute;
   bottom: 0;
-  width: 97.5%;
+  width: 100vw;
   height: 2.5rem;
   display: block;
   background-color: #414141;
   padding: 7px 18px;
 }
+/* FOOTER END */
 
+
+/* FORM */
 input[type=text], select {
   width: 100%;
   padding: 12px 20px;
@@ -281,23 +289,48 @@ button[type=submit]:hover {
   background-color: #fe5ebb;
 }
 
-.background-colour {
-  background-color: #57d7e9;
-}
-
 .box {
   border-radius: 5px;
-  background-color: #57d7e9;
-  background-size: cover;
-  opacity: 0.5;
+  background-color: #fff;
   padding-left: 250px;
   padding-right: 250px;
   padding-top: 50px;
   padding-bottom: 180px;
-  opacity: 1.5;
   font-family: 'Montserrat', monospace;
   position: relative;
   font-size: 20px;
 }
 
-select:hover { background-color: #fe5ebb; }
+select:hover {
+  background-color: #fe5ebb;
+}
+/* FORM END */
+
+
+/* INDEX */
+.index {
+  background-color: #57d7e9;
+  font-family: 'Montserrat', monospace;
+  font-size: 20px;
+  width: 100vw;
+}
+
+button[type=button] {
+  background-color: #414141; ]
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 14px;
+  margin: 4px 2px;
+  cursor: pointer;
+  transition-duration: 0.4s;
+  box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19)
+}
+
+button[type=button]:hover {
+  background-color: #fe5ebb;
+}
+/* INDEX END */

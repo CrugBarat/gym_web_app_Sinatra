@@ -1,18 +1,13 @@
-<a href="/admin">
-  <button type="button">HOME</button>
-</a>
-<a href="/admin/equipment">
-  <button type="button" name="button">EQUIPMENT</button>
-</a>
 <a href="/admin/equipment/create">
   <button type="button" name="button">CREATE</button>
 </a>
-<hr>
-<p>NEW EQUIPMENT</p>
-<hr>
-<p>Type: <%= @new_equipment.type() %></p>
-<p>Quantity: <%= @new_equipment.quantity() %></p>
-<p>Room: <%= @new_equipment.show_room_name() %></p>
-<a href="/admin/equipment/<%= @new_equipment.id() %>/edit">
-  <button type="button" name="button">EDIT</button>
-</a>
+<div class="index">
+  <p>NEW EQUIPMENT</p>
+  <hr>
+  <p>Type: <%= @new_equipment.type() %></p>
+  <p>Quantity: <%= @new_equipment.quantity() %></p>
+  <p>Room: <%= @new_equipment.show_room_name() %></p>
+  <a href="/admin/equipment/<%= @new_equipment.id() %>/edit">
+    <button type="button" name="button">EDIT</button>
+  </a>
+</div>

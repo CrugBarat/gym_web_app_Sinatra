@@ -1,13 +1,7 @@
-<a href="/admin">
-  <button type="button">HOME</button>
-</a>
-<a href="/admin/bookings">
-  <button type="button">BOOKINGS</button>
-</a>
 <a href="/admin/bookings/new">
   <button type="button" name="button">BOOK</button>
 </a>
-<hr>
+<div class="index">
 <p>BOOKING</p>
 <p>Member: <%= @booking.show_member_name() %></p>
 <p>Session: <%= @booking.show_session_title() %></p>
@@ -15,3 +9,4 @@
 <a href="/admin/bookings/<%= @booking.id() %>/edit">
   <button type="button" name="button">EDIT</button>
 </a>
+</div>

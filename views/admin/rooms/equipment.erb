@@ -1,15 +1,10 @@
-<a href="/admin">
-  <button type="button">HOME</button>
-</a>
-<a href="/admin/rooms">
-  <button type="button">ROOMS</button>
-</a>
 <a href="/admin/rooms/create">
   <button type="button">CREATE</button>
 </a>
-<hr>
 <% for equipment in @equipment %>
+<div class="">
 <p>Type: <%=equipment.type()%></p>
 <p>Quantity: <%=equipment.quantity()%></p>
 <hr>
 <%end%>
+</div>
