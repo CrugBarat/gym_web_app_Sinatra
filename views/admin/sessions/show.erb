@@ -28,10 +28,16 @@
     <p><%=@session.title()%></p>
     <div class="index">
       <p>Instructor: <%=@session.show_instructor_name()%></p>
-      <p>Room: <%=@session.show_room_name()%></p>
-      <p>Start Time: <%=@session.start_time()%></p>
-      <p>End Time: <%=@session.end_time()%></p>
-      <p>Date: <%=@session.date()%></p>
+      <p>Studio: <%=@session.show_room_name()%></p>
+      <% time1 = Time.parse(@session.start_time)%>
+      <% formatted_start_time = time1.strftime("%H:%M") %>
+      <p>Start Time: <%=formatted_start_time%></p>
+      <% time2 = Time.parse(@session.end_time)%>
+      <% formatted_end_time = time2.strftime("%H:%M") %>
+      <p>End Time: <%=formatted_end_time%></p>
+      <% date = Date.parse(@session.date)%>
+      <% formatted_date = date.strftime("%d-%m-%Y") %>
+      <p>Date: <%=formatted_date%></p>
       <hr>
       <p>Max Capacity: <%=@session.max_capacity()%></p>
       <p>Bookings: <%=@session.number_of_members()%></p>
