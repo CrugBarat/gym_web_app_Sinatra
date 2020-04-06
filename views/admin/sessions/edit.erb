@@ -1,16 +1,12 @@
-<a href="/admin">
-  <button type="button">HOME</button>
-</a>
-<a href="/admin/sessions">
-  <button type="button">SESSIONS</button>
-</a>
 <a href="/admin/sessions/create">
   <button type="button">CREATE</button>
 </a>
-<hr>
-<form action="/admin/sessions/<%= @session.id() %>" method="post" id="classform">
-  <label for="title">Title:</label>
+<div class="box">
+<form action="/admin/sessions/<%= @session.id() %>" method="post">
+  <label for="title">Title</label>
   <input id="title" type="text" name="title" required>
+  <textarea id="description" name="description" rows="4" cols="80">Description...</textarea>
+  <label for="instructor">Instrcutor</label>
   <select id="instructor" name="instructor_id">
     <% for instructor in @instructors %>
     <option value="<%= instructor.id() %>">
@@ -18,6 +14,7 @@
     </option>
     <% end %>
   </select>
+  <label for="room">Studio</label>
   <select id="room" name="room_id">
     <% for room in @rooms %>
     <option value="<%= room.id() %>">
@@ -31,4 +28,4 @@
   <input id="active" type="checkbox" name="active">
   <button type="submit" name="button">UPDATE</button>
 </form>
-<textarea id="description" name="description" form="classform" rows="8" cols="80">Description...</textarea>
+</div>

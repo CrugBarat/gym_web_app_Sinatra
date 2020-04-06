@@ -1,9 +1,11 @@
+<div class="box">
 <form action="/admin/sessions/<%= @session.id %>/date_time" method="post">
-  <label for="start_time">Start Time:</label>
+  <label for="start_time">Start Time</label>
   <input id="start_time" type="time" name="start_time" required>
-  <label for="end_time">End Time:</label>
+  <label for="end_time">End Time</label>
   <input id="end_time" type="time" name="end_time" required>
-  <label for="session_date">Date:</label>
+  <label for="session_date">Date</label>
   <input id="session_date" type="date" name="session_date" required>
   <button type="submit" name="button">CREATE</button>
 </form>
+</div>

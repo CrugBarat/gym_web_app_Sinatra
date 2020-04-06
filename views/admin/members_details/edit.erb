@@ -1,14 +1,16 @@
+<div class="box">
 <form action="/admin/members/<%= @member.id %>/member_details/update" method="POST">
   <input type="hidden" name="id" value="<%=@member_details.id %>">
-  <label for="address">Address:</label>
+  <label for="address">Address</label>
   <input id="address" type="text" name="address" required/>
-  <label for="post_code">Postcode: </label>
-  <input id="post_code" type="string" name="post_code" required/>
-  <label for="telephone_number">Telephone: </label>
+  <label for="post_code">Postcode</label>
+  <input id="post_code" type="text" name="post_code" required/>
+  <label for="telephone_number">Telephone</label>
   <input id="telephone_number" type="number" name="telephone_number" required/>
-  <label for="email_address">Email: </label>
-  <input id="email_address" type="string" name="email_address" required/>
+  <label for="email_address">Email</label>
+  <input id="email_address" type="text" name="email_address" required/>
   <br/>
   <br/>
   <button type="submit" name="button">UPDATE</button>
 </form>
+</div>

@@ -4,13 +4,34 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="/css/style.css">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+  rel="stylesheet">
+  <link rel="stylesheet"
+  href="https://fonts.googleapis.com/css?family=Montserrat">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <link rel="shortcut icon" href="">
   <title>GYM</title>
 </head>
 <body>
-  <section>
-    <%= yield %>
-  </section>
+  <div id="page-container">
+    <div id="content-wrap">
+      <header>
+        <nav>
+          <ul>
+            <li><a href="/admin"><i class="material-icons">help_outline</i></a></li>
+            <li><a href="/admin"><i class="material-icons">build</i></a></li>
+            <li><a href="/"><i class="material-icons">face</i></a></li>
+            <li><a href="/"><i class="material-icons">home</i></a></li>
+          </ul>
+        </nav>
+      </header>
+      <section>
+        <%= yield %>
+      </section>
+    </div>
+    <footer id="footer">
+
+    </footer>
+  </div>
 </body>
 </html>

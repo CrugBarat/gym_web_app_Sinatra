@@ -1,15 +1,10 @@
-<a href="/admin">
-  <button type="button">HOME</button>
-</a>
-<a href="/admin/bookings">
-  <button type="button">BOOKINGS</button>
-</a>
 <a href="/admin/bookings/new">
   <button type="button" name="button">BOOK</button>
 </a>
-<hr>
+<div class="background-colour"></div>
+<div class="box">
 <form action="/admin/bookings" method="post">
-  <label for="member">Member:</label>
+  <label for="member">Member</label>
   <select id="member" name="member_id">
     <% for member in @members %>
     <option value="<%= member.id() %>">
@@ -17,7 +12,7 @@
     </option>
     <% end %>
   </select>
-  <label for="sessions">Session:</label>
+  <label for="sessions">Session</label>
   <select id="sessions" name="session_id">
     <% for session in @sessions %>
     <% if session.over_capacity?() == false %>
@@ -29,3 +24,4 @@
   </select>
   <button type="submit" name="button">BOOK</button>
 </form>
+</div>

@@ -1,14 +1,12 @@
-<a href="/admin">
-  <button type="button">HOME</button>
+<a href="/admin/sessions/create">
+  <button type="button" name="button">CREATE</button>
 </a>
-<a href="/admin/sessions">
-  <button type="button">SESSIONS</button>
-</a>
-<hr>
-<form action="/admin/sessions" method="post" id="sessionform">
-  <label for="title">Title:</label>
+<div class="box">
+<form action="/admin/sessions" method="post" >
+  <label for="title">Title</label>
   <input id="title" type="text" name="title" required>
-  <label for="instructor">Instrcutor:</label>
+  <textarea id="description" name="description" rows="4" cols="80">Description...</textarea>
+  <label for="instructor">Instrcutor</label>
   <select id="instructor" name="instructor_id">
     <% for instructor in @instructors %>
     <option value="<%= instructor.id() %>">
@@ -16,7 +14,7 @@
     </option>
     <% end %>
   </select>
-  <label for="room">Room:</label>
+  <label for="room">Studio</label>
   <select id="room" name="room_id">
     <% for room in @rooms %>
     <option value="<%= room.id() %>">
@@ -24,10 +22,10 @@
     </option>
     <% end %>
   </select>
-  <label for="max_capacity">Max Capacity: </label>
+  <label for="max_capacity">Max Capacity</label>
   <input id="max_capacity" type="number" name="max_capacity" required>
   <label for="active">Active?</label>
   <input id="active" type="checkbox" name="active"/>
   <button type="submit" name="button">CREATE</button>
 </form>
-<textarea id="description" name="description" form="sessionform" rows="8" cols="80">Description...</textarea>
+</div>

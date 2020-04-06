@@ -1,17 +1,12 @@
-<a href="/admin">
-  <button type="button">HOME</button>
-</a>
-<a href="/admin/rooms">
-  <button type="button" name="button">ROOMS</button>
-</a>
 <a href="/admin/rooms/create">
   <button type="button" name="button">CREATE</button>
 </a>
-<hr>
+<div class="box">
 <form action="/admin/rooms" method="POST">
-  <label for="name">Room Name:</label>
-  <input id="name" type="string" name="name" required/>
+  <label for="name">Studio Name</label>
+  <input id="name" type="text" name="name" required/>
   <br/>
   <br/>
   <button type="submit" name="button">CREATE</button>
 </form>
+</div>

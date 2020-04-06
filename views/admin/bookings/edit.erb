@@ -1,15 +1,9 @@
-<a href="/admin">
-  <button type="button">HOME</button>
-</a>
-<a href="/admin/bookings">
-  <button type="button">BOOKINGS</button>
-</a>
 <a href="/admin/bookings/new">
   <button type="button" name="button">BOOK</button>
 </a>
-<hr>
+<div class="box">
 <form action="/admin/bookings/<%= @booking.id %>" method="post">
-  <label for="member">Member:</label>
+  <label for="member">Member</label>
   <select id="member" name="member_id">
     <% for member in @members %>
     <option value="<%= member.id() %>">
@@ -17,6 +11,7 @@
     </option>
     <% end %>
   </select>
+  <label for="session">Session</label>
   <select id="sessions" name="session_id">
     <% for sessions in @sessions %>
     <option value="<%= sessions.id() %>">
@@ -26,3 +21,4 @@
   </select>
   <button type="submit" name="button">UPDATE</button>
 </form>
+</div>
