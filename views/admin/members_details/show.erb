@@ -26,6 +26,7 @@
   </section>
   <section>
     <div class="index">
+      <br>
       <p>Member: <%= @member.full_name() %></p>
       <p>DOB: <%=@member.date_of_birth()%></p>
       <p>Membership Type: <%=@member.membership_type()%></p>
@@ -37,6 +38,7 @@
       <a href="/admin/members/<%= @member.id() %>/edit">
         <button type="button" name="button">EDIT</button>
       </a>
+      <br>
     </div>
     <br/>
     <br/>

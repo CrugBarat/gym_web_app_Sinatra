@@ -11,25 +11,21 @@
       <div class="cell_container">
         <a href="/users/rooms">
           <div class="cell2"><img class="img1" src="/images/sessions.webp" alt="">
-            <div class="bottom-right">STUDIOS</div>
+            <div class="bottom-right">ROOMS</div>
           </div>
         </a>
       </div>
     </div>
   </section>
   <section>
-    <% for instructor in @instructors %>
+    <% for equipment in @equipment %>
     <div class="index">
       <br>
-      <img class= "resize" src="/images/empty.png" alt="">
-      <p><%=instructor.full_name()%></p>
-      <p class="profile-margins"><%=instructor.profile()%></p>
-      <p><%=instructor.email_address()%></p>
-      <a href="/users/instructors/<%= instructor.id %>/sessions">
-        <button type="button" name="button">SESSIONS</button>
-      </a>
+      <p>Type: <%=equipment.type()%></p>
+      <p>Quantity: <%=equipment.quantity()%></p>
       <br>
     </div>
+    <br>
     <%end%>
     <br/>
     <br/>

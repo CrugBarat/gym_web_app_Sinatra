@@ -77,6 +77,14 @@ class Member
     end
   end
 
+  def show_user_active()
+    if active() == 't'
+      return "ACTIVE"
+    else
+      return "PENDING"
+    end
+  end
+
   def correct_membership?()
     if membership_type() == "PREMIUM"
       return true

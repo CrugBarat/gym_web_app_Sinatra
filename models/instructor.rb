@@ -61,6 +61,14 @@ class Instructor
     return "#{@first_name} #{@last_name}"
   end
 
+  def sessions()
+    sql = "SELECT * FROM sessions
+           WHERE instructor_id = $1"
+    values = [@id]
+    results = SqlRunner.run(sql, values)
+    Session.map_items(results)
+  end
+
   def self.map_items(result)
     result.map{|instructor| Instructor.new(instructor)}
   end

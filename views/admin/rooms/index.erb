@@ -27,15 +27,18 @@
   <section>
     <% for room in @rooms %>
     <div class="index">
-      <p>Room: <%=room.name()%></p>
-      <p>Room ID:<%=room.id()%></p>
+      <br>
+      <p>Studio: <%=room.name()%></p>
+      <p>Studio ID: <%=room.id()%></p>
       <a href="/admin/rooms/<%= room.id() %>/edit">
         <button type="button" name="button">EDIT</button>
       </a>
       <a href="/admin/rooms/<%= room.id() %>/equipment">
         <button type="button" name="button">EQUIPMENT</button>
       </a>
+      <br>
     </div>
+    <br>
     <%end%>
     <br/>
     <br/>

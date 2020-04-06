@@ -27,13 +27,15 @@
   <section>
     <% for instructor in @instructors %>
     <div class="index">
+      <br>
       <p>Instructor: <%=instructor.full_name()%></p>
       <p>Instructor ID: <%=instructor.id()%></p>
       <a href="/admin/instructors/<%= instructor.id() %>/edit">
         <button type="button" name="button">EDIT</button>
       </a>
-      <hr>
+      <br>
     </div>
+    <br>
     <%end%>
     <br/>
     <br/>

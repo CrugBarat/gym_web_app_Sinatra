@@ -27,13 +27,16 @@
   <section>
     <% for booking in @bookings %>
     <div class="index">
+      <br>
       <p>Member: <%=booking.show_member_name()%></p>
       <p>Session: <%=booking.show_session_title()%></p>
       <p>Booking ID: <%=booking.id()%></p>
       <a href="/admin/bookings/<%= booking.id() %>/edit">
         <button type="button" name="button">EDIT</button>
       </a>
+      <br>
     </div>
+    <br>
     <%end%>
     <br/>
     <br/>

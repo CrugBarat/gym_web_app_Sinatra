@@ -19,6 +19,7 @@
   </section>
   <section>
     <div class="index">
+      <br>
       <p>Member: <%= @member.full_name() %></p>
       <p>DOB: <%=@member.date_of_birth()%></p>
       <p>Membership Type: <%=@member.membership_type()%></p>
@@ -26,7 +27,8 @@
       <p>Postcode: <%= @member_details.post_code() %></p>
       <p>Telephone: <%= @member_details.telephone_number() %></p>
       <p>Email: <%= @member_details.email_address() %></p>
-      <p><%=@member.show_active()%></p>
+      <p><%=@member.show_user_active()%></p>
+      <br>
     </div>
     <br/>
     <br/>

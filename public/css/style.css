@@ -419,15 +419,9 @@ font-style: italic;
 .resize {
   height: 10vw;
   width: auto;
-  padding-left: 2em;
-}
-
-.text-margins {
-  padding-left: 2em;
 }
 
 .profile-margins {
-  padding-left: 2em;
   padding-right: 25em;
 }
 /* USER INSTRUCTOR PROFILE END */

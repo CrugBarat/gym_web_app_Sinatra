@@ -27,6 +27,7 @@
   <section>
     <% for member in @members %>
     <div class="index">
+      <br>
       <p>Name: <%=member.full_name()%></p>
       <p>DOB: <%=member.date_of_birth()%></p>
       <p>Membership Type: <%=member.membership_type()%></p>
@@ -41,7 +42,9 @@
       <a href="/admin/bookings/new">
         <button type="button" name="button">BOOK</button>
       </a>
+      <br>
     </div>
+    <br>
     <%end%>
     <br/>
     <br/>

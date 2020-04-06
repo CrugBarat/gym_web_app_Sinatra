@@ -27,14 +27,17 @@
   <section>
     <% for equipment in @equipment %>
     <div class="index">
+      <br>
       <p>Type: <%=equipment.type()%></p>
       <p>Quantity: <%=equipment.quantity()%></p>
       <p>Room: <%=equipment.show_room_name()%></p>
       <a href="/admin/equipment/<%= equipment.id() %>/edit">
         <button type="button" name="button">EDIT</button>
       </a>
+      <br>
     </div>
+    <br>
     <%end%>
     <br/>
-    <br/> 
+    <br/>
   </section>
