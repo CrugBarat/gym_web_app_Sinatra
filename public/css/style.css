@@ -399,6 +399,7 @@ font-style: italic;
 }
 /* HOMEPAGE SIGNUP END */
 
+
 /* HOMEPAGE BOX 2? */
 .box3 {
   border-radius: 5px;
@@ -412,3 +413,21 @@ font-style: italic;
   font-size: 20px;
 }
 /* HOMEPAGE BOX 2? END */
+
+
+/* USER INSTRUCTOR PROFILE */
+.resize {
+  height: 10vw;
+  width: auto;
+  padding-left: 2em;
+}
+
+.text-margins {
+  padding-left: 2em;
+}
+
+.profile-margins {
+  padding-left: 2em;
+  padding-right: 25em;
+}
+/* USER INSTRUCTOR PROFILE END */

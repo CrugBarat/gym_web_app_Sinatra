@@ -20,10 +20,12 @@
   <section>
     <% for instructor in @instructors %>
     <div class="index">
-      <p>Instructor: <%=instructor.full_name()%></p>
-      <p>Profile: <%=instructor.profile()%></p>
-      <p>Contact: <%=instructor.email_address()%></p>
-      <hr>
+      <br>
+      <img class= "resize" src="/images/empty.png" alt="">
+      <p class="text-margins"><%=instructor.full_name()%></p>
+      <p class="profile-margins"><%=instructor.profile()%></p>
+      <p class="text-margins"><%=instructor.email_address()%></p>
+      <br>
     </div>
     <%end%>
     <br/>
