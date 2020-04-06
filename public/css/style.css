@@ -192,6 +192,7 @@ li a:hover {
 #page-container {
   position: relative;
   min-height: 100vh;
+  background-color: #FDFDFD;
 }
 
 #content-wrap {
@@ -341,3 +342,60 @@ button[type=button]:hover {
   border-color: #fe5ebb;
 }
 /* SESSION LINE BREAK END */
+
+/* HOMEPAGE QUOTE */
+.quote {
+position: absolute;
+bottom: 15px;
+left: 16px;
+font-size: 6vw;
+font-family: 'Montserrat', monospace;
+text-shadow: 1px 0 0 #000, 0 -1px 0 #000, 0 1px 0 #000, -1px 0 0 #000;
+position: relative;
+text-align: justify;
+color: #414141;
+}
+
+.quote-middle {
+position: absolute;
+bottom: 15px;
+left: 16px;
+font-size: 6vw;
+font-family: 'Montserrat', monospace;
+text-shadow: 1px 0 0 #000, 0 -1px 0 #000, 0 1px 0 #000, -1px 0 0 #000;
+position: relative;
+text-align: justify;
+color: #414141;
+padding-left:3.2em
+}
+
+.quote-name {
+position: absolute;
+bottom: 15px;
+left: 16px;
+font-size: 2.5vw;
+font-family: 'Montserrat', monospace;
+text-shadow: 1px 0 0 #000, 0 -1px 0 #000, 0 1px 0 #000, -1px 0 0 #000;
+position: relative;
+text-align: justify;
+color: #414141;
+padding-left: 24.5em;
+font-style: italic;
+}
+/* HOMEPAGE QUOTE END*/
+
+
+/* HOMEPAGE SIGNUP */
+.box2 {
+  border-radius: 5px;
+  background-color: #57d7e9;
+  padding-left: 250px;
+  padding-right: 250px;
+  padding-top: 50px;
+  padding-bottom: 50px;
+  font-family: 'Montserrat', monospace;
+  position: relative;
+  font-size: 20px;
+}
+
+/* HOMEPAGE SIGNUP END */
