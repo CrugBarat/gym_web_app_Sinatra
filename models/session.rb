@@ -32,7 +32,7 @@ class Session
 
   def self.all_active()
     sql = "SELECT * FROM sessions
-           WHERE active"
+    WHERE active"
     result = SqlRunner.run(sql)
     self.map_items(result)
   end
@@ -60,7 +60,7 @@ class Session
 
   def self.find_by_id(id)
     sql = "SELECT * FROM sessions
-           WHERE id = $1"
+    WHERE id = $1"
     values = [id]
     results = SqlRunner.run(sql, values)
     self.returns_single_session(results)
@@ -68,7 +68,7 @@ class Session
 
   def room()
     sql = "SELECT * FROM rooms
-           WHERE id = $1"
+    WHERE id = $1"
     values = [@room_id]
     results = SqlRunner.run(sql, values)
     Room.returns_single_room(results)
@@ -81,7 +81,7 @@ class Session
 
   def instructor()
     sql = "SELECT * FROM Instructors
-           WHERE id = $1"
+    WHERE id = $1"
     values = [@instructor_id]
     results = SqlRunner.run(sql, values)
     Instructor.returns_single_instructor(results)
@@ -94,9 +94,9 @@ class Session
 
   def members()
     sql = "SELECT * FROM bookings
-           INNER JOIN members
-           ON bookings.member_id = members.id
-           WHERE bookings.session_id = $1"
+    INNER JOIN members
+    ON bookings.member_id = members.id
+    WHERE bookings.session_id = $1"
     values = [@id]
     results = SqlRunner.run(sql, values)
     Member.map_items(results)
@@ -112,27 +112,30 @@ class Session
 
   def date_time()
     sql = "SELECT * FROM session_dates_times
-           INNER JOIN sessions
-           ON session_dates_times.session_id = sessions.id
-           WHERE sessions.id = $1"
+    INNER JOIN sessions
+    ON session_dates_times.session_id = sessions.id
+    WHERE sessions.id = $1"
     values = [@id]
     results = SqlRunner.run(sql, values)
     SessionDateTime.returns_single_session_date_time(results)
   end
 
   def start_time()
-    date_time = date_time()
-    date_time.start_time()
+    time = date_time()
+    formatted_time = Time.parse(time.start_time())
+    formatted_time.strftime("%H:%M")
   end
 
   def end_time()
-    date_time = date_time()
-    date_time.end_time()
+    time = date_time()
+    formatted_time = Time.parse(time.start_time())
+    formatted_time.strftime("%H:%M")
   end
 
   def date()
-    date_time = date_time()
-    date_time.session_date()
+    date = date_time()
+    formatted_date = Date.parse(date.session_date())
+    formatted_date.strftime("%d-%m-%Y")
   end
 
   def show_active()
