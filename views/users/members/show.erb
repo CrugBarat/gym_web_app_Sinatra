@@ -24,14 +24,14 @@
   <section>
     <div class="index">
       <br>
-      <p>Member: <%= @member.full_name() %></p>
-      <p>DOB: <%=@member.formatted_dob()%></p>
-      <p>Membership Type: <%=@member.membership_type()%></p>
-      <p>Address: <%= @member_details.address() %></p>
-      <p>Postcode: <%= @member_details.post_code() %></p>
-      <p>Telephone: <%= @member_details.formatted_telephone() %></p>
-      <p>Email: <%= @member_details.email_address() %></p>
-      <p><%=@member.show_user_active()%></p>
+      <p style="color:#fe5ebb;">Member: <span style="color:#414141;"><%= @member.full_name() %></span></p>
+      <p style="color:#fe5ebb;">DOB: <span style="color:#414141;"><%=@member.formatted_dob()%></span></p>
+      <p style="color:#fe5ebb;">Membership Type: <span style="color:#414141;"><%=@member.membership_type()%></span></p>
+      <p style="color:#fe5ebb;">Address: <span style="color:#414141;"><%= @member_details.address() %></span></p>
+      <p style="color:#fe5ebb;">Postcode: <span style="color:#414141;"><%= @member_details.post_code() %></span></p>
+      <p style="color:#fe5ebb;">Telephone: <span style="color:#414141;"><%= @member_details.formatted_telephone() %></span></p>
+      <p style="color:#fe5ebb;">Email: <span style="color:#414141;"><%= @member_details.email_address() %></span></p>
+      <p style="color:#B200FF;"><%=@member.show_user_active()%></p>
       <br>
     </div>
     <br/>
