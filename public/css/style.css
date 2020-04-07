@@ -489,7 +489,7 @@ ul.none {
 .box4 {
   background-color: #FDFDFD;
   padding-top: 19vh;
-  padding-bottom: 27vh;
+  padding-bottom: 35vh;
   background-image: url('/images/logo.png');
   background-repeat: no-repeat;
   background-position: center;
@@ -528,3 +528,22 @@ ul.none {
   border-radius: 2vw;
 }
 /* ROOM IMAGE END */
+
+
+/* HOMEPAGE VIDEO */
+.grid-vid {
+  width: 100vw;
+  padding-right: 1vw;
+  position: relative;
+  display: flex;
+  flex: 1, 0, auto;
+}
+
+.video-insert {
+    position: relative;
+    right: 0;
+    bottom: 0;
+    width: 100vw;
+    height: auto;
+}
+/* HOMEPAGE VIDEO */
