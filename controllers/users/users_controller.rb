@@ -6,7 +6,6 @@ require_relative('./sessions_controller.rb')
 require_relative('./bookings_controller.rb')
 require_relative('./instructors_controller.rb')
 require_relative('./rooms_controller.rb')
-require_relative('./equipment_controller.rb')
 also_reload('./models/*')
 
 get '/users' do
