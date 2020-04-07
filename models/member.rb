@@ -102,6 +102,11 @@ class Member
     end
   end
 
+  def formatted_dob()
+    formatted_dob = Date.parse(date_of_birth())
+    formatted_dob.strftime("%d-%m-%Y")
+  end
+
   def self.map_items(result)
     result.map{|member| Member.new(member)}
   end

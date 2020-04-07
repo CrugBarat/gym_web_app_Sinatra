@@ -28,7 +28,7 @@
     <div class="index">
       <br>
       <p style="color:#fe5ebb;">Member: <span style="color:#414141;"><%= @member.full_name() %></p>
-      <p style="color:#fe5ebb;">DOB: <span style="color:#414141;"><%= @member.date_of_birth() %></p>
+      <p style="color:#fe5ebb;">DOB: <span style="color:#414141;"><%= @member.formatted_dob() %></p>
       <p style="color:#fe5ebb;">Membership Type: <span style="color:#414141;"><%=@member.membership_type()%></p>
       <p style="color:#fe5ebb;">Membership Number: <span style="color:#414141;"><%= @member.id() %></p>
       <p style="color:#B200FF;"><%=@member.show_active()%></p>

@@ -21,7 +21,7 @@
     <div class="index">
       <br>
       <p>Member: <%= @member.full_name() %></p>
-      <p>DOB: <%=@member.date_of_birth()%></p>
+      <p>DOB: <%=@member.formatted_dob()%></p>
       <p>Membership Type: <%=@member.membership_type()%></p>
       <p>Address: <%= @member_details.address() %></p>
       <p>Postcode: <%= @member_details.post_code() %></p>
