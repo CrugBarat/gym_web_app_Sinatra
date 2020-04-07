@@ -29,6 +29,9 @@
       <br>
       <p style="color:#fe5ebb;">Member: <span style="color:#414141;"><%= @booking.show_member_name() %></span></p>
       <p style="color:#fe5ebb;">Session: <span style="color:#414141;"><%= @booking.show_session_title() %></span></p>
+      <p style="color:#fe5ebb;">Start Time: <span style="color:#414141;"> <%=@booking.show_start_time()%></span></p>
+      <p style="color:#fe5ebb;">End Time: <span style="color:#414141;"> <%=@booking.show_end_time()%></span></p>
+      <p style="color:#fe5ebb;">Date: <span style="color:#414141;"> <%=@booking.show_date()%></span></p>
       <p style="color:#fe5ebb;">Booking ID: <span style="color:#414141;"><%= @booking.id() %></span></p>
       <a href="/admin/bookings/<%= @booking.id() %>/edit">
         <button type="button" name="button">EDIT</button>

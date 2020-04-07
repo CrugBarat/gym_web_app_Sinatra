@@ -85,8 +85,23 @@ class Booking
   end
 
   def show_session_title
+    session = sessions()
+    session.title()
+  end
+
+  def show_start_time
+    session = sessions()
+    session.start_time()
+  end
+
+  def show_end_time
+    session = sessions()
+    session.end_time()
+  end
+
+  def show_date
     sessions = sessions()
-    sessions.title
+    sessions.date()
   end
 
   def self.member_id_from_params(hash)
