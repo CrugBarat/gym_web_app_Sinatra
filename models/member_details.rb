@@ -74,6 +74,11 @@ class MemberDetails
     self.returns_single_member_details(results)
   end
 
+  def formatted_telephone()
+    telephone_number = @telephone_number.to_s
+    formatted_telephone = telephone_number.to_s.insert(0, '0')
+  end
+
   def self.map_items(result)
     result.map{|member_detail| MemberDetails.new(member_detail)}
   end

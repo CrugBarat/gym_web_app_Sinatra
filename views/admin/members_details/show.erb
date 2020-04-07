@@ -33,7 +33,7 @@
       <p style="color:#fe5ebb;">Membership Number: <span style="color:#414141;"><%=@member.id()%></span></p>
       <p style="color:#fe5ebb;">Address:<span style="color:#414141;">  <%= @member_details.address() %></span></p>
       <p style="color:#fe5ebb;">Postcode:<span style="color:#414141;">  <%= @member_details.post_code() %></span></p>
-      <p style="color:#fe5ebb;">Telephone:<span style="color:#414141;">  <%= @member_details.telephone_number() %></span></p>
+      <p style="color:#fe5ebb;">Telephone:<span style="color:#414141;">  <%= @member_details.formatted_telephone() %></span></p>
       <p style="color:#fe5ebb;">Email:<span style="color:#414141;">  <%= @member_details.email_address() %></span></p>
       <p style="color:#B200FF;"><%=@member.show_active()%></p>
       <a href="/admin/members/<%= @member.id() %>/edit">

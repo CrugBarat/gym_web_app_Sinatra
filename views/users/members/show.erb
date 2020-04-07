@@ -25,7 +25,7 @@
       <p>Membership Type: <%=@member.membership_type()%></p>
       <p>Address: <%= @member_details.address() %></p>
       <p>Postcode: <%= @member_details.post_code() %></p>
-      <p>Telephone: <%= @member_details.telephone_number() %></p>
+      <p>Telephone: <%= @member_details.formatted_telephone() %></p>
       <p>Email: <%= @member_details.email_address() %></p>
       <p><%=@member.show_user_active()%></p>
       <br>
