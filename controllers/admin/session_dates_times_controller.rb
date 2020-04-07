@@ -17,7 +17,7 @@ post '/admin/sessions/:id/date_time' do
   new_params = params.merge!(session_id: id)
   session_date_time = SessionDateTime.new(new_params)
   session_date_time.save()
-  redirect('/admin/sessions')
+  redirect('/admin/sessions/' + id.to_s)
 end
 
 #SHOW

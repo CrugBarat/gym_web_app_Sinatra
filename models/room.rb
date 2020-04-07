@@ -3,19 +3,20 @@ require_relative('../db/sql_runner.rb')
 class Room
 
   attr_reader :id
-  attr_accessor :name
+  attr_accessor :name, :image
 
   def initialize(options)
     @id = options['id'].to_i if options['id']
     @name = options['name']
+    @image = options['image']
   end
 
   def save()
     sql = "INSERT INTO rooms
-    (name)
-    VALUES ($1)
+    (name, image)
+    VALUES ($1, $2)
     RETURNING *"
-    values = [@name]
+    values = [@name, @image]
     @id = SqlRunner.run(sql, values)[0]['id'].to_i
   end
 
@@ -27,9 +28,9 @@ class Room
 
   def update()
     sql = "UPDATE rooms
-    SET name = $1
-    WHERE id = $2"
-    values = [@name, @id]
+    SET (name, image) = ($1, $2)
+    WHERE id = $3"
+    values = [@name, @image, @id]
     SqlRunner.run(sql, values)
   end
 

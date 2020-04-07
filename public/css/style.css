@@ -518,3 +518,13 @@ ul.none {
   background-size: cover;
 }
 /* ARNIE END */
+
+
+/* ROOM IMAGE */
+.rooms {
+  width: 50vw;
+  height: auto;
+  opacity: 0.90;
+  border-radius: 2vw;
+}
+/* ROOM IMAGE END */

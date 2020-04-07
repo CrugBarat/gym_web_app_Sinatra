@@ -58,8 +58,11 @@ instructor1.save()
 ##################################################################
 # ROOMS
 
-room1 = Room.new({'name' => 'Spin Studio'})
-room2 = Room.new({'name' => 'Free Weights'})
+room1 = Room.new({'name' => 'Spin Studio',
+                  'image' => '/images/spin.webp'})
+
+room2 = Room.new({'name' => 'Free Weights',
+                  'image' => '/images/free.webp'})
 
 
 room1.save()

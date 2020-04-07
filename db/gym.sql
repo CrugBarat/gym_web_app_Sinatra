@@ -35,7 +35,8 @@ CREATE TABLE member_details (
 
 CREATE TABLE rooms (
   id SERIAL PRIMARY KEY,
-  name VARCHAR(255)
+  name VARCHAR(255),
+  image VARCHAR(255)
 );
 
 CREATE TABLE equipment (
