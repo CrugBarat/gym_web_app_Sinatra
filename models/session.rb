@@ -128,7 +128,7 @@ class Session
 
   def end_time()
     time = date_time()
-    formatted_time = Time.parse(time.start_time())
+    formatted_time = Time.parse(time.end_time())
     formatted_time.strftime("%H:%M")
   end
 
@@ -147,7 +147,7 @@ class Session
   end
 
   def peak_time?()
-    if start_time() >= "09:00:00" && end_time() <= "17:00:00"
+    if start_time() >= "09:00" && end_time() <= "17:00"
       return true
     else
       return false

@@ -65,6 +65,15 @@ class Member
     self.returns_single_member(results)
   end
 
+  def self.find_by_full_name(first_name, last_name)
+    sql = "SELECT * FROM members
+           WHERE first_name = $1
+           AND last_name = $2"
+    values = [first_name, last_name]
+    results = SqlRunner.run(sql, values)
+    self.returns_single_member(results)
+  end
+
   def full_name()
     return "#{@first_name} #{@last_name}"
   end

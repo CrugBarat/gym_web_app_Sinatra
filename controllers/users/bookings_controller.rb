@@ -7,14 +7,14 @@ also_reload('./models/*')
 
 #NEW
 get '/users/bookings/new' do
-  @members = Member.all_active()
   @sessions = Session.all_active()
   erb(:"users/bookings/book")
 end
 
 #CREATE
 post '/users/bookings' do
-  @new_booking = Booking.membership_check(params)
+  new_params = Booking.user_booking(params)
+  @new_booking = Booking.membership_check(new_params)
   @new_booking.save()
   erb(:"users/bookings/success")
 end
