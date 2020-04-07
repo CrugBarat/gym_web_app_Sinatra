@@ -27,8 +27,8 @@
   <section>
     <div class="index">
       <br>
-      <p>Studio: <%= @room.name() %></p>
-      <p>Studio ID: <%= @room.id() %></p>
+      <p style="color:#fe5ebb;">Studio: <span style="color:#414141;"><%= @room.name() %></span></p>
+      <p style="color:#fe5ebb;">Studio ID: <span style="color:#414141;"><%= @room.id() %></span></p>
       <a href="/admin/rooms/<%= @room.id() %>/edit">
         <button type="button" name="button">EDIT</button>
       </a>

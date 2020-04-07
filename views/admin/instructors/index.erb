@@ -28,8 +28,8 @@
     <% for instructor in @instructors %>
     <div class="index">
       <br>
-      <p>Instructor: <%=instructor.full_name()%></p>
-      <p>Instructor ID: <%=instructor.id()%></p>
+      <p style="color:#fe5ebb;">Instructor: <span style="color:#414141;"><%=instructor.full_name()%></span></p>
+      <p style="color:#fe5ebb;">Instructor ID: <span style="color:#414141;"><%=instructor.id()%></span></p>
       <a href="/admin/instructors/<%= instructor.id() %>/edit">
         <button type="button" name="button">EDIT</button>
       </a>

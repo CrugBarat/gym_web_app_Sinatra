@@ -9,7 +9,7 @@ body, html {
   width: 100vw;
   background-repeat: no-repeat;
   background-size: cover;
-  background-blend-mode: luminosity;
+  background-blend-mode: luminosity
 }
 
 .home-container {
@@ -25,6 +25,12 @@ body, html {
   bottom: 15px;
   left: 16px;
   font-size: 18vw;
+  -webkit-touch-callout: none; /* iOS Safari */
+  -webkit-user-select: none; /* Safari */
+  -khtml-user-select: none; /* Konqueror HTML */
+  -moz-user-select: none; /* Old versions of Firefox */
+  -ms-user-select: none; /* Internet Explorer/Edge */
+  user-select: none;
 }
 /* HERO IMAGE END  */
 
@@ -228,12 +234,12 @@ input[type=number], select {
 }
 
 input[type='checkbox'] {
-    width:30px;
-    height:28px;
-    background:white;
-    border-radius:5px;
-    border:2px solid #555;
-    display: run-in;
+  width:30px;
+  height:28px;
+  background:white;
+  border-radius:5px;
+  border:2px solid #555;
+  display: run-in;
 }
 
 input[type=date], select {
@@ -334,41 +340,41 @@ button[type=button]:hover {
 
 /* SESSION LINE BREAK */
 .colour {
-  border-color: #fe5ebb;
+  border-color: #414141;
 }
 /* SESSION LINE BREAK END */
 
 
 /* HOMEPAGE QUOTE */
 .quote {
-position: absolute;
-font-size: 4.5vw;
-font-family: 'Montserrat', monospace;
-position: relative;
-text-align: justify;
-color: #414141;
-padding-left:3.2em
+  position: absolute;
+  font-size: 4.5vw;
+  font-family: 'Montserrat', monospace;
+  position: relative;
+  text-align: justify;
+  color: #414141;
+  padding-left:3.2em
 }
 
 .quote-middle {
-position: absolute;
-font-size: 4.5vw;
-font-family: 'Montserrat', monospace;
-position: relative;
-text-align: justify;
-color: #414141;
-padding-left:6.4em
+  position: absolute;
+  font-size: 4.5vw;
+  font-family: 'Montserrat', monospace;
+  position: relative;
+  text-align: justify;
+  color: #414141;
+  padding-left:6.4em
 }
 
 .quote-name {
-position: absolute;
-font-size: 2vw;
-font-family: 'Montserrat', monospace;
-position: relative;
-text-align: justify;
-color: #414141;
-padding-left: 24.5em;
-font-style: italic;
+  position: absolute;
+  font-size: 2vw;
+  font-family: 'Montserrat', monospace;
+  position: relative;
+  text-align: justify;
+  color: #414141;
+  padding-left: 24.5em;
+  font-style: italic;
 }
 /* HOMEPAGE QUOTE END*/
 

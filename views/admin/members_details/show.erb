@@ -27,14 +27,15 @@
   <section>
     <div class="index">
       <br>
-      <p>Member: <%= @member.full_name() %></p>
-      <p>DOB: <%=@member.date_of_birth()%></p>
-      <p>Membership Type: <%=@member.membership_type()%></p>
-      <p>Address: <%= @member_details.address() %></p>
-      <p>Postcode: <%= @member_details.post_code() %></p>
-      <p>Telephone: <%= @member_details.telephone_number() %></p>
-      <p>Email: <%= @member_details.email_address() %></p>
-      <p><%=@member.show_active()%></p>
+      <p style="color:#fe5ebb;">Member:<span style="color:#414141;"> <%= @member.full_name() %></span></p>
+      <p style="color:#fe5ebb;">DOB:<span style="color:#414141;">  <%=@member.date_of_birth()%></span></p>
+      <p style="color:#fe5ebb;">Membership Type:<span style="color:#414141;">  <%=@member.membership_type()%></span></p>
+      <p style="color:#fe5ebb;">Membership Number: <span style="color:#414141;"><%=@member.id()%></span></p>
+      <p style="color:#fe5ebb;">Address:<span style="color:#414141;">  <%= @member_details.address() %></span></p>
+      <p style="color:#fe5ebb;">Postcode:<span style="color:#414141;">  <%= @member_details.post_code() %></span></p>
+      <p style="color:#fe5ebb;">Telephone:<span style="color:#414141;">  <%= @member_details.telephone_number() %></span></p>
+      <p style="color:#fe5ebb;">Email:<span style="color:#414141;">  <%= @member_details.email_address() %></span></p>
+      <p style="color:#B200FF;"><%=@member.show_active()%></p>
       <a href="/admin/members/<%= @member.id() %>/edit">
         <button type="button" name="button">EDIT</button>
       </a>

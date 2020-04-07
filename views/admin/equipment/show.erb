@@ -27,9 +27,9 @@
   <section>
     <div class="index">
       <br>
-      <p>Type: <%= @found_equipment.type() %></p>
-      <p>Quantity: <%= @found_equipment.quantity() %></p>
-      <p>Room: <%= @found_equipment.show_room_name() %></p>
+      <p style="color:#fe5ebb;">Type: <span style="color:#414141;"><%= @found_equipment.type() %></span></p>
+      <p style="color:#fe5ebb;">Quantity: <span style="color:#414141;"><%= @found_equipment.quantity() %></span></p>
+      <p style="color:#fe5ebb;">Studio: <span style="color:#414141;"><%= @found_equipment.show_room_name() %></span></p>
       <a href="/admin/equipment/<%= @found_equipment.id() %>/edit">
         <button type="button" name="button">EDIT</button>
       </a>

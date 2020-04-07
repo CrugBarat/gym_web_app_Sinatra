@@ -27,10 +27,10 @@
   <section>
     <div class="index">
       <br>
-      <p>Instructor: <%= @new_instructor.full_name() %></p>
-      <p>Profile: <%= @new_instructor.profile() %></p>
-      <p>Instructor ID: <%= @new_instructor.id() %></p>
-      <p>Email: <%= @new_instructor.email_address() %></p>
+      <p style="color:#fe5ebb;">Instructor: <span style="color:#414141;"><%= @new_instructor.full_name() %></span></p>
+      <p style="color:#fe5ebb;">Profile: <span style="color:#414141;"><%= @new_instructor.profile() %></span></p>
+      <p style="color:#fe5ebb;">Instructor ID: <span style="color:#414141;"><%= @new_instructor.id() %></span></p>
+      <p style="color:#fe5ebb;">Email: <span style="color:#414141;"><%= @new_instructor.email_address() %></span></p>
       <a href="/admin/instructors/<%= @new_instructor.id() %>/edit">
         <button type="button" name="button">EDIT</button>
       </a>

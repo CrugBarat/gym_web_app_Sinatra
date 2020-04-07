@@ -27,9 +27,9 @@
   <section>
     <div class="index">
       <br>
-      <p>Member: <%=@new_booking.show_member_name()%></p>
-      <p>Session: <%=@new_booking.show_session_title()%></p>
-      <p>Booking ID: <%=@new_booking.id()%></p>
+      <p style="color:#fe5ebb;">Member: <span style="color:#414141;"><%=@new_booking.show_member_name()%></span></p>
+      <p style="color:#fe5ebb;">Session: <span style="color:#414141;"><%=@new_booking.show_session_title()%></span></p>
+      <p style="color:#fe5ebb;">Booking ID: <span style="color:#414141;"><%=@new_booking.id()%></span></p>
       <a href="/admin/bookings/<%= @new_booking.id() %>/edit">
         <button type="button" name="button">EDIT</button>
       </a>

@@ -25,19 +25,19 @@
     </div>
   </section>
   <section>
-    <p><%=@session.title()%></p>
     <div class="index">
       <br>
-      <p>Instructor: <%=@session.show_instructor_name()%></p>
-      <p>Studio: <%=@session.show_room_name()%></p>
-      <p>Start Time: <%=@session.start_time()%></p>
-      <p>End Time: <%=@session.end_time()%></p>
-      <p>Date: <%=@session.date()%></p>
+      <p><%=@session.title()%></p>
+      <p style="color:#fe5ebb;">Instructor: <span style="color:#414141;"><%=@session.show_instructor_name()%></span></p>
+      <p style="color:#fe5ebb;">Studio: <span style="color:#414141;"><%=@session.show_room_name()%></span></p>
+      <p style="color:#fe5ebb;">Start Time: <span style="color:#414141;"><%=@session.start_time()%></span></p>
+      <p style="color:#fe5ebb;">End Time: <span style="color:#414141;"><%=@session.end_time()%></span></p>
+      <p style="color:#fe5ebb;">Date: <span style="color:#414141;"><%=@session.date()%></span></p>
       <hr>
-      <p>Max Capacity: <%=@session.max_capacity()%></p>
-      <p>Bookings: <%=@session.number_of_members()%></p>
-      <p><%=@session.show_active()%></p>
-      <p>Class ID: <%=@session.id() %></p>
+      <p style="color:#fe5ebb;">Max Capacity: <span style="color:#414141;"><%=@session.max_capacity()%></span></p>
+      <p style="color:#fe5ebb;">Bookings: <span style="color:#414141;"><%=@session.number_of_members()%></span></p>
+      <p style="color:#fe5ebb;">Class ID: <span style="color:#414141;"><%=@session.id() %></span></p>
+      <p style="color:#B200FF;"><%=@session.show_active()%></p>
       <a href="/admin/sessions/<%= @session.id() %>/edit">
         <button type="button" name="button">EDIT</button>
       </a>

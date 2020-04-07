@@ -28,8 +28,8 @@
     <% for member in @members %>
     <div class="index">
       <br>
-      <p>Member: <%=member.full_name()%></p>
-      <p>Membership No: <%=member.id()%></p>
+      <p style="color:#fe5ebb;">Member: <span style="color:#414141;"><%=member.full_name()%></span></p>
+      <p style="color:#fe5ebb;">Membership No: <span style="color:#414141;"><%=member.id()%></span></p>
       <% booking = Booking.find_by_member_id(member.id) %>
       <a href="/admin/bookings/<%= booking.id %>/edit">
         <button type="button" name="button">EDIT BOOKING</button>
