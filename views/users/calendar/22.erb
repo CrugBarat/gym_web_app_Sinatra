@@ -1,0 +1,65 @@
+<div class="home-container">
+  <img class="home" alt="">
+  <div class="bottom-left">Members.</div>
+</div>
+<section>
+  <div class="grid">
+    <div class="grid-row grid-row-sm">
+      <div class="cell_container">
+        <a href="/users">
+          <div class="cell1"><img class="img1" src="/images/flex1.webp" alt="">
+            <div class="bottom-right">MAIN MENU</div>
+          </div>
+        </a>
+      </div>
+      <div class="cell_container">
+        <a href="/users/bookings/new">
+          <div class="cell2"><img class="img1" src="/images/flex5.webp" alt="">
+            <div class="bottom-right">BOOK</div>
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
+<section>
+  <% for session in @sessions%>
+  <% if session.show_date == '22-04-2020'  %>
+  <div class="index">
+    <br>
+    <p style="font-weight:bold;"><%=session.title()%></p>
+    <p class="profile-margins"><%=session.description()%></p>
+    <p style="color:#fe5ebb;">Instructor: <span style="color:#414141;"><%=session.show_instructor_name()%></span></p>
+    <p style="color:#fe5ebb;">Studio: <span style="color:#414141;"><%=session.show_room_name()%></span></p>
+    <p style="color:#fe5ebb;">Start Time: <span style="color:#414141;"><%=session.show_start_time()%></span></p>
+    <p style="color:#fe5ebb;">End Time: <span style="color:#414141;"><%=session.show_end_time()%></span></p>
+    <p style="color:#fe5ebb;">Date: <span style="color:#414141;"><%=session.show_date()%></span></p>
+    <a href="/users/bookings/new">
+      <button type="button" name="button">BOOK</button>
+    </a>
+    <br>
+  </div>
+  <br>
+  <%end%>
+  <%end%>
+  <br/>
+  <br/>
+</section>
+<section>
+  <div class="quote">
+    <p>“What is the point of</p>
+  </div>
+  <div class="quote-middle">
+    <p style="padding-left: 12vw;">&nbsp; being on this Earth</p>
+  </div>
+  <div class="quote">
+    <p>&nbsp; to be like everyone else?”</p>
+  </div>
+  <p class="quote-name"> – Arnold Schwarzenegger</p>
+</section>
+<section>
+  <div class="grid-vid">
+    <video class="video-insert" autoplay loop>
+      <source src="/videos/vid1.mp4" type="video/mp4">
+      </video>
+    </div>
+  </section>

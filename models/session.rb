@@ -30,7 +30,7 @@ class Session
     self.map_items(result)
   end
 
-  def self.all_sorted_by_date_and_time()
+  def self.sort_by_date_and_time()
     sessions = self.all()
     sessions.sort_by {|session| [Date.parse(session.date()), session.start_time()]}
   end
