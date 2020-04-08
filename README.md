@@ -1,6 +1,6 @@
-![Homepage](/images/README/homepage.jpeg)
-![Admin](/images/README/admin_flex_nav.jpeg)
-![Member-Signup](/images/README/member_signup.jpeg)
+![Homepage](https://raw.githubusercontent.com/CrugBarat/my_files/blob/master/homepage.jpeg)
+![Admin](https://raw.githubusercontent.com/CrugBarat/my_files/blob/master/admin.jpeg)
+![Member-Signup](https://raw.githubusercontent.com/CrugBarat/my_files/blob/master/member.jpeg)
 
 #Gym.
 
