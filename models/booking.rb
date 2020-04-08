@@ -91,17 +91,17 @@ class Booking
 
   def show_start_time
     session = sessions()
-    session.start_time()
+    session.show_start_time()
   end
 
   def show_end_time
     session = sessions()
-    session.end_time()
+    session.show_end_time()
   end
 
   def show_date
     sessions = sessions()
-    sessions.date()
+    sessions.show_date()
   end
 
   def self.member_id_from_params(hash)

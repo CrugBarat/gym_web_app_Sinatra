@@ -32,7 +32,7 @@ class Session
 
   def self.sort_by_date_and_time()
     sessions = self.all()
-    sessions.sort_by {|session| [Date.parse(session.date()), session.start_time()]}
+    sessions.sort_by {|session| [Date.parse(session.show_date()), session.show_start_time()]}
   end
 
   def self.all_active()
@@ -152,7 +152,7 @@ class Session
   end
 
   def peak_time?()
-    if start_time() >= "09:00" && end_time() <= "17:00"
+    if show_start_time() >= "09:00" && show_end_time() <= "17:00"
       return true
     else
       return false

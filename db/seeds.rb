@@ -119,12 +119,12 @@ session2.save()
 
 session_date_time1 = SessionDateTime.new({'start_time' => '09:00:00',
                                           'end_time' => '10:00:00',
-                                          'session_date' => '2020-01-27',
+                                          'session_date' => '2020-04-01',
                                           'session_id' => session1.id})
 
 session_date_time2 = SessionDateTime.new({'start_time' => '18:00:00',
                                           'end_time' => '18:45:00',
-                                          'session_date' => '2020-01-27',
+                                          'session_date' => '2020-04-02',
                                           'session_id' => session2.id})
 
 

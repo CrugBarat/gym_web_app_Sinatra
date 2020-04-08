@@ -28,7 +28,7 @@ CREATE TABLE member_details (
   id SERIAL PRIMARY KEY,
   address TEXT,
   post_code VARCHAR(255),
-  telephone_number INT,
+  telephone_number BIGINT,
   email_address VARCHAR(255),
   member_id INT REFERENCES members(id) ON DELETE CASCADE
 );
