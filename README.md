@@ -1,6 +1,6 @@
-![Homepage](https://raw.githubusercontent.com/CrugBarat/my_files/blob/master/homepage.jpeg)
-![Admin](https://raw.githubusercontent.com/CrugBarat/my_files/blob/master/admin.jpeg)
-![Member-Signup](https://raw.githubusercontent.com/CrugBarat/my_files/blob/master/member.jpeg)
+![Homepage](https://github.com/CrugBarat/my_files/blob/master/homepage.jpeg)
+![Admin](https://github.com/CrugBarat/my_files/blob/master/admin.jpeg)
+![Member-Signup](https://github.com/CrugBarat/my_files/blob/master/member.jpeg)
 
 # Gym.
 
@@ -44,6 +44,7 @@ The 'Admin.' section of the web app is accessed via the 'spanner' icon in the na
 
 The 'Member.' section of the app is accessed via the 'home' & 'face' icons in the navbar. These sections allow members to signup, view sessions/studios/equipment and book sessions.
 
+---
 
 ## Development
 
@@ -59,9 +60,11 @@ Developing the app was an enjoyable experience and allowed me to utilise all the
 - Wireframe Diagrams
 
 **The Spec**:
+
 All requirements of the spec were fulfilled.
 
 **Additional Extensions**:
+
 Extensions designed and executed by me included:
 - create/edit/view instructors, rooms and equipments
 - Member Interface
@@ -72,6 +75,7 @@ Extensions designed and executed by me included:
 - Preventing standard members from booking Premium sessions.
 - No HTML/CSS was taught as part of the course so the styling of the app was self-taught during the 5 days allowed to complete the project. Styling challenges included; flexbox, parallax image, scaling for mobile.
 
+---
 
 ## App Setup
 
