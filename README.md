@@ -1,6 +1,6 @@
-![Homepage](https://github.com/CrugBarat/my_files/blob/master/homepage.jpeg)
-![Admin](https://github.com/CrugBarat/my_files/blob/master/admin.jpeg)
-![Member-Signup](https://github.com/CrugBarat/my_files/blob/master/member.jpeg)
+![Homepage](https://github.com/CrugBarat/my_files/blob/master/homepage.jpeg =100x20)
+![Admin](https://github.com/CrugBarat/my_files/blob/master/admin.jpeg =100x20)
+![Member-Signup](https://github.com/CrugBarat/my_files/blob/master/member.jpeg =100x20)
 
 # Gym.
 
