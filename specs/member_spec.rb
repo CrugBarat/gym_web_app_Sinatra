@@ -17,11 +17,15 @@ class TestMember < MiniTest::Test
                           'last_name' => 'Smith',
                           'date_of_birth' => '1988-05-13',
                           'membership_type' => 'STANDARD',
-                          'active' => 't'})
+                          'active' => 'f'})
   end
 
-  def test_show_active()
+  def test_show_active__ACTIVE()
     assert_equal('ACTIVE', @member1.show_active())
+  end
+
+  def test_show_active__INACTIVE()
+    assert_equal('INACTIVE', @member2.show_active())
   end
 
   def test_correct_membership__true()
