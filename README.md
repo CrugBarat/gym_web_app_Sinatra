@@ -133,3 +133,11 @@ http://localhost:4567
 CTRL + C
 
 - Close browser
+
+---
+
+# Acknowledgments
+
+Ally, Anna & Colin at CodeClan for the comprehensive and fluid teaching of the Ruby module of the Professional Software Development course. They gave me the tools and knowledge I needed to create this app. Thank you :)
+
+Shout out to G18 in lockdown!
