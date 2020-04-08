@@ -29,9 +29,9 @@
       <p class="profile-margins"><%=session.description()%></p>
       <p style="color:#fe5ebb;">Instructor: <span style="color:#414141;"><%=session.show_instructor_name()%></span></p>
       <p style="color:#fe5ebb;">Studio: <span style="color:#414141;"><%=session.show_room_name()%></span></p>
-      <p style="color:#fe5ebb;">Start Time: <span style="color:#414141;"><%=session.start_time()%></span></p>
-      <p style="color:#fe5ebb;">End Time: <span style="color:#414141;"><%=session.end_time()%></span></p>
-      <p style="color:#fe5ebb;">Date: <span style="color:#414141;"><%=session.date()%></span></p>
+      <p style="color:#fe5ebb;">Start Time: <span style="color:#414141;"><%=session.show_start_time()%></span></p>
+      <p style="color:#fe5ebb;">End Time: <span style="color:#414141;"><%=session.show_end_time()%></span></p>
+      <p style="color:#fe5ebb;">Date: <span style="color:#414141;"><%=session.show_date()%></span></p>
       <a href="/users/bookings/new">
         <button type="button" name="button">BOOK</button>
       </a>

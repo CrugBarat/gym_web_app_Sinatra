@@ -30,6 +30,11 @@ class Session
     self.map_items(result)
   end
 
+  def self.all_sorted_by_date_and_time()
+    sessions = self.all()
+    sessions.sort_by {|session| [Date.parse(session.date()), session.start_time()]}
+  end
+
   def self.all_active()
     sql = "SELECT * FROM sessions
            WHERE active"
@@ -120,19 +125,19 @@ class Session
     SessionDateTime.returns_single_session_date_time(results)
   end
 
-  def start_time()
+  def show_start_time()
     time = date_time()
     formatted_time = Time.parse(time.start_time())
     formatted_time.strftime("%H:%M")
   end
 
-  def end_time()
+  def show_end_time()
     time = date_time()
     formatted_time = Time.parse(time.end_time())
     formatted_time.strftime("%H:%M")
   end
 
-  def date()
+  def show_date()
     date = date_time()
     formatted_date = Date.parse(date.session_date())
     formatted_date.strftime("%d-%m-%Y")
