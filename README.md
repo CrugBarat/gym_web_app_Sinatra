@@ -2,19 +2,23 @@
 ![Admin](https://raw.githubusercontent.com/CrugBarat/my_files/blob/master/admin.jpeg)
 ![Member-Signup](https://raw.githubusercontent.com/CrugBarat/my_files/blob/master/member.jpeg)
 
-#Gym.
+# Gym.
 
 Gym. is an app I created using the following:
 
 **Programming Language**: Ruby
+
 **Database Management System**: PostgreSQL
+
 **Web App Framework**: Sinatra
+
 **Markup/Styling**: HTML5/CSS3
 
 The project was tasked to me by CodeClan, Glasgow where I studied towards a PDA Level 8 in Professional Software Development. I was given 5 days to complete it. The project spec can be found below.
 
+---
 
-##CodeClan - Gym Spec
+## CodeClan - Gym Spec
 
 A local gym has asked you to build a piece of software to help them manage memberships and register members for sessions.
 
@@ -32,15 +36,16 @@ A local gym has asked you to build a piece of software to help them manage membe
 
 [Download](https://github.com/CrugBarat/my_files/blob/master/codeclan_week5_project_spec.pdf?raw=true)
 
+---
 
-##About the App
+## About the App
 
 The 'Admin.' section of the web app is accessed via the 'spanner' icon in the navbar. Typically this section would be password protected, which provides a quasi-CMS for Gym. employees. This section allows users to create/view/edit members, sessions, studios, instructors, equipment and bookings.
 
 The 'Member.' section of the app is accessed via the 'home' & 'face' icons in the navbar. These sections allow members to signup, view sessions/studios/equipment and book sessions.
 
 
-##Development
+## Development
 
 Developing the app was an enjoyable experience and allowed me to utilise all the knowledge and training I received during my time studying the Ruby module at CodeClan.
 
@@ -68,7 +73,7 @@ Extensions designed and executed by me included:
 - No HTML/CSS was taught as part of the course so the styling of the app was self-taught during the 5 days allowed to complete the project. Styling challenges included; flexbox, parallax image, scaling for mobile.
 
 
-##App Setup
+## App Setup
 
 If you would like to use or explore the app, please complete the following steps:
 
