@@ -1,8 +1,8 @@
-<img src="https://github.com/CrugBarat/my_files/blob/master/homepage.jpeg" width="48">
+<img src="https://github.com/CrugBarat/my_files/blob/master/homepage.jpeg" width="100">
 
-<img src="https://github.com/CrugBarat/my_files/blob/master/admin.jpeg" width="48">
+<img src="https://github.com/CrugBarat/my_files/blob/master/admin.jpeg" width="100">
 
-<img src="https://github.com/CrugBarat/my_files/blob/master/member.jpeg" width="48">
+<img src="https://github.com/CrugBarat/my_files/blob/master/member.jpeg" width="100">
 
 
 # Gym.
