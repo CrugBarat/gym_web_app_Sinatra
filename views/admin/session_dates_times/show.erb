@@ -33,10 +33,10 @@
       <p style="font-weight:bold;"><%=@session.title()%></p>
       <p style="color:#fe5ebb;">Instructor: <span style="color:#414141;"><%=@session.show_instructor_name()%></span></p>
       <p style="color:#fe5ebb;">Studio: <span style="color:#414141;"><%=@session.show_room_name()%></span></p>
-      <p style="color:#fe5ebb;">Start Time: <span style="color:#414141;"><%=@session.start_time()%></span></p>
-      <p style="color:#fe5ebb;">End Time: <span style="color:#414141;"><%=@session.end_time()%></p>
-      <p style="color:#fe5ebb;">Date: <span style="color:#414141;"><%=@session.date()%></span></p>
-      <hr>
+      <p style="color:#fe5ebb;">Start Time: <span style="color:#414141;"><%=@session.show_start_time()%></span></p>
+      <p style="color:#fe5ebb;">End Time: <span style="color:#414141;"><%=@session.show_end_time()%></p>
+      <p style="color:#fe5ebb;">Date: <span style="color:#414141;"><%=@session.show_date()%></span></p>
+      <hr class="colour">
       <p style="color:#fe5ebb;">Max Capacity: <span style="color:#414141;"><%=@session.max_capacity()%></span></p>
       <p style="color:#fe5ebb;">Bookings: <span style="color:#414141;"><%=@session.number_of_members()%></span></p>
       <p style="color:#fe5ebb;">Class ID: <span style="color:#414141;"><%=@session.id() %></span></p>
