@@ -59,14 +59,26 @@ instructor1.save()
 # ROOMS
 
 room1 = Room.new({'name' => 'Spin Studio',
-                  'image' => '/images/spin.webp'})
+                  'image' => '/images/rooms/room1.webp'})
 
 room2 = Room.new({'name' => 'Free Weights',
-                  'image' => '/images/free.webp'})
+                  'image' => '/images/rooms/room2.webp'})
+
+room3 = Room.new({'name' => 'Cardio Room',
+                  'image' => '/images/rooms/room3.webp'})
+
+room4 = Room.new({'name' => 'Health Suite',
+                  'image' => '/images/rooms/room5.webp'})
+
+room5 = Room.new({'name' => 'Chill-out Area',
+                  'image' => '/images/rooms/room4.webp'})
 
 
 room1.save()
 room2.save()
+room3.save()
+room4.save()
+room5.save()
 
 
 ##################################################################

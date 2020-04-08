@@ -522,9 +522,9 @@ ul.none {
 
 /* ROOM IMAGE */
 .rooms {
-  width: 50vw;
+  width: 40vw;
   height: auto;
-  opacity: 0.90;
+  opacity: 0.80;
   border-radius: 2vw;
 }
 /* ROOM IMAGE END */
