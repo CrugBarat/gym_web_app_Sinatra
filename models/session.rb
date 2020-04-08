@@ -17,9 +17,9 @@ class Session
 
   def save()
     sql = "INSERT INTO sessions
-    (title, description, instructor_id, room_id, active, max_capacity)
-    VALUES ($1, $2, $3, $4, $5, $6)
-    RETURNING *"
+           (title, description, instructor_id, room_id, active, max_capacity)
+           VALUES ($1, $2, $3, $4, $5, $6)
+           RETURNING *"
     values = [@title, @description, @instructor_id, @room_id, @active, @max_capacity]
     @id = SqlRunner.run(sql, values)[0]['id'].to_i
   end
@@ -32,23 +32,23 @@ class Session
 
   def self.all_active()
     sql = "SELECT * FROM sessions
-    WHERE active"
+           WHERE active"
     result = SqlRunner.run(sql)
     self.map_items(result)
   end
 
   def update()
     sql = "UPDATE sessions
-    SET (title, description, instructor_id, room_id, active, max_capacity)
-    = ($1, $2, $3, $4, $5, $6)
-    WHERE id = $7"
+           SET (title, description, instructor_id, room_id, active, max_capacity)
+           = ($1, $2, $3, $4, $5, $6)
+           WHERE id = $7"
     values = [@title, @description, @instructor_id, @room_id, @active, @max_capacity, @id]
     SqlRunner.run(sql, values)
   end
 
   def delete()
     sql = "DELETE FROM sessions
-    WHERE id = $1"
+           WHERE id = $1"
     values = [@id]
     SqlRunner.run(sql, values)
   end
@@ -60,7 +60,7 @@ class Session
 
   def self.find_by_id(id)
     sql = "SELECT * FROM sessions
-    WHERE id = $1"
+           WHERE id = $1"
     values = [id]
     results = SqlRunner.run(sql, values)
     self.returns_single_session(results)
@@ -68,7 +68,7 @@ class Session
 
   def room()
     sql = "SELECT * FROM rooms
-    WHERE id = $1"
+           WHERE id = $1"
     values = [@room_id]
     results = SqlRunner.run(sql, values)
     Room.returns_single_room(results)
@@ -81,7 +81,7 @@ class Session
 
   def instructor()
     sql = "SELECT * FROM Instructors
-    WHERE id = $1"
+           WHERE id = $1"
     values = [@instructor_id]
     results = SqlRunner.run(sql, values)
     Instructor.returns_single_instructor(results)
@@ -94,9 +94,9 @@ class Session
 
   def members()
     sql = "SELECT * FROM bookings
-    INNER JOIN members
-    ON bookings.member_id = members.id
-    WHERE bookings.session_id = $1"
+           INNER JOIN members
+           ON bookings.member_id = members.id
+           WHERE bookings.session_id = $1"
     values = [@id]
     results = SqlRunner.run(sql, values)
     Member.map_items(results)
@@ -112,9 +112,9 @@ class Session
 
   def date_time()
     sql = "SELECT * FROM session_dates_times
-    INNER JOIN sessions
-    ON session_dates_times.session_id = sessions.id
-    WHERE sessions.id = $1"
+           INNER JOIN sessions
+           ON session_dates_times.session_id = sessions.id
+           WHERE sessions.id = $1"
     values = [@id]
     results = SqlRunner.run(sql, values)
     SessionDateTime.returns_single_session_date_time(results)
@@ -155,7 +155,7 @@ class Session
   end
 
   def self.map_items(result)
-    result.map{|a_class| Session.new(a_class)}
+    result.map{|session| Session.new(session)}
   end
 
   def self.returns_single_session(results)

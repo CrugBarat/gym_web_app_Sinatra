@@ -15,9 +15,9 @@ class SessionDateTime
 
   def save()
     sql = "INSERT INTO session_dates_times
-    (start_time, end_time, session_date, session_id)
-    VALUES ($1, $2, $3, $4)
-    RETURNING *"
+           (start_time, end_time, session_date, session_id)
+           VALUES ($1, $2, $3, $4)
+           RETURNING *"
     values = [@start_time, @end_time, @session_date, @session_id]
     @id = SqlRunner.run(sql, values)[0]['id'].to_i
   end
@@ -30,16 +30,16 @@ class SessionDateTime
 
   def update()
     sql = "UPDATE session_dates_times
-    SET (start_time, end_time, session_date, session_id)
-    = ($1, $2, $3, $4)
-    WHERE id = $5"
+           SET (start_time, end_time, session_date, session_id)
+           = ($1, $2, $3, $4)
+           WHERE id = $5"
     values = [@start_time, @end_time, @session_date, @session_id, @id]
     SqlRunner.run(sql, values)
   end
 
   def delete()
     sql = "DELETE FROM session_dates_times
-    WHERE id = $1"
+           WHERE id = $1"
     values = [@id]
     SqlRunner.run(sql, values)
   end

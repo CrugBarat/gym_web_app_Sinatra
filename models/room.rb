@@ -13,9 +13,9 @@ class Room
 
   def save()
     sql = "INSERT INTO rooms
-    (name, image)
-    VALUES ($1, $2)
-    RETURNING *"
+           (name, image)
+           VALUES ($1, $2)
+           RETURNING *"
     values = [@name, @image]
     @id = SqlRunner.run(sql, values)[0]['id'].to_i
   end
@@ -28,15 +28,15 @@ class Room
 
   def update()
     sql = "UPDATE rooms
-    SET (name, image) = ($1, $2)
-    WHERE id = $3"
+           SET (name, image) = ($1, $2)
+           WHERE id = $3"
     values = [@name, @image, @id]
     SqlRunner.run(sql, values)
   end
 
   def delete()
     sql = "DELETE FROM rooms
-    WHERE id = $1"
+           WHERE id = $1"
     values = [@id]
     SqlRunner.run(sql, values)
   end

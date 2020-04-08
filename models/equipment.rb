@@ -14,9 +14,9 @@ class Equipment
 
   def save()
     sql = "INSERT INTO equipment
-    (type, quantity, room_id)
-    VALUES ($1, $2, $3)
-    RETURNING *"
+           (type, quantity, room_id)
+           VALUES ($1, $2, $3)
+           RETURNING *"
     values = [@type, @quantity, @room_id]
     @id = SqlRunner.run(sql, values)[0]['id'].to_i
   end
@@ -29,16 +29,16 @@ class Equipment
 
   def update()
     sql = "UPDATE equipment
-    SET (type, quantity, room_id)
-    = ($1, $2, $3)
-    WHERE id = $4"
+           SET (type, quantity, room_id)
+           = ($1, $2, $3)
+           WHERE id = $4"
     values = [@type, @quantity, @room_id, @id]
     SqlRunner.run(sql, values)
   end
 
   def delete()
     sql = "DELETE FROM equipment
-    WHERE id = $1"
+           WHERE id = $1"
     values = [@id]
     SqlRunner.run(sql, values)
   end

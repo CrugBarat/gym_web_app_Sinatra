@@ -16,9 +16,9 @@ class Member
 
   def save()
     sql = "INSERT INTO members
-    (first_name, last_name, date_of_birth, membership_type, active)
-    VALUES ($1, $2, $3, $4, $5)
-    RETURNING *"
+           (first_name, last_name, date_of_birth, membership_type, active)
+           VALUES ($1, $2, $3, $4, $5)
+           RETURNING *"
     values = [@first_name, @last_name, @date_of_birth, @membership_type, @active]
     @id = SqlRunner.run(sql, values)[0]['id'].to_i
   end
@@ -38,16 +38,16 @@ class Member
 
   def update()
     sql = "UPDATE members
-    SET (first_name, last_name, date_of_birth, membership_type, active)
-    = ($1, $2, $3, $4, $5)
-    WHERE id = $6"
+           SET (first_name, last_name, date_of_birth, membership_type, active)
+           = ($1, $2, $3, $4, $5)
+           WHERE id = $6"
     values = [@first_name, @last_name, @date_of_birth, @membership_type, @active, @id]
     SqlRunner.run(sql, values)
   end
 
   def delete()
     sql = "DELETE FROM members
-    WHERE id = $1"
+           WHERE id = $1"
     values = [@id]
     SqlRunner.run(sql, values)
   end

@@ -15,9 +15,9 @@ class Instructor
 
   def save()
     sql = "INSERT INTO instructors
-    (first_name, last_name, profile, email_address)
-    VALUES ($1, $2, $3, $4)
-    RETURNING *"
+           (first_name, last_name, profile, email_address)
+           VALUES ($1, $2, $3, $4)
+           RETURNING *"
     values = [@first_name, @last_name, @profile, @email_address]
     @id = SqlRunner.run(sql, values)[0]['id'].to_i
   end
@@ -30,16 +30,16 @@ class Instructor
 
   def update()
     sql = "UPDATE instructors
-    SET (first_name, last_name, profile, email_address)
-    = ($1, $2, $3, $4)
-    WHERE id = $5"
+           SET (first_name, last_name, profile, email_address)
+           = ($1, $2, $3, $4)
+           WHERE id = $5"
     values = [@first_name, @last_name, @profile, @email_address, @id]
     SqlRunner.run(sql, values)
   end
 
   def delete()
     sql = "DELETE FROM instructors
-    WHERE id = $1"
+           WHERE id = $1"
     values = [@id]
     SqlRunner.run(sql, values)
   end

@@ -13,9 +13,9 @@ class Booking
 
   def save()
     sql = "INSERT INTO bookings
-    (member_id, session_id)
-    VALUES ($1, $2)
-    RETURNING *"
+           (member_id, session_id)
+           VALUES ($1, $2)
+           RETURNING *"
     values = [@member_id, @session_id]
     @id = SqlRunner.run(sql, values)[0]['id'].to_i
   end
@@ -28,16 +28,16 @@ class Booking
 
   def update()
     sql = "UPDATE bookings
-    SET (member_id, session_id)
-    = ($1, $2)
-    WHERE id = $3"
+           SET (member_id, session_id)
+           = ($1, $2)
+           WHERE id = $3"
     values = [@member_id, @session_id, @id]
     SqlRunner.run(sql, values)
   end
 
   def delete()
     sql = "DELETE FROM bookings
-    WHERE id = $1"
+           WHERE id = $1"
     values = [@id]
     SqlRunner.run(sql, values)
   end
