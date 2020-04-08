@@ -39,7 +39,7 @@ A local gym has asked you to build a piece of software to help them manage membe
 
 ## About the App
 
-The 'Admin.' section of the web app is accessed via the 'spanner' icon in the navbar. Typically this section would be password protected, which provides a quasi-CMS for Gym. employees. This section allows users to create/view/edit members, sessions, studios, instructors, equipment and bookings.
+The 'Admin.' section (project spec) of the web app is accessed via the 'spanner' icon in the navbar. Typically this section would be password protected, which provides a quasi-CMS for Gym. employees. This section allows users to create/view/edit members, sessions, studios, instructors, equipment and bookings.
 
 The 'Member.' section of the app is accessed via the 'home' & 'face' icons in the navbar. These sections allow members to signup, view sessions/studios/equipment and book sessions.
 
