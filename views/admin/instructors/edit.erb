@@ -32,12 +32,12 @@
     <div class="box">
       <form action="/admin/instructors/<%= @instructor.id() %>" method="POST">
         <label for="first_name">First Name</label>
-        <input id="first_name" type="text" name="first_name" required/>
+        <input id="first_name" type="text" name="first_name" value="<%=@instructor.first_name%>" required/>
         <label for="last_name">Last Name</label>
-        <input id="last_name" type="text" name="last_name" required/>
-        <textarea id="profile" name="profile" rows="4" cols="80">Profile...</textarea>
+        <input id="last_name" type="text" name="last_name" value="<%=@instructor.last_name%>" required/>
+        <textarea id="profile" name="profile" rows="4" cols="80"><%=@instructor.profile%></textarea>
         <label for="email_address">Email</label>
-        <input id="email_address" type="text" name="email_address" required/>
+        <input id="email_address" type="text" name="email_address" value="<%=@instructor.email_address%>" required/>
         <br/>
         <br/>
         <button type="submit" name="button">UPDATE</button>

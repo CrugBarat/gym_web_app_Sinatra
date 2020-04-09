@@ -6,11 +6,11 @@
 <form action="/admin/sessions/<%= @session.id %>/date_time/update" method="post">
   <input type="hidden" name="id" value="<%=@session_date_time.id %>">
   <label for="start_time">Start Time</label>
-  <input id="start_time" type="time" name="start_time" required>
+  <input id="start_time" type="time" name="start_time" value="<%=@session_date_time.start_time%>" required>
   <label for="end_time">End Time</label>
-  <input id="end_time" type="time" name="end_time" required>
+  <input id="end_time" type="time" name="end_time" value="<%=@session_date_time.end_time%>" required>
   <label for="session_date">Date</label>
-  <input id="session_date" type="date" name="session_date" required>
+  <input id="session_date" type="date" name="session_date" value="<%=@session_date_time.session_date%>" required>
   <button type="submit" name="button">UPDATE</button>
 </form>
 </div>

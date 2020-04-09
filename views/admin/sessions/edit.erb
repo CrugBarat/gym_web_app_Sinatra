@@ -32,8 +32,8 @@
     <div class="box">
       <form action="/admin/sessions/<%= @session.id() %>" method="post">
         <label for="title">Title</label>
-        <input id="title" type="text" name="title" required>
-        <textarea id="description" name="description" rows="4" cols="80">Description...</textarea>
+        <input id="title" type="text" name="title" value="<%=@session.title%>" required>
+        <textarea id="description" name="description" rows="4" cols="80"><%=@session.description%></textarea>
         <label for="instructor">Instrcutor</label>
         <select id="instructor" name="instructor_id">
           <% for instructor in @instructors %>
@@ -50,8 +50,8 @@
           </option>
           <% end %>
         </select>
-        <label for="max_capacity">Max Capacity: </label>
-        <input id="max_capacity" type="number" name="max_capacity" required>
+        <label for="max_capacity">Max Capacity</label>
+        <input id="max_capacity" type="number" name="max_capacity" value="<%=@session.max_capacity%>" required>
         <label for="active">Active?</label>
         <input id="active" type="checkbox" name="active">
         <button type="submit" name="button">UPDATE</button>

@@ -32,9 +32,9 @@
     <div class="box">
       <form action="/admin/equipment/<%= @found_equipment.id() %>" method="POST">
         <label for="type">Type</label>
-        <input id="type" type="text" name="type" required/>
+        <input id="type" type="text" name="type" value="<%=@found_equipment.type%>" required/>
         <label for="quantity">Quantity</label>
-        <input id="quantity" type="number" name="quantity" required/>
+        <input id="quantity" type="number" name="quantity" value="<%=@found_equipment.quantity%>" required/>
         <label for="room">Studio</label>
         <select id="room" name="room_id">
           <% for room in @rooms %>

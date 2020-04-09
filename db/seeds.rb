@@ -35,7 +35,7 @@ member1.save()
 
 member_details1 = MemberDetails.new({'address' => '123 Queen St, Glasgow',
                                        'post_code' => 'G1 1AH',
-                                       'telephone_number' => 07123123123,
+                                       'telephone_number' => 7773826653,
                                        'email_address' => 'johnsmith@gmail.com',
                                        'member_id' => member1.id})
 
@@ -48,7 +48,7 @@ member_details1.save()
 
 instructor1 = Instructor.new({'first_name' => 'Richard',
                               'last_name' => 'Jonson',
-                              'profile' => 'Coming from a Rugby background, Richard has developed a career in strength & conditioning training with functional training',
+                              'profile' => 'Fitness instructor for 15 years',
                               'email_address' => 'r_jonson@gym.com'})
 
 
