@@ -13,3 +13,7 @@ also_reload('./models/*')
 get '/admin' do
   erb(:"admin/home")
 end
+
+get '/admin/error/not_found' do
+  erb(:"admin/errors/not_found")
+end

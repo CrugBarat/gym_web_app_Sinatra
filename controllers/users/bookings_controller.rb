@@ -26,5 +26,5 @@ post '/users/bookings' do
 end
 
 get '/users/bookings/error' do
-  erb(:"users/bookings/error")
+  erb(:"users/errors/no_member")
 end
