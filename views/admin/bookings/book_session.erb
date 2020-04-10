@@ -1,0 +1,51 @@
+<div class="home-container">
+  <img class="home" alt="">
+  <div class="bottom-left">Admin.</div>
+</div>
+<section>
+  <div class="grid">
+    <div class="grid-row grid-row-sm">
+      <div class="cell_container">
+        <a href="/admin">
+          <div class="cell1"><img class="img1" src="/images/flex1.webp" alt="">
+            <div class="bottom-right">MAIN MENU</div>
+          </div>
+        </a>
+      </div>
+      <div class="cell_container">
+        <a href="/admin/bookings">
+          <div class="cell2"><img class="img1" src="/images/flex6.webp" alt="">
+            <div class="bottom-right">BOOKINGS</div>
+          </div>
+        </a>
+      </div>
+      <div class="cell_container">
+        <a href="/admin/sessions">
+          <div class="cell3"><img class="img1" src="/images/flex3.webp" alt="">
+            <div class="bottom-right">BOOK</div>
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
+  <section>
+    <div class="background-colour"></div>
+    <div class="box">
+      <form action="/admin/sessions/<%= @session.id %>/bookings" method="post">
+        <label id="session">Session</label>
+        <input type="text" name="session" value="<%= @session.title() %> : <%= @session.show_start_time %> : <%= @session.show_date %>" disabled>
+        <input type="hidden" name="session_id" value="<%= @session.id() %>">
+        <label for="member">Member</label>
+        <select id="member" name="member_id">
+          <% for member in @members %>
+          <% if member.correct_membership?(@session) == true %>
+          <option value="<%= member.id() %>">
+            <%=  member.full_name() %>
+          </option>
+          <% end %>
+          <% end %>
+        </select>
+        <button type="submit" name="button">BOOK</button>
+      </form>
+    </div>
+  </section>

@@ -20,7 +20,7 @@
         </a>
       </div>
       <div class="cell_container">
-        <a href="/admin/bookings/new">
+        <a href="/admin/sessions">
           <div class="cell3"><img class="img1" src="/images/flex3.webp" alt="">
             <div class="bottom-right">BOOK</div>
           </div>
@@ -29,28 +29,11 @@
     </div>
   </section>
   <section>
-    <div class="background-colour"></div>
-    <div class="box">
-      <form action="/admin/bookings" method="post">
-        <label for="member">Member</label>
-        <select id="member" name="member_id">
-          <% for member in @members %>
-          <option value="<%= member.id() %>">
-            <%=  member.full_name() %>
-          </option>
-          <% end %>
-        </select>
-        <label for="sessions">Session</label>
-        <select id="sessions" name="session_id">
-          <% for session in @sessions %>
-          <% if session.over_capacity?() == false %>
-          <option value="<%= session.id() %>">
-            <%=  session.title() %>
-          </option>
-          <%end %>
-          <% end %>
-        </select>
-        <button type="submit" name="button">BOOK</button>
-      </form>
-    </div>
+
+      <p class="error">Are you sure you want to delete this booking?</p>
+      <form action="/admin/bookings/<%= @booking.id() %>/delete" method="post">
+      <!-- <a href="/admin/bookings/<%= @booking.id() %>/delete"> -->
+        <button type="submit">DELETE</button>
+      <!-- </a> -->
+    </form>
   </section>

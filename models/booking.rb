@@ -119,12 +119,12 @@ class Booking
     new_hash.merge!("session_id" => session_id)
   end
 
-  def self.membership_check(booking_hash)
-    member = Member.find_by_id(booking_hash["member_id"])
-    session = Session.find_by_id(booking_hash["session_id"])
-    return if member.correct_membership?() == false && session.peak_time?() == true
-    self.new(booking_hash)
-  end
+  # def self.membership_check(booking_hash)
+  #   member = Member.find_by_id(booking_hash["member_id"])
+  #   session = Session.find_by_id(booking_hash["session_id"])
+  #   return if member.correct_membership?() == false && session.peak_time?() == true
+  #   self.new(booking_hash)
+  # end
 
   def self.map_items(result)
     result.map{|booking| Booking.new(booking)}

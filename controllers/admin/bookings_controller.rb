@@ -12,15 +12,16 @@ get '/admin/bookings' do
 end
 
 #NEW
-get '/admin/bookings/new' do
+get '/admin/sessions/:id/bookings/new' do
+  id = params['id'].to_i
+  @session = Session.find_by_id(id)
   @members = Member.all_active()
-  @sessions = Session.all_active()
-  erb(:"admin/bookings/book")
+  erb(:"admin/bookings/book_session")
 end
 
 #CREATE
-post '/admin/bookings' do
-  @new_booking = Booking.membership_check(params)
+post '/admin/sessions/:id/bookings' do
+  @new_booking = Booking.new(params)
   @new_booking.save()
   erb(:"admin/bookings/success")
 end
@@ -29,25 +30,16 @@ get '/admin/bookings/error' do
   erb(:"admin/bookings/error")
 end
 
-#SHOW
+#DELETE
 get '/admin/bookings/:id' do
   id = params['id'].to_i
   @booking = Booking.find_by_id(id)
-  erb(:"admin/bookings/show")
+  erb(:"admin/bookings/delete")
 end
 
-#EDIT
-get '/admin/bookings/:id/edit' do
-  id = params['id'].to_i
-  @booking = Booking.find_by_id(id)
-  @members = Member.all_active()
-  @sessions = Session.all_active()
-  erb(:"admin/bookings/edit")
-end
-
-#UPDATE
-post '/admin/bookings/:id' do
-  booking = Booking.new(params)
-  booking.update()
-  redirect('/admin/bookings/' + params['id'])
+post '/admin/bookings/:id/delete' do
+  id = params['id'].to_i()
+  booking = Booking.find_by_id(id)
+  booking.delete()
+  redirect('/admin/bookings')
 end

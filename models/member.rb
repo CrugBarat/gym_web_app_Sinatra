@@ -94,8 +94,12 @@ class Member
     end
   end
 
-  def correct_membership?()
-    if membership_type() == "PREMIUM"
+  def correct_membership?(session)
+    if membership_type() == "PREMIUM" && session.peak_time?() == true
+      return true
+    elsif membership_type() == "PREMIUM" && session.peak_time?() == false
+      return true
+    elsif membership_type() == "STANDARD" && session.peak_time?() == false
       return true
     else
       return false
