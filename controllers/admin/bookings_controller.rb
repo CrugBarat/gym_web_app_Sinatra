@@ -26,10 +26,6 @@ post '/admin/sessions/:id/bookings' do
   erb(:"admin/bookings/success")
 end
 
-get '/admin/bookings/error' do
-  erb(:"admin/bookings/error")
-end
-
 #DELETE
 get '/admin/bookings/:id' do
   id = params['id'].to_i

@@ -104,28 +104,6 @@ class Booking
     sessions.show_date()
   end
 
-  def self.member_id_from_params(hash)
-    first_name = hash["first_name"]
-    last_name = hash["last_name"]
-    member = Member.find_by_full_name(first_name, last_name)
-    member.id
-  end
-
-  def self.user_booking(hash)
-    session_id = hash["session_id"].to_i
-    member_id = self.member_id_from_params(hash)
-    new_hash = {}
-    new_hash.merge!("member_id" => member_id)
-    new_hash.merge!("session_id" => session_id)
-  end
-
-  # def self.membership_check(booking_hash)
-  #   member = Member.find_by_id(booking_hash["member_id"])
-  #   session = Session.find_by_id(booking_hash["session_id"])
-  #   return if member.correct_membership?() == false && session.peak_time?() == true
-  #   self.new(booking_hash)
-  # end
-
   def self.map_items(result)
     result.map{|booking| Booking.new(booking)}
   end

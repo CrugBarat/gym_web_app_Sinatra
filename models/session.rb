@@ -159,6 +159,18 @@ class Session
     end
   end
 
+  def correct_session?(member)
+    if member.membership_type() == "PREMIUM" && peak_time?() == true
+      return true
+    elsif member.membership_type() == "PREMIUM" && peak_time?() == false
+      return true
+    elsif member.membership_type() == "STANDARD" && peak_time?() == false
+      return true
+    else
+      return false
+    end
+  end
+
   def self.map_items(result)
     result.map{|session| Session.new(session)}
   end

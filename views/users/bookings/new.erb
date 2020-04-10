@@ -23,19 +23,12 @@
   </section>
   <section>
     <div class="box">
-      <form action="/users/bookings" method="post">
-        <input type="hidden" name="member_id" value="<%= @member.id %>">
-        <label for="session">Session</label>
-        <select id="session" name="session_id">
-          <% for session in @sessions %>
-          <% if  session.correct_session?(@member)%>
-          <option value="<%= session.id() %>">
-            <%=  session.title() %>
-          </option>
-          <% end %>
-          <% end %>
-        </select>
-        <button type="submit" name="button">BOOK</button>
+      <form action="/users/bookings/new/book" method="post">
+        <label for="first_name">First Name</label>
+        <input type="text" name="first_name" required>
+        <label for="last_name">Last Name</label>
+        <input type="text" name="last_name" required>
+        <button type="submit" name="button">ENTER</button>
       </form>
     </div>
   </section>
