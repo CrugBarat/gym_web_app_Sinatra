@@ -35,10 +35,10 @@
           <div class="flex-cell table-headers">Member</div>
           <div class="flex-cell table-headers">DOB</div>
           <div class="flex-cell table-headers">Type</div>
-          <div class="flex-cell table-headers">#</div>
+          <div class="flex-cell table-headers">Membership #</div>
           <div class="flex-cell table-headers">Status</div>
           <div class="flex-cell table-headers">Details</div>
-          <div class="flex-cell table-headers">Edit</div>   
+          <div class="flex-cell table-headers">Edit</div>
         </div>
         <% for member in @members %>
         <div class="flex-row table-flex">
@@ -49,12 +49,12 @@
           <div class="flex-cell table-cells"><span style="color:#B200FF;"><%=member.show_active()%></span></div>
           <div class="flex-cell table-cells">
             <a class="table" href="/admin/members/<%= member.id() %>/member_details/show">
-              <button type="button" name="button">DETAILS</button>
+              <button class="tables" type="button" name="button">DETAILS</button>
             </a>
           </div>
           <div class="flex-cell table-cells">
             <a class="table" href="/admin/members/<%= member.id() %>/edit">
-              <button type="button" name="button">EDIT</button>
+              <button class="tables" type="button" name="button">EDIT</button>
             </a>
           </div>
         </div>

@@ -13,7 +13,7 @@ Gym. is an app I created using the following:
 
 **Markup/Styling**: HTML5/CSS3
 
-The project was tasked to me by CodeClan, Glasgow where I studied towards a PDA Level 8 in Professional Software Development. I was given 5 days to complete it. The project spec can be found below.
+The project was tasked to me by CodeClan, Glasgow, where I studied towards a PDA Level 8 in Professional Software Development. I was given 5 days to complete it. The project spec can be found below.
 
 ---
 

@@ -128,7 +128,13 @@ body, html {
   .grid-row-sm{
     flex-direction: column;
   }
-}
+    .bottom-right {
+      position: absolute;
+      bottom: 8px;
+      right: 16px;
+      font-size: 7vw;
+    }
+  }
 
 a {
   color: inherit;
@@ -579,28 +585,17 @@ a.table :hover {
 }
 
 .table-headers {
-  font-size: 2vw;
+  font-size: 1.5vw;
   background-color: #414141;
   color: #FDFDFD;
 }
 
 .table-cells {
-  font-size: 2vw;
-  background-color: #57d7e9;
-}
-
-.table-headers-sessions {
-  font-size: 1.5vw;
-  background-color: #414141;
-  color: #FDFDFD;
-}
-
-.table-cells-sessions {
   font-size: 1.5vw;
   background-color: #57d7e9;
 }
 
-button.sessions[type=button] {
+button.tables[type=button] {
   background-color: #414141; ]
   border: none;
   color: white;
@@ -632,10 +627,27 @@ button.sessions[type=button]:hover {
   }
 
   .table-headers {
-    font-size: 3vw;
+    font-size: 6vw;
   }
 
   .table-cells {
-    font-size: 3vw;
+    font-size: 6vw;
   }
+
+  button.tables[type=button] {
+    background-color: #414141; ]
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 5vw;
+    margin: 4px 2px;
+    cursor: pointer;
+    transition-duration: 0.8s;
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19)
+  }
+
+}
 /* INDEX TABLES END */

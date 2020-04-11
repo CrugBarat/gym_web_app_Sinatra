@@ -140,7 +140,7 @@ class Session
   def show_date()
     date = date_time()
     formatted_date = Date.parse(date.session_date())
-    formatted_date.strftime("%d-%m-%Y")
+    formatted_date.strftime("%d-%m-%y")
   end
 
   def show_active()

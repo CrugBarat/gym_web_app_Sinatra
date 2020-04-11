@@ -32,43 +32,43 @@
     <div class="index-table">
       <div class="table-container">
         <div class="flex-row table-flex">
-          <div class="flex-cell table-headers-sessions">Session</div>
-          <div class="flex-cell table-headers-sessions">Instructor</div>
-          <div class="flex-cell table-headers-sessions">Studio</div>
-          <div class="flex-cell table-headers-sessions">Start</div>
-          <div class="flex-cell table-headers-sessions">End</div>
-          <div class="flex-cell table-headers-sessions">Date</div>
-          <div class="flex-cell table-headers-sessions">Max Cap.</div>
-          <div class="flex-cell table-headers-sessions">Bookings</div>
-          <div class="flex-cell table-headers-sessions">Active</div>
-          <div class="flex-cell table-headers-sessions">Edit</div>
-          <div class="flex-cell table-headers-sessions">Bookings</div>
-          <div class="flex-cell table-headers-sessions">Book</div>
+          <div class="flex-cell table-headers">Session</div>
+          <div class="flex-cell table-headers">Instructor</div>
+          <div class="flex-cell table-headers">Studio</div>
+          <div class="flex-cell table-headers">Start</div>
+          <div class="flex-cell table-headers">End</div>
+          <div class="flex-cell table-headers">Date</div>
+          <div class="flex-cell table-headers">Max Cap.</div>
+          <div class="flex-cell table-headers">Bookings</div>
+          <div class="flex-cell table-headers">Active</div>
+          <div class="flex-cell table-headers">Edit</div>
+          <div class="flex-cell table-headers">Bookings</div>
+          <div class="flex-cell table-headers">Book</div>
         </div>
         <% for session in @sessions%>
         <div class="flex-row table-flex">
-          <div class="flex-cell table-cells-sessions"><%=session.title()%></div>
-          <div class="flex-cell table-cells-sessions"><%=session.show_instructor_name()%></div>
-          <div class="flex-cell table-cells-sessions"><%=session.show_room_name()%></div>
-          <div class="flex-cell table-cells-sessions"><%=session.show_start_time()%></div>
-          <div class="flex-cell table-cells-sessions"><%=session.show_end_time()%></div>
-          <div class="flex-cell table-cells-sessions"><%=session.show_date()%></div>
-          <div class="flex-cell table-cells-sessions"><%=session.max_capacity()%></div>
-          <div class="flex-cell table-cells-sessions"><%=session.number_of_members()%></div>
-          <div class="flex-cell table-cells-sessions"><%=session.show_active()%></div>
-          <div class="flex-cell table-cells-sessions">
+          <div class="flex-cell table-cells"><%=session.title()%></div>
+          <div class="flex-cell table-cells"><%=session.show_instructor_name()%></div>
+          <div class="flex-cell table-cells"><%=session.show_room_name()%></div>
+          <div class="flex-cell table-cells"><%=session.show_start_time()%></div>
+          <div class="flex-cell table-cells"><%=session.show_end_time()%></div>
+          <div class="flex-cell table-cells"><%=session.show_date()%></div>
+          <div class="flex-cell table-cells"><%=session.max_capacity()%></div>
+          <div class="flex-cell table-cells"><%=session.number_of_members()%></div>
+          <div class="flex-cell table-cells"><span style="color:#B200FF;"><%=session.show_active()%></span></div>
+          <div class="flex-cell table-cells">
             <a href="/admin/sessions/<%= session.id() %>/edit">
-              <button class="sessions" type="button" name="button">EDIT</button>
+              <button class="tables" type="button" name="button">EDIT</button>
             </a>
           </div>
-          <div class="flex-cell table-cells-sessions">
+          <div class="flex-cell table-cells">
             <a href="/admin/sessions/<%= session.id() %>/bookings">
-              <button class="sessions" type="button" name="button">BOOKINGS</button>
+              <button class="tables" type="button" name="button">BOOKINGS</button>
             </a>
           </div>
-          <div class="flex-cell table-cells-sessions">
+          <div class="flex-cell table-cells">
             <a href="/admin/sessions/<%= session.id %>/bookings/new">
-              <button class="sessions" type="button" name="button">BOOK</button>
+              <button class="tables" type="button" name="button">BOOK</button>
             </a>
           </div>
         </div>
