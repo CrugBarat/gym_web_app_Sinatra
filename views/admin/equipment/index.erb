@@ -29,19 +29,27 @@
     </div>
   </section>
   <section>
-    <% for equipment in @equipment %>
-    <div class="index">
-      <br>
-      <p style="color:#fe5ebb;">Type: <span style="color:#414141;"><%=equipment.type()%></span></p>
-      <p style="color:#fe5ebb;">Quantity: <span style="color:#414141;"><%=equipment.quantity()%></span></p>
-      <p style="color:#fe5ebb;">Studio: <span style="color:#414141;"><%=equipment.show_room_name()%></span></p>
-      <a href="/admin/equipment/<%= equipment.id() %>/edit">
-        <button type="button" name="button">EDIT</button>
-      </a>
-      <br>
+    <div class="index-table">
+      <div class="table-container">
+        <div class="flex-row table-flex">
+          <div class="flex-cell table-headers">Type</div>
+          <div class="flex-cell table-headers">Quantity</div>
+          <div class="flex-cell table-headers">Studio</div>
+          <div class="flex-cell table-headers">Edit</div>
+        </div>
+        <% for equipment in @equipment %>
+        <div class="flex-row table-flex">
+          <div class="flex-cell table-cells"><%=equipment.type()%></div>
+          <div class="flex-cell table-cells"><%=equipment.quantity()%></div>
+          <div class="flex-cell table-cells"><%=equipment.show_room_name()%></div>
+          <div class="flex-cell table-cells">
+            <a href="/admin/equipment/<%= equipment.id() %>/edit">
+              <button type="button" name="button">EDIT</button>
+            </a>
+          </div>
+        </div>
+        <%end%>
+      </div>
     </div>
-    <br>
-    <%end%>
-    <br/>
-    <br/>
   </section>
+  <section>

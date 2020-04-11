@@ -29,24 +29,36 @@
     </div>
   </section>
   <section>
-    <% for member in @members %>
-    <div class="index">
-      <br>
-      <p style="color:#fe5ebb;">Name: <span style="color:#414141;"><%=member.full_name()%></span></p>
-      <p style="color:#fe5ebb;">DOB: <span style="color:#414141;"><%=member.formatted_dob()%></span></p>
-      <p style="color:#fe5ebb;">Membership Type: <span style="color:#414141;"><%=member.membership_type()%></span></p>
-      <p style="color:#fe5ebb;">Membership Number: <span style="color:#414141;"><%=member.id()%></span></p>
-      <p style="color:#B200FF;"><%=member.show_active()%></p>
-      <a href="/admin/members/<%= member.id() %>/edit">
-        <button type="button" name="button">EDIT</button>
-      </a>
-      <a href="/admin/members/<%= member.id() %>/member_details/show">
-        <button type="button" name="button">CONTACT DETAILS</button>
-      </a>
-      <br>
+    <div class="index-table">
+      <div class="table-container">
+        <div class="flex-row table-flex">
+          <div class="flex-cell table-headers">Member</div>
+          <div class="flex-cell table-headers">DOB</div>
+          <div class="flex-cell table-headers">Type</div>
+          <div class="flex-cell table-headers">#</div>
+          <div class="flex-cell table-headers">Status</div>
+          <div class="flex-cell table-headers">Details</div>
+          <div class="flex-cell table-headers">Edit</div>   
+        </div>
+        <% for member in @members %>
+        <div class="flex-row table-flex">
+          <div class="flex-cell table-cells"><%=member.full_name()%></div>
+          <div class="flex-cell table-cells"><%=member.formatted_dob()%></div>
+          <div class="flex-cell table-cells"><%=member.membership_type()%></div>
+          <div class="flex-cell table-cells"><%=member.id()%></div>
+          <div class="flex-cell table-cells"><span style="color:#B200FF;"><%=member.show_active()%></span></div>
+          <div class="flex-cell table-cells">
+            <a class="table" href="/admin/members/<%= member.id() %>/member_details/show">
+              <button type="button" name="button">DETAILS</button>
+            </a>
+          </div>
+          <div class="flex-cell table-cells">
+            <a class="table" href="/admin/members/<%= member.id() %>/edit">
+              <button type="button" name="button">EDIT</button>
+            </a>
+          </div>
+        </div>
+        <%end%>
+      </div>
     </div>
-    <br>
-    <%end%>
-    <br/>
-    <br/>
   </section>

@@ -29,18 +29,24 @@
     </div>
   </section>
   <section>
-    <% for instructor in @instructors %>
-    <div class="index">
-      <br>
-      <p style="color:#fe5ebb;">Instructor: <span style="color:#414141;"><%=instructor.full_name()%></span></p>
-      <p style="color:#fe5ebb;">Instructor ID: <span style="color:#414141;"><%=instructor.id()%></span></p>
-      <a href="/admin/instructors/<%= instructor.id() %>/edit">
-        <button type="button" name="button">EDIT</button>
-      </a>
-      <br>
+    <div class="index-table">
+      <div class="table-container">
+        <div class="flex-row table-flex">
+          <div class="flex-cell table-headers">Instructor</div>
+          <div class="flex-cell table-headers">Instructor ID</div>
+          <div class="flex-cell table-headers">Edit</div>
+        </div>
+        <% for instructor in @instructors %>
+        <div class="flex-row table-flex">
+            <div class="flex-cell table-cells"><%=instructor.full_name()%></div>
+            <div class="flex-cell table-cells"><%=instructor.id()%></div>
+            <div class="flex-cell table-cells">
+              <a href="/admin/instructors/<%= instructor.id() %>/edit">
+                <button type="button" name="button">EDIT</button>
+              </a>
+          </div>
+        </div>
+        <%end%>
+      </div>
     </div>
-    <br>
-    <%end%>
-    <br/>
-    <br/>
   </section>

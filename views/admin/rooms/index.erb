@@ -29,21 +29,30 @@
     </div>
   </section>
   <section>
-    <% for room in @rooms %>
-    <div class="index">
-      <br>
-      <p style="color:#fe5ebb;">Studio: <span style="color:#414141;"><%=room.name()%></span></p>
-      <p style="color:#fe5ebb;">Studio ID: <span style="color:#414141;"><%=room.id()%></span></p>
-      <a href="/admin/rooms/<%= room.id() %>/edit">
-        <button type="button" name="button">EDIT</button>
-      </a>
-      <a href="/admin/rooms/<%= room.id() %>/equipment">
-        <button type="button" name="button">EQUIPMENT</button>
-      </a>
-      <br>
+    <div class="index-table">
+      <div class="table-container">
+        <div class="flex-row table-flex">
+          <div class="flex-cell table-headers">Studio</div>
+          <div class="flex-cell table-headers">Studio ID</div>
+          <div class="flex-cell table-headers">Edit</div>
+          <div class="flex-cell table-headers">Equipment</div>
+        </div>
+        <% for room in @rooms %>
+        <div class="flex-row table-flex">
+          <div class="flex-cell table-cells"><%=room.name()%></div>
+          <div class="flex-cell table-cells"><%=room.id()%></div>
+          <div class="flex-cell table-cells">
+            <a href="/admin/rooms/<%= room.id() %>/edit">
+              <button type="button" name="button">EDIT</button>
+            </a>
+          </div>
+          <div class="flex-cell table-cells">
+            <a href="/admin/rooms/<%= room.id() %>/equipment">
+              <button type="button" name="button">EQUIPMENT</button>
+            </a>
+          </div>
+        </div>
+        <%end%>
+      </div>
     </div>
-    <br>
-    <%end%>
-    <br/>
-    <br/>
   </section>

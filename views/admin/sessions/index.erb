@@ -29,33 +29,50 @@
     </div>
   </section>
   <section>
-    <% for session in @sessions%>
-    <div class="index">
-      <br>
-      <p style="font-weight:bold;"><%=session.title()%></p>
-      <p style="color:#fe5ebb;">Instructor: <span style="color:#414141;"><%=session.show_instructor_name()%></span></p>
-      <p style="color:#fe5ebb;">Studio: <span style="color:#414141;"><%=session.show_room_name()%></span></p>
-      <p style="color:#fe5ebb;">Start Time: <span style="color:#414141;"><%=session.show_start_time()%></span></p>
-      <p style="color:#fe5ebb;">End Time: <span style="color:#414141;"><%=session.show_end_time()%></span></p>
-      <p style="color:#fe5ebb;">Date: <span style="color:#414141;"><%=session.show_date()%></span></p>
-      <hr class="colour">
-      <p style="color:#fe5ebb;">Max Capacity: <span style="color:#414141;"><%=session.max_capacity()%></span></p>
-      <p style="color:#fe5ebb;">Bookings: <span style="color:#414141;"><%=session.number_of_members()%></span></p>
-      <p style="color:#fe5ebb;">Class ID: <span style="color:#414141;"><%=session.id() %></span></p>
-      <p style="color:#B200FF;"><%=session.show_active()%></p>
-      <a href="/admin/sessions/<%= session.id() %>/edit">
-        <button type="button" name="button">EDIT</button>
-      </a>
-      <a href="/admin/sessions/<%= session.id() %>/bookings">
-        <button type="button" name="button">BOOKINGS</button>
-      </a>
-      <a href="/admin/sessions/<%= session.id %>/bookings/new">
-        <button type="button" name="button">BOOK</button>
-      </a>
-      <br>
+    <div class="index-table">
+      <div class="table-container">
+        <div class="flex-row table-flex">
+          <div class="flex-cell table-headers-sessions">Session</div>
+          <div class="flex-cell table-headers-sessions">Instructor</div>
+          <div class="flex-cell table-headers-sessions">Studio</div>
+          <div class="flex-cell table-headers-sessions">Start</div>
+          <div class="flex-cell table-headers-sessions">End</div>
+          <div class="flex-cell table-headers-sessions">Date</div>
+          <div class="flex-cell table-headers-sessions">Max Cap.</div>
+          <div class="flex-cell table-headers-sessions">Bookings</div>
+          <div class="flex-cell table-headers-sessions">Active</div>
+          <div class="flex-cell table-headers-sessions">Edit</div>
+          <div class="flex-cell table-headers-sessions">Bookings</div>
+          <div class="flex-cell table-headers-sessions">Book</div>
+        </div>
+        <% for session in @sessions%>
+        <div class="flex-row table-flex">
+          <div class="flex-cell table-cells-sessions"><%=session.title()%></div>
+          <div class="flex-cell table-cells-sessions"><%=session.show_instructor_name()%></div>
+          <div class="flex-cell table-cells-sessions"><%=session.show_room_name()%></div>
+          <div class="flex-cell table-cells-sessions"><%=session.show_start_time()%></div>
+          <div class="flex-cell table-cells-sessions"><%=session.show_end_time()%></div>
+          <div class="flex-cell table-cells-sessions"><%=session.show_date()%></div>
+          <div class="flex-cell table-cells-sessions"><%=session.max_capacity()%></div>
+          <div class="flex-cell table-cells-sessions"><%=session.number_of_members()%></div>
+          <div class="flex-cell table-cells-sessions"><%=session.show_active()%></div>
+          <div class="flex-cell table-cells-sessions">
+            <a href="/admin/sessions/<%= session.id() %>/edit">
+              <button class="sessions" type="button" name="button">EDIT</button>
+            </a>
+          </div>
+          <div class="flex-cell table-cells-sessions">
+            <a href="/admin/sessions/<%= session.id() %>/bookings">
+              <button class="sessions" type="button" name="button">BOOKINGS</button>
+            </a>
+          </div>
+          <div class="flex-cell table-cells-sessions">
+            <a href="/admin/sessions/<%= session.id %>/bookings/new">
+              <button class="sessions" type="button" name="button">BOOK</button>
+            </a>
+          </div>
+        </div>
+        <%end%>
+      </div>
     </div>
-    <br>
-    <%end%>
-    <br/>
-    <br/>
   </section>

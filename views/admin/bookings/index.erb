@@ -29,22 +29,32 @@
     </div>
   </section>
   <section>
-    <% for booking in @bookings %>
-    <div class="index">
-      <br>
-      <p style="color:#fe5ebb;">Member: <span style="color:#414141;"> <%=booking.show_member_name()%></span></p>
-      <p style="color:#fe5ebb;">Session: <span style="color:#414141;"> <%=booking.show_session_title()%></span></p>
-      <p style="color:#fe5ebb;">Start Time: <span style="color:#414141;"> <%=booking.show_start_time()%></span></p>
-      <p style="color:#fe5ebb;">End Time: <span style="color:#414141;"> <%=booking.show_end_time()%></span></p>
-      <p style="color:#fe5ebb;">Date: <span style="color:#414141;"> <%=booking.show_date()%></span></p>
-      <p style="color:#fe5ebb;">Booking ID: <span style="color:#414141;"> <%=booking.id()%></span></p>
-      <a href="/admin/bookings/<%= booking.id %>">
-        <button type="button" name="button">DELETE</button>
-      </a>
-      <br>
+    <div class="index-table">
+      <div class="table-container">
+        <div class="flex-row table-flex">
+          <div class="flex-cell table-headers">Member</div>
+          <div class="flex-cell table-headers">Session</div>
+          <div class="flex-cell table-headers">Start Time</div>
+          <div class="flex-cell table-headers">End Time</div>
+          <div class="flex-cell table-headers">Date</div>
+          <div class="flex-cell table-headers">Booking ID</div>
+          <div class="flex-cell table-headers">Delete</div>
+        </div>
+        <% for booking in @bookings %>
+        <div class="flex-row table-flex">
+            <div class="flex-cell table-cells"><%=booking.show_member_name()%></div>
+            <div class="flex-cell table-cells"><%=booking.show_session_title()%></div>
+            <div class="flex-cell table-cells"><%=booking.show_start_time()%></div>
+            <div class="flex-cell table-cells"><%=booking.show_end_time()%></div>
+            <div class="flex-cell table-cells"><%=booking.show_date()%></div>
+            <div class="flex-cell table-cells"><%=booking.id()%></div>
+            <div class="flex-cell table-cells">
+            <a href="/admin/bookings/<%= booking.id %>">
+            <button type="button" name="button">DELETE</button>
+          </a>
+          </div>
+        </div>
+        <%end%>
+      </div>
     </div>
-    <br>
-    <%end%>
-    <br/>
-    <br/>
   </section>
