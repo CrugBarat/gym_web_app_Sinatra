@@ -1,5 +1,7 @@
 body, html {
   overflow-x: hidden;
+  padding: 0;
+  margin: 0;
 }
 
 /* HERO IMAGE */
@@ -160,6 +162,7 @@ ul.nav {
 
 li.nav {
   float: right;
+  margin-right: 40px;
 }
 
 li.nav a {
@@ -197,6 +200,9 @@ li.nav a:hover {
   position: relative;
   min-height: 100vh;
   background-color: #FDFDFD;
+  padding: 0;
+  margin: 0;
+  width: 100vw;
 }
 
 #content-wrap {
