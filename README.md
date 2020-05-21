@@ -3,7 +3,7 @@
 
 # Gym.
 
-Gym. is an app I created using the following:
+Gym. is an app I created using:
 
 **Programming Language**: Ruby
 
