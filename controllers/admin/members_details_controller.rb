@@ -2,7 +2,6 @@ require('sinatra')
 require('sinatra/contrib/all') if development?
 require_relative('../../models/member.rb')
 require_relative('../../models/member_details.rb')
-also_reload('./models/*')
 
 #NEW
 get '/admin/members/:id/member_details/create' do

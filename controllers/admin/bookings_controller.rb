@@ -3,7 +3,6 @@ require('sinatra/contrib/all') if development?
 require_relative('../../models/member.rb')
 require_relative('../../models/session.rb')
 require_relative('../../models/booking.rb')
-also_reload('./models/*')
 
 #INDEX
 get '/admin/bookings' do

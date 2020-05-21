@@ -2,7 +2,6 @@ require('sinatra')
 require('sinatra/contrib/all') if development?
 require_relative('../../models/session.rb')
 require_relative('../../models/session_date_time.rb')
-also_reload('./models/*')
 
 #NEW
 get '/admin/sessions/:id/date_time/create' do

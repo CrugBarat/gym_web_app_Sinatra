@@ -8,7 +8,6 @@ require_relative('./session_dates_times_controller.rb')
 require_relative('./instructors_controller.rb')
 require_relative('./rooms_controller.rb')
 require_relative('./equipment_controller.rb')
-also_reload('./models/*')
 
 get '/admin' do
   erb(:"admin/home")

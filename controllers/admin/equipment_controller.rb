@@ -2,7 +2,6 @@ require('sinatra')
 require('sinatra/contrib/all') if development?
 require_relative('../../models/equipment.rb')
 require_relative('../../models/room.rb')
-also_reload('./models/*')
 
 #INDEX
 get '/admin/equipment' do

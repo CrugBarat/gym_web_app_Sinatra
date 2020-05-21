@@ -1,7 +1,6 @@
 require('sinatra')
 require('sinatra/contrib/all') if development?
 require_relative('../../models/member.rb')
-also_reload('./models/*')
 
 #INDEX
 get '/admin/members' do
