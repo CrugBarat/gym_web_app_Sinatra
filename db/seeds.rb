@@ -1,4 +1,3 @@
-require('pry-byebug')
 require_relative('../models/member.rb')
 require_relative('../models/session.rb')
 require_relative('../models/booking.rb')
@@ -144,12 +143,3 @@ booking2 = Booking.new({'member_id' => member1.id,
 
 booking1.save()
 booking2.save()
-
-
-##################################################################
-# PRY
-
-binding.pry
-nil
-
-##################################################################
