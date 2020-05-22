@@ -13,7 +13,7 @@ Gym. is an app I created using:
 
 **Markup/Styling**: HTML5/CSS3
 
-**Demo**: [Heroku](https://gym-sinatra.herokuapp.com/)
+**Demo**: [Heroku](https://gym-app-sinatra.herokuapp.com/)
 
 The project was tasked to me by CodeClan, Glasgow, where I studied towards a PDA Level 8 in Professional Software Development. This was a solo project and I was given 5 days to complete it. The project spec can be found below.
 
@@ -140,6 +140,8 @@ CTRL + C
 
 # Acknowledgments
 
-Ally, Anna & Colin at CodeClan for the comprehensive and fluid teaching of the Ruby module of the Professional Software Development course. They gave me the tools and knowledge I needed to create this app. Thank you :)
+- Ally, Anna & Colin at CodeClan for the comprehensive and fluid teaching of the Ruby module of the Professional Software Development course. They gave me the tools and knowledge I needed to create this app. Thank you :)
 
-Shout out to G18 in lockdown!
+- Shout out to G18 in lockdown!
+
+- [Ross Cumming](https://github.com/rosscumming) for that beautiful line of code
